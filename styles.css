@@ -236,6 +236,35 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* ===========================
+   HERO PARALLAX
+=========================== */
+.hero-img {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+/* ===========================
+   HERO PARALLAX RESPONSIVE
+=========================== */
+.hero-img {
+    transition: transform 0.2s ease-out;
+    will-change: transform;
+}
+
+/* Movimientos más suaves para tablets y móviles */
+@media (max-width: 1024px) {
+    .hero-img {
+        transition: transform 0.25s ease-out;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-img {
+        transition: transform 0.3s ease-out;
+    }
+}
+
 /* HERO MOBILE */
 @media (max-width: 700px) {
     .hero h1 {

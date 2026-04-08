@@ -1018,6 +1018,23 @@
             });
         });
     </script>
+    <script>
+        // Parallax hero full responsive
+        const heroImg = document.querySelector('.hero-img');
+
+        window.addEventListener('scroll', () => {
+            let factor = 0.25; // Desktop
+
+            if (window.innerWidth <= 1024 && window.innerWidth > 700) {
+                factor = 0.15; // Tablet
+            } else if (window.innerWidth <= 700) {
+                factor = 0.05; // Móvil
+            }
+
+            const offset = window.scrollY * factor;
+            heroImg.style.transform = `translateY(${offset}px)`;
+        });
+    </script>
 
 
 
