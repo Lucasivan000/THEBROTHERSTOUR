@@ -36,8 +36,10 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-overlay"></div>
+
+        <img src="./assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-img">
         <div class="hero-content">
+
             <h1>Descubre Río de Janeiro con Experiencias Premium</h1>
             <p>Vive aventuras auténticas, rodeado de naturaleza y acompañado por guías profesionales.</p>
 
@@ -815,6 +817,40 @@
 
         </div>
     </section>
+    <footer class="footer">
+        <div class="footer-top">
+            <!-- Logo y nombre -->
+            <div class="footer-brand">
+                <img src="ruta/al/logo.png" alt="Logo TheBrothersTour" class="footer-logo">
+                <span class="footer-name">THEBROTHERSTOUR</span>
+            </div>
+
+            <!-- Contacto -->
+            <div class="footer-contact">
+                <a href="https://wa.me/5490000000000" target="_blank" class="footer-contact-item">
+                    <img src="ruta/al/whatsapp-icon.png" alt="WhatsApp" class="footer-icon">
+                    +54 9 11 1234 5678
+                </a>
+                <a href="https://wa.me/5490000000001" target="_blank" class="footer-contact-item">
+                    <img src="ruta/al/whatsapp-icon.png" alt="WhatsApp" class="footer-icon">
+                    +54 9 11 9876 5432
+                </a>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+                <a href="https://instagram.com/thebrotherstour" target="_blank" class="footer-social-item">
+                    <img src="ruta/al/instagram-icon.png" alt="Instagram" class="footer-icon">
+                    Instagram
+                </a>
+            </div>
+        </div>
+
+        <!-- Derechos reservados -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 THEBROTHERSTOUR - Todos los derechos reservados</p>
+        </div>
+    </footer>
     <div class="modal" id="tourModal">
         <div class="modal-content">
             <button class="modal-close" data-close>&times;</button>
@@ -845,6 +881,7 @@
             </div>
         </div>
     </div>
+
 
 
 
@@ -956,6 +993,32 @@
             if (e.target === modal) modal.classList.remove("active");
         });
     </script>
+    <script>
+        // Crear el contenedor del lightbox dinámicamente
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        document.body.appendChild(lightbox);
+
+        // Función para mostrar imagen en lightbox
+        const showLightbox = (src) => {
+            lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
+            lightbox.classList.add("active");
+        };
+
+        // Cerrar al click en el overlay
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        // Hacer las imágenes del slider clickeables
+        document.querySelectorAll(".modal .slider img").forEach(img => {
+            img.style.cursor = "zoom-in"; // cambiar cursor
+            img.addEventListener("click", () => {
+                showLightbox(img.src);
+            });
+        });
+    </script>
+
 
 
 </body>

@@ -148,30 +148,48 @@ body {
 .hero {
     position: relative;
     min-height: 90vh;
-    background-image: url('https://via.placeholder.com/1600x900?text=Rio+de+Janeiro');
-    background-size: cover;
-    background-position: center;
     display: flex;
     align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* mantiene la imagen completa y reluciente */
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: contrast(1.1) saturate(1.15);
+    /* más impacto visual */
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
+    z-index: 2;
     max-width: 700px;
     padding: 0 2rem;
     animation: fadeInUp 1.2s ease forwards;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 1rem;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    color: #fff;
 }
 
 .hero p {
@@ -179,12 +197,15 @@ body {
     color: var(--gris-claro);
     max-width: 550px;
     margin-bottom: 2rem;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* HERO BUTTONS */
 .hero-buttons {
     display: flex;
     gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -219,6 +240,10 @@ body {
 @media (max-width: 700px) {
     .hero h1 {
         font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .hero-buttons {
@@ -524,6 +549,30 @@ body {
 }
 
 
+
+/* click sobre modals foto full widht */
+/* Lightbox fullscreen */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    cursor: zoom-out;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox.active {
+    display: flex;
+}
 
 
 
@@ -919,5 +968,116 @@ FIESTAS
 @media (max-width: 600px) {
     .extra-card {
         flex: 0 0 220px;
+    }
+}
+
+
+
+
+
+
+
+
+/* FOOTER
+
+/* ===========================
+   FOOTER RESPONSIVE
+=========================== */
+.footer {
+    background-color: #1a1a1a;
+    /* gris oscuro */
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    padding: 2rem 1rem 1rem;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+/* Top section con flex */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo y nombre */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.footer-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Contacto y redes */
+.footer-contact,
+.footer-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-contact-item,
+.footer-social-item {
+    gap: 0.5rem;
+}
+
+.footer-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+}
+
+/* ===========================
+   RESPONSIVE MOBILE
+=========================== */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-contact,
+    .footer-social {
+        align-items: center;
+    }
+
+    .footer-contact-item,
+    .footer-social-item {
+        justify-content: center;
     }
 }
