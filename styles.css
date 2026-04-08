@@ -1,0 +1,923 @@
+/* ===========================
+   styles.css
+=========================== */
+
+/* VARIABLES */
+:root {
+    --verde-main: #1F7A5C;
+    --verde-hover: #176A50;
+    --negro-premium: #0E0E0E;
+    --negro-suave: #161616;
+    --amarillo-acento: #F2C94C;
+    --azul-oceano: #1E5D8C;
+    --blanco: #FFFFFF;
+    --gris-claro: #F5F5F5;
+    --gris-texto: #6B6B6B;
+    --transition: 0.3s ease;
+    --font-main: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background: var(--negro-suave);
+    color: var(--blanco);
+}
+
+.price {
+    display: inline-block;
+    margin: 0.35rem 0 0.6rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #b89b5e;
+    letter-spacing: 0.3px;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: var(--negro-premium);
+    z-index: 999;
+    padding: 0.4rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--blanco);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--verde-main);
+}
+
+.btn-whatsapp {
+    background: var(--verde-main);
+    padding: 0.55rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    background: var(--verde-hover);
+}
+
+/* HAMBURGER MENU (MOBILE) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--blanco);
+    transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE NAV */
+@media (max-width: 850px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--negro-premium);
+        width: 100%;
+        flex-direction: column;
+        padding: 1.5rem 0;
+        gap: 1rem;
+        transform: translateY(-300px);
+        opacity: 0;
+        transition: var(--transition);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    background-image: url('https://via.placeholder.com/1600x900?text=Rio+de+Janeiro');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    padding: 0 2rem;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--gris-claro);
+    max-width: 550px;
+    margin-bottom: 2rem;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.btn-primary {
+    background: var(--verde-main);
+    padding: 0.9rem 1.6rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--blanco);
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--verde-hover);
+}
+
+.btn-secondary {
+    border: 2px solid var(--blanco);
+    padding: 0.9rem 1.6rem;
+    border-radius: 5px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* HERO MOBILE */
+@media (max-width: 700px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .btn-secondary {
+        text-align: center;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/* Seccion experiencias
+/* ===========================
+   VARIABLES
+=========================== */
+
+:root {
+    --verde-main: #1F7A5C;
+    --verde-hover: #176A50;
+    --negro-premium: #0E0E0E;
+    --negro-suave: #161616;
+    --amarillo-acento: #F2C94C;
+    --azul-oceano: #1E5D8C;
+    --blanco: #FFFFFF;
+    --gris-claro: #F5F5F5;
+    --gris-texto: #6B6B6B;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    --transition: .3s ease;
+    --radius: 10px;
+}
+
+/* ===========================
+   SECCIÓN EXPERIENCIAS
+=========================== */
+
+.experiencias {
+    background: var(--gris-claro);
+    padding: 5rem 0;
+    color: var(--negro-premium);
+}
+
+.exp-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.exp-title {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.exp-subtitle {
+    text-align: center;
+    color: var(--gris-texto);
+    margin-bottom: 3rem;
+}
+
+/* GRID */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 950px) {
+    .exp-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .exp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CARDS */
+.exp-card {
+    background: var(--blanco);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+}
+
+.exp-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.exp-content {
+    padding: 1.5rem;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--amarillo-acento);
+    color: var(--negro-premium);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.exp-content h3 {
+    margin: 0.7rem 0;
+    font-size: 1.4rem;
+}
+
+.exp-content p {
+    color: var(--gris-texto);
+}
+
+/* BUTTONS */
+.exp-buttons {
+    margin-top: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.btn-primary {
+    background: var(--verde-main);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: var(--blanco);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--verde-hover);
+}
+
+.btn-secondary {
+    background: transparent;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    color: var(--azul-oceano);
+    border: 2px solid var(--azul-oceano);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: var(--azul-oceano);
+    color: var(--blanco);
+}
+
+.big {
+    font-size: 1.1rem;
+    padding: 1rem 1.4rem;
+}
+
+
+
+
+
+/*MODAL ABARCATIVO */
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    z-index: 9999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #32c95f;
+    width: 100%;
+    max-width: 850px;
+    max-height: 90vh;
+    padding: 2rem;
+    border-radius: 18px;
+    position: relative;
+    overflow-y: auto;
+}
+
+@media (max-width: 700px) {
+    .modal-content {
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.slider img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: none;
+    border-radius: 12px;
+}
+
+.slider img.active {
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .slider img {
+        height: 260px;
+    }
+}
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.modal-section {
+    margin-top: 1.5rem;
+}
+
+.modal-section h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.info-list li {
+    margin-bottom: 0.4rem;
+}
+
+.modal-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/*FIESTA DE BARCOS
+/* ===========================
+   SECCIÓN BARCOS
+=========================== */
+
+.barcos {
+    background: var(--gris-claro);
+    padding: 5rem 0;
+    color: var(--negro-premium);
+}
+
+.barcos-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.barcos-title {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.barcos-subtitle {
+    text-align: center;
+    color: var(--gris-texto);
+    margin-bottom: 3rem;
+}
+
+/* GRID */
+.barcos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 950px) {
+    .barcos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .barcos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CARDS */
+.barco-card {
+    background: var(--blanco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.barco-card:hover {
+    transform: translateY(-5px);
+}
+
+.barco-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.barco-content {
+    padding: 1.5rem;
+}
+
+.barco-content h3 {
+    margin: 0.7rem 0;
+    font-size: 1.4rem;
+}
+
+.barco-content p {
+    color: var(--gris-texto);
+}
+
+.info-quick {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    color: var(--gris-texto);
+}
+
+.info-quick li {
+    margin-bottom: 0.3rem;
+}
+
+/* Buttons */
+.barco-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+
+
+
+
+/* Gallery */
+.slider img {
+    width: 100%;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--negro-premium);
+    color: var(--blanco);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.modal-cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+FIESTAS
+/* ===========================
+   FIESTAS EN RÍO
+=========================== */
+
+.fiestas-rio {
+    position: relative;
+    padding: 120px 40px;
+    background: url("https://via.placeholder.com/1600x900?text=Rio+Night") center / cover fixed no-repeat;
+}
+
+.fiestas-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+    /* CLAVE */
+}
+
+.fiestas-container {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+
+.fiestas-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.fiesta-card {
+    background: #161616;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.fiesta-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.fiesta-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.fiesta-content {
+    padding: 22px;
+    text-align: left;
+}
+
+.fiesta-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .fiestas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+/* TOUR DE FAVELA
+/* ===========================
+   TOURS FAVELA
+=========================== */
+
+.favela-tours {
+    padding: 120px 40px;
+    background: #1a1a1a;
+}
+
+.favela-container {
+    max-width: 1200px;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+}
+
+.favela-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.favela-card {
+    background: #161616;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.favela-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.favela-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.favela-content {
+    padding: 22px;
+    text-align: left;
+}
+
+.favela-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .favela-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/** carrusel 
+
+/* ===========================
+   EXTRAS - CARRUSEL
+=========================== */
+
+.extras {
+    padding: 120px 40px;
+    background: linear-gradient(to bottom,
+            #ffffff,
+            #f3f3f3)
+}
+
+.extras-container {
+    max-width: 1300px;
+    margin: auto;
+    color: #fff;
+}
+
+.extras-header {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.extras-header h2 {
+
+    color: #1f2933;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.extras-header p {
+    color: #6b7280;
+    max-width: 600px;
+}
+
+.extras-carousel {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.extras-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.extras-carousel::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+
+.extra-card {
+    flex: 0 0 260px;
+    background: #161616;
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform .3s ease;
+}
+
+.extra-card:hover {
+    transform: translateY(-4px);
+}
+
+.extra-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.extra-body {
+    padding: 16px;
+}
+
+.extra-body h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--amarillo);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .extra-card {
+        flex: 0 0 220px;
+    }
+}
