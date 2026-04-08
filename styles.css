@@ -56,9 +56,20 @@ body {
 }
 
 .logo {
-    color: var(--blanco);
-    font-size: 1.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    /* espacio entre icono y texto */
     font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--blanco);
+}
+
+.logo-img {
+    width: 40px;
+    /* tamaño del icono */
+    height: 40px;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -763,22 +774,27 @@ body {
 
 
 FIESTAS
-/* ===========================
-   FIESTAS EN RÍO
-=========================== */
 
+
+/* ========================
+   SECCIÓN FIESTAS EN RÍO
+======================== */
 .fiestas-rio {
     position: relative;
     padding: 120px 40px;
-    background: url("https://via.placeholder.com/1600x900?text=Rio+Night") center / cover fixed no-repeat;
+    background-image: url("./assets/principal/cards/fiestaplayafondo.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 .fiestas-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(247, 243, 243, 0.55);
     pointer-events: none;
-    /* CLAVE */
+    /* evita que bloquee clicks */
 }
 
 .fiestas-container {
@@ -796,11 +812,12 @@ FIESTAS
     gap: 40px;
 }
 
+/* ====== Cards ====== */
 .fiesta-card {
     background: #161616;
     border-radius: 14px;
     overflow: hidden;
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fiesta-card:hover {
@@ -808,12 +825,17 @@ FIESTAS
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
+/* Imagen de la card */
 .fiesta-img {
     height: 220px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: #e61010;
+    /* fallback en caso de que no cargue */
 }
 
+/* Contenido de la card */
 .fiesta-content {
     padding: 22px;
     text-align: left;
@@ -825,12 +847,12 @@ FIESTAS
     gap: 10px;
 }
 
+/* ====== Responsive ====== */
 @media (max-width: 900px) {
     .fiestas-grid {
         grid-template-columns: 1fr;
     }
 }
-
 
 
 
@@ -845,7 +867,7 @@ FIESTAS
 
 .favela-tours {
     padding: 120px 40px;
-    background: #1a1a1a;
+    background: #363636;
 }
 
 .favela-container {
