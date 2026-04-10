@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* ===========================
    VARIABLES GLOBALES
 =========================== */
@@ -15,7 +19,7 @@
     --verde-main: #1F7A5C;
     --verde-hover: #176A50;
     --negro-premium: #0E0E0E;
-    --negro-suave: white;
+    --negro-suave: #0E0E0E;
     --amarillo-acento: #F2C94C;
     --azul-oceano: #1E5D8C;
     --blanco: #FFFFFF;
@@ -205,7 +209,7 @@ MAIN NAVBAR===========================*/
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
+    height: 110%;
     object-fit: cover;
     object-position: center;
     z-index: 0;
@@ -476,10 +480,6 @@ MAIN NAVBAR===========================*/
 
 
 
-/* ===========================
-   SECCIÓN EXPERIENCIAS
-=========================== */
-
 .experiencias {
     background: var(--gris-claro);
     padding: 5rem 0;
@@ -513,6 +513,7 @@ MAIN NAVBAR===========================*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
 }
 
 @media (max-width: 950px) {
@@ -535,6 +536,7 @@ MAIN NAVBAR===========================*/
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+    height: 100%;
     transition: var(--transition);
 }
 
@@ -544,17 +546,17 @@ MAIN NAVBAR===========================*/
 
 /* IMAGE */
 .experiencias .exp-img {
-    height: 220px;
+    height: 280px;
     background-size: cover;
     background-position: center;
 }
 
 /* CONTENT */
 .experiencias .exp-content {
-    padding: 1.5rem;
+    padding: 1.2rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
 }
 
 .experiencias .exp-content h3 {
@@ -565,11 +567,19 @@ MAIN NAVBAR===========================*/
 .experiencias .exp-content p {
     color: var(--gris-texto);
     margin-bottom: 0.8rem;
+
+    /* 🔥 evita desbalance de alturas */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
+/* PRICE */
 .experiencias .price {
     font-weight: 700;
     margin-top: auto;
+    padding: 10px;
 }
 
 /* BADGE */
@@ -585,7 +595,7 @@ MAIN NAVBAR===========================*/
 
 /* BUTTONS */
 .experiencias .exp-buttons {
-    margin-top: 1.3rem;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
@@ -666,6 +676,7 @@ MAIN NAVBAR===========================*/
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    align-items: stretch;
 }
 
 @media (max-width: 950px) {
@@ -688,6 +699,7 @@ MAIN NAVBAR===========================*/
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+    height: 100%;
     transition: var(--transition);
 }
 
@@ -697,7 +709,7 @@ MAIN NAVBAR===========================*/
 
 /* IMAGE */
 .barcos .barco-img {
-    height: 220px;
+    height: 280px;
     background-size: cover;
     background-position: center;
 }
@@ -707,7 +719,7 @@ MAIN NAVBAR===========================*/
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
 }
 
 .barcos .barco-content h3 {
@@ -717,6 +729,10 @@ MAIN NAVBAR===========================*/
 
 .barcos .barco-content p {
     color: var(--gris-texto);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* INFO LIST */
@@ -736,6 +752,7 @@ MAIN NAVBAR===========================*/
 .barcos .price {
     font-weight: 700;
     margin-top: auto;
+    padding: 10px;
 }
 
 /* BADGE */
@@ -751,13 +768,13 @@ MAIN NAVBAR===========================*/
 
 /* BUTTONS */
 .barcos .barco-buttons {
-    margin-top: 1.3rem;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
 }
 
-/* BUTTONS */
+/* PRIMARY BUTTON */
 .barcos .btn-primary {
     background: var(--verde-main);
     padding: 0.75rem 1rem;
@@ -773,6 +790,7 @@ MAIN NAVBAR===========================*/
     background: var(--verde-hover);
 }
 
+/* SECONDARY BUTTON */
 .barcos .btn-secondary {
     background: transparent;
     padding: 0.7rem 1rem;
@@ -787,7 +805,6 @@ MAIN NAVBAR===========================*/
     background: var(--azul-oceano);
     color: var(--blanco);
 }
-
 
 
 
@@ -1014,13 +1031,56 @@ MAIN NAVBAR===========================*/
 #favela {
     position: relative;
     isolation: isolate;
-    background: #ce3f3f;
+    background: #1B1B1B;
     padding: 80px 20px;
     color: #fff;
 }
 
 #favela * {
     box-sizing: border-box;
+}
+
+#favela::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(224, 184, 79, 0.10),
+            transparent 60%),
+        radial-gradient(circle at 70% 60%,
+            rgba(255, 255, 255, 0.03),
+            transparent 55%);
+    filter: blur(60px);
+    animation: favelaFloat 18s ease-in-out infinite;
+    z-index: -1;
+}
+
+#favela::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.015),
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 2px,
+            transparent 3px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes favelaFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(25px, -20px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
 }
 
 .favela-container {
@@ -1035,7 +1095,7 @@ MAIN NAVBAR===========================*/
 }
 
 .favela-subtitle {
-    color: #ccc;
+    color: #F2F2F2;
     margin-bottom: 50px;
 }
 
@@ -1046,7 +1106,7 @@ MAIN NAVBAR===========================*/
 }
 
 .favela-card {
-    background: #161616;
+    background: #2A2A2A;
     border-radius: 14px;
     overflow: hidden;
     display: flex;
@@ -1056,6 +1116,7 @@ MAIN NAVBAR===========================*/
 
 .favela-card:hover {
     transform: translateY(-6px);
+    transition: 0.3s ease;
 }
 
 .favela-img {
@@ -1084,11 +1145,11 @@ MAIN NAVBAR===========================*/
 
 .favela-info {
     padding-left: 18px;
-    color: #ddd;
+    color: #B8B8B8;
 }
 
 .favela-price {
-    color: #ffd700;
+    color: #E0B84F;
     font-weight: 600;
 }
 

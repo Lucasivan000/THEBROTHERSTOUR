@@ -18,11 +18,12 @@
             </div>
 
             <nav class="main-nav__links" id="mainNavLinks">
+                <a href="#inicio">Inicio</a>
                 <a href="#experiencias">Experiencias</a>
                 <a href="#barcos">Barcos</a>
-                <a href="#fiestas">Fiestas</a>
-                <a href="#tours">Tours</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#rioParties">Fiestas</a>
+                <a href="#favela">Favela</a>
+                <a href="#x-extras">Tours</a>
                 <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">WhatsApp</a>
             </nav>
 
@@ -34,9 +35,9 @@
         </div>
     </header>
     <!-- HERO MAIN -->
-    <section class="hero-main">
+    <section class="hero-main" id="inicio">
 
-        <img src="./assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-main__image">
+        <img src="./assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-main__image js-parallax">
 
         <div class="hero-main__overlay"></div>
 
@@ -105,6 +106,8 @@
                                 "Descuento especial: a partir de 2 personas",
                                 "Fotos y videos opcionales para recordar la experiencia",
                                 "Aterrizaje en la playa"
+                            
+
                             ]' data-whatsapp="Consulta%20sobre%20Parapente">
                                 Ver detalles
                             </button>
@@ -491,12 +494,12 @@
                         <span class="favela-badge">Más elegido</span>
 
                         <h3>Favela Rocinha</h3>
-                        <p>La favela más grande de Brasil con experiencias auténticas.</p>
+                        <p>Conocé su historia y su vibrante cultura urbana desde una mirada segura y respetuosa.</p>
 
                         <ul class="favela-info">
                             <li>Duración: xh</li>
                             <li>Guía local</li>
-                            <li>Cultural</li>
+                            <li>Cultura urbana</li>
                         </ul>
 
                         <span class="favela-price">Desde R$ xxx</span>
@@ -537,15 +540,15 @@
                         <span class="favela-badge">Panorámico</span>
 
                         <h3>Santa Marta</h3>
-                        <p>Historia, arte urbano y vistas únicas de Río.</p>
+                        <p>Un tour cultural con vistas panorámicas de Río y la famosa escalera de Michael Jackson.</p>
 
                         <ul class="favela-info">
-                            <li>Duración: 2.5h</li>
+                            <li>Duración: xxh</li>
                             <li>Arte urbano</li>
-                            <li>Seguro</li>
+                            <li>Escalera del MJ</li>
                         </ul>
 
-                        <span class="favela-price">Desde R$ 100</span>
+                        <span class="favela-price">Desde R$ xxx</span>
 
                         <div class="favela-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Santa%20Marta"
@@ -582,15 +585,15 @@
                         <span class="favela-badge">Sunset</span>
 
                         <h3>Vidigal</h3>
-                        <p>Una experiencia visual imperdible al caer el sol.</p>
+                        <p>Una experiencia auténtica que combina cultura local, naturaleza y atardeceres únicos.</p>
 
                         <ul class="favela-info">
-                            <li>Duración: 3h</li>
-                            <li>Atardecer</li>
+                            <li>Duración: xxh</li>
+                            <li>Mirador panorámico</li>
                             <li>Fotográfico</li>
                         </ul>
 
-                        <span class="favela-price">Desde R$ 100</span>
+                        <span class="favela-price">Desde R$ xxx</span>
 
                         <div class="favela-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Vidigal"
@@ -883,14 +886,50 @@
             </div>
         </div>
         <script>
-            const hamburger = document.getElementById("hamburger");
-            const navLinks = document.getElementById("navLinks");
+            const heroImage = document.querySelector(".js-parallax");
 
-            hamburger.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-                hamburger.classList.toggle("active");
+            window.addEventListener("scroll", () => {
+                const scroll = window.scrollY;
+
+                if (scroll < window.innerHeight) {
+                    heroImage.style.transform = `translateY(${scroll * 0.35}px)`;
+                }
             });
         </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const hamburger = document.getElementById("mainNavHamburger");
+                const navLinks = document.getElementById("mainNavLinks");
+
+                if (!hamburger || !navLinks) return;
+
+                // Abrir / cerrar menú
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+
+                // Cerrar al hacer click en un link
+                navLinks.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", () => {
+                        hamburger.classList.remove("active");
+                        navLinks.classList.remove("active");
+                    });
+                });
+
+                // Cerrar al clickear fuera
+                document.addEventListener("click", (e) => {
+                    const isClickInside =
+                        hamburger.contains(e.target) || navLinks.contains(e.target);
+
+                    if (!isClickInside) {
+                        hamburger.classList.remove("active");
+                        navLinks.classList.remove("active");
+                    }
+                });
+            });
+        </script>
+
         <script>
             /* ===========================
                MODAL TOUR ÚNICO
