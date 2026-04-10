@@ -1,99 +1,111 @@
-<!-- ===========================
-     index.html
-=========================== -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Turismo Premium Río de Janeiro</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
 </head>
 
 <body>
-
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="./assets/icons/logo.png" alt="Logo TheBrothersTour" class="logo-img">
-                TheBrothersTour
+    <!-- MAIN NAVBAR -->
+    <header class="main-nav">
+        <div class="main-nav__container">
+            <div class="main-nav__brand">
+                <img src="./assets/icons/logo.png" alt="Logo TheBrothersTour" class="main-nav__logo">
+                <span class="main-nav__title">TheBrothersTour</span>
             </div>
 
-            <nav class="nav-links" id="navLinks">
+            <nav class="main-nav__links" id="mainNavLinks">
                 <a href="#experiencias">Experiencias</a>
                 <a href="#barcos">Barcos</a>
                 <a href="#fiestas">Fiestas</a>
                 <a href="#tours">Tours</a>
                 <a href="#contacto">Contacto</a>
-                <a href="https://wa.me/0000000000" target="_blank" class="btn-whatsapp">WhatsApp</a>
+                <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">WhatsApp</a>
             </nav>
 
-            <div class="hamburger" id="hamburger">
+            <button class="main-nav__hamburger" id="mainNavHamburger" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </header>
+    <!-- HERO MAIN -->
+    <section class="hero-main">
 
-    <!-- HERO -->
-    <section class="hero">
+        <img src="./assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-main__image">
 
-        <img src="./assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-img">
-        <div class="hero-content">
+        <div class="hero-main__overlay"></div>
 
-            <h1>Descubre Río de Janeiro</h1>
-            <p>Vive aventuras auténticas, rodeado de naturaleza y acompañado por guías profesionales.</p>
+        <div class="hero-main__content">
+            <h1 class="hero-main__title">Descubre Río de Janeiro</h1>
+            <p class="hero-main__text">
+                Vive aventuras auténticas, rodeado de naturaleza y acompañado por guías profesionales.
+            </p>
 
-            <div class="hero-buttons">
-                <a href="https://wa.me/0000000000" target="_blank" class="btn-primary">Consultar por WhatsApp</a>
-                <a href="#experiencias" class="btn-secondary">Ver Experiencias</a>
+            <div class="hero-main__actions">
+                <a href="https://wa.me/0000000000" target="_blank" class="hero-main__btn hero-main__btn--primary">
+                    Consultar por WhatsApp
+                </a>
+
+                <a href="#experiencias" class="hero-main__btn hero-main__btn--secondary">
+                    Ver Experiencias
+                </a>
             </div>
         </div>
     </section>
     <!-- ===========================
      EXPERIENCIAS DESTACADAS
 =========================== -->
-
     <section class="experiencias" id="experiencias">
+
         <div class="exp-container">
-            <h2 class="exp-title">Experiencias destacadas</h2>
-            <p class="exp-subtitle">Aventura, adrenalina y vistas inolvidables en Río de Janeiro.</p>
+
+            <header class="exp-header">
+                <h2 class="exp-title">Experiencias destacadas</h2>
+                <p class="exp-subtitle">
+                    Aventura, adrenalina y vistas inolvidables en Río de Janeiro.
+                </p>
+            </header>
 
             <div class="exp-grid">
 
                 <!-- CARD 1 -->
                 <article class="exp-card">
-                    <div class="exp-img" style="background-image:url('./assets/principal/cards/parapentcard.webp');">
+
+                    <div class="exp-img" style="background-image: url('./assets/principal/cards/parapentcard.webp');">
                     </div>
 
                     <div class="exp-content">
                         <span class="badge">Más vendido</span>
+
                         <h3>Parapente en Río</h3>
                         <p>Vuela sobre las montañas y playas icónicas de Río con pilotos certificados.</p>
                         <span class="price">Desde R$ xxx</span>
 
                         <div class="exp-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Parapente" target="_blank"
-                                class="btn-primary">Consultar por WhatsApp</a>
+                                class="btn-primary">
+                                Consultar por WhatsApp
+                            </a>
 
-                            <!-- Solo el botón contiene data para el modal -->
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Parapente sobre Río de Janeiro"
                                 data-description="¡Vuela y disfruta de una aventura única desde el cielo!" data-images='[
-                    "https://via.placeholder.com/900x500?text=Parapente+1",
-                    "https://via.placeholder.com/900x500?text=Parapente+2",
-                    "https://via.placeholder.com/900x500?text=Parapente+3"
-                ]' data-duration="10 a 15 minutos de pura adrenalina y paisaje" data-stops="-"
+                                "https://via.placeholder.com/900x500?text=Parapente+1",
+                                "https://via.placeholder.com/900x500?text=Parapente+2",
+                                "https://via.placeholder.com/900x500?text=Parapente+3"
+                            ]' data-duration="10 a 15 minutos de pura adrenalina y paisaje" data-stops="-"
                                 data-includes="con instructor profesional, vistas panorámicas de la ciudad y sus playas icónicas"
                                 data-notincludes="traslado hasta el punto de salida" data-itinerary='[
-                    "Salida desde: Parque da Cidade, Niterói",
-                    "Descuento especial: a partir de 2 personas",
-                    "Fotos y videos opcionales para recordar la experiencia",
-                    "Aterrizaje en la playa"
-                ]' data-whatsapp="Consulta%20sobre%20Parapente">
+                                "Salida desde: Parque da Cidade, Niterói",
+                                "Descuento especial: a partir de 2 personas",
+                                "Fotos y videos opcionales para recordar la experiencia",
+                                "Aterrizaje en la playa"
+                            ]' data-whatsapp="Consulta%20sobre%20Parapente">
                                 Ver detalles
                             </button>
                         </div>
@@ -102,29 +114,36 @@
 
                 <!-- CARD 2 -->
                 <article class="exp-card">
-                    <div class="exp-img" style="background-image:url('./assets/principal/cards/asadelta.webp');"></div>
+
+                    <div class="exp-img" style="background-image: url('./assets/principal/cards/asadelta.webp');">
+                    </div>
 
                     <div class="exp-content">
                         <span class="badge">Experiencia única</span>
+
                         <h3>Ala delta</h3>
                         <p>xx</p>
                         <span class="price">Desde R$ xxx</span>
 
                         <div class="exp-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Ala%20Delta" target="_blank"
-                                class="btn-primary">Consultar por WhatsApp</a>
+                                class="btn-primary">
+                                Consultar por WhatsApp
+                            </a>
+
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal" data-title="Ala delta"
                                 data-description="xx" data-images='[
-                    "https://via.placeholder.com/900x500?text=Ala+Delta+1",
-                    "https://via.placeholder.com/900x500?text=Ala+Delta+2",
-                    "https://via.placeholder.com/900x500?text=Ala+Delta+3"
-                ]' data-duration="xx" data-stops="xx" data-includes="xx" data-notincludes="xx" data-itinerary='[
-                    "xx",
-                    "xx",
-                    "xx",
-                    "xx",
-                    "xx"
-                ]' data-whatsapp="Consulta%20sobre%20Ala%20Delta">
+                                "https://via.placeholder.com/900x500?text=Ala+Delta+1",
+                                "https://via.placeholder.com/900x500?text=Ala+Delta+2",
+                                "https://via.placeholder.com/900x500?text=Ala+Delta+3"
+                            ]' data-duration="xx" data-stops="xx" data-includes="xx" data-notincludes="xx"
+                                data-itinerary='[
+                                "xx",
+                                "xx",
+                                "xx",
+                                "xx",
+                                "xx"
+                            ]' data-whatsapp="Consulta%20sobre%20Ala%20Delta">
                                 Ver detalles
                             </button>
                         </div>
@@ -132,9 +151,10 @@
                 </article>
 
                 <!-- CARD 3 -->
-                <!-- CARD 3 -->
                 <article class="exp-card">
-                    <div class="exp-img" style="background-image:url('./assets/principal/cards/helicopterocard.webp');">
+
+                    <div class="exp-img"
+                        style="background-image: url('./assets/principal/cards/helicopterocard.webp');">
                     </div>
 
                     <div class="exp-content">
@@ -144,20 +164,23 @@
 
                         <div class="exp-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Helicoptero" target="_blank"
-                                class="btn-primary">Consultar por WhatsApp</a>
+                                class="btn-primary">
+                                Consultar por WhatsApp
+                            </a>
+
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Paseo en Helicóptero por Río de Janeiro"
-                                data-description="Vive Río desde el cielo y disfruta de vistas panorámicas únicas.."
+                                data-description="Vive Río desde el cielo y disfruta de vistas panorámicas únicas."
                                 data-images='[
-                    "https://via.placeholder.com/900x500?text=Helicoptero+1",
-                    "https://via.placeholder.com/900x500?text=Helicoptero+2",
-                    "https://via.placeholder.com/900x500?text=Helicoptero+3"
-                ]' data-duration="Segun el recorrido" data-stops="Sin paradas" data-includes="Piloto profesional"
-                                data-notincludes="Fotos" data-itinerary='[
-                    "Recorrido recomendado 1°: Cristo Redentor (15 a 20 min)",
-                    "Variedad de puntos turisticos a eleccion",
-                    "Playas: Barra da Tijuca - Ipanema - Joatinga - Leblon - São Conrado"
-                ]' data-whatsapp="Consulta%20sobre%20Helicoptero">
+                                "https://via.placeholder.com/900x500?text=Helicoptero+1",
+                                "https://via.placeholder.com/900x500?text=Helicoptero+2",
+                                "https://via.placeholder.com/900x500?text=Helicoptero+3"
+                            ]' data-duration="Según el recorrido" data-stops="Sin paradas"
+                                data-includes="Piloto profesional" data-notincludes="Fotos" data-itinerary='[
+                                "Recorrido recomendado 1°: Cristo Redentor (15 a 20 min)",
+                                "Variedad de puntos turísticos a elección",
+                                "Playas: Barra da Tijuca - Ipanema - Joatinga - Leblon - São Conrado"
+                            ]' data-whatsapp="Consulta%20sobre%20Helicoptero">
                                 Ver detalles
                             </button>
                         </div>
@@ -167,30 +190,36 @@
             </div>
         </div>
     </section>
-
-
     <!-- ===========================
      RECORRIDOS EN BARCO
 =========================== -->
-
     <section class="barcos" id="barcos">
+
         <div class="barcos-container">
 
-            <h2 class="barcos-title">Recorré las Playas de Río en Barco</h2>
-            <p class="barcos-subtitle">Descubrí Río desde el mar y pisá la arena de sus playas más icónicas.</p>
+            <header class="barcos-header">
+                <h2 class="barcos-title">Recorré las Playas de Río en Barco</h2>
+                <p class="barcos-subtitle">
+                    Descubrí Río desde el mar y pisá la arena de sus playas más icónicas.
+                </p>
+            </header>
 
             <div class="barcos-grid">
 
                 <!-- CARD 1 -->
-                <!-- CARD Paseo en Barco -->
                 <article class="barco-card">
+
                     <div class="barco-img" style="background-image:url('./assets/principal/cards/arraialcard.webp');">
                     </div>
 
                     <div class="barco-content">
                         <span class="badge">Más elegido</span>
+
                         <h3>Arraial do Cabo</h3>
-                        <p>Conocido como "El Caribe Brasilero", este tour te lleva a descubrir las playas mas espectaculares de Río de Janeiro.</p>
+                        <p>
+                            Conocido como "El Caribe Brasilero", este tour te lleva a descubrir
+                            las playas más espectaculares de Río de Janeiro.
+                        </p>
 
                         <ul class="info-quick">
                             <li>Duración: xh</li>
@@ -201,26 +230,29 @@
 
                         <div class="barco-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Paseo%20en%20Barco%20por%20Playas"
-                                class="btn-primary" target="_blank">Consultar por WhatsApp</a>
+                                class="btn-primary" target="_blank">
+                                Consultar por WhatsApp
+                            </a>
 
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Paseo en barco por playas"
                                 data-description="Una experiencia perfecta para familia, parejas y grupos de amigos que buscan relajación, aventura y fotografia en un entorno natural único."
                                 data-images='[
-                    "./assets/principal/cards/arraialcard.webp",            
-                    "./assets/modals/barcos/arrialdocabo/arraial1.webp",
-                    "./assets/modals/barcos/arrialdocabo/arraial2.webp",
-                    "./assets/modals/barcos/arrialdocabo/arraial3.webp",
-                    "./assets/modals/barcos/arrialdocabo/arraial4.webp",
-                    "./assets/modals/barcos/arrialdocabo/arraial5.webp",
-                    "./assets/modals/barcos/arrialdocabo/arraial6.webp"
-                ]' data-duration="xh" data-stops="Copacabana, Ipanema, Arpoador" data-includes="Almuerzo buffet libre"
+                                "./assets/principal/cards/arraialcard.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial1.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial2.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial3.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial4.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial5.webp",
+                                "./assets/modals/barcos/arrialdocabo/arraial6.webp"
+                            ]' data-duration="xh" data-stops="Copacabana, Ipanema, Arpoador"
+                                data-includes="Almuerzo buffet libre"
                                 data-notincludes="Traslado hasta punto de encuentro" data-itinerary='[
-                    "Transporte ida y vuelta al punto de encuentro",
-                    "Guia profesional cadastrado, bilingue y con amplia experiencia",
-                    "Embarcació certificada que combina seguridad, diversión y respeto por la naturaleza",
-                    "Recorrido de playas"
-                ]' data-whatsapp="Consulta%20sobre%20Paseo%20en%20Barco%20por%20Playas">
+                                "Transporte ida y vuelta al punto de encuentro",
+                                "Guia profesional cadastrado, bilingue y con amplia experiencia",
+                                "Embarcación certificada que combina seguridad, diversión y respeto por la naturaleza",
+                                "Recorrido de playas"
+                            ]' data-whatsapp="Consulta%20sobre%20Paseo%20en%20Barco%20por%20Playas">
                                 Ver detalles
                             </button>
                         </div>
@@ -228,15 +260,18 @@
                 </article>
 
                 <!-- CARD 2 -->
-                <!-- CARD Tour en Barco al Atardecer -->
                 <article class="barco-card">
+
                     <div class="barco-img" style="background-image:url('./assets/principal/cards/angracard.webp');">
                     </div>
 
                     <div class="barco-content">
                         <span class="badge">Ideal familia</span>
+
                         <h3>Angra dos Reis & Isla Grande</h3>
-                        <p>Descubre un paraíso tropical con mas de 365 islas en el corazon del estado de Río de Janeiro.
+                        <p>
+                            Descubre un paraíso tropical con más de 365 islas en el corazón
+                            del estado de Río de Janeiro.
                         </p>
 
                         <ul class="info-quick">
@@ -248,28 +283,30 @@
 
                         <div class="barco-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Tour%20en%20Barco%20al%20Atardecer"
-                                class="btn-primary" target="_blank">Consultar por WhatsApp</a>
+                                class="btn-primary" target="_blank">
+                                Consultar por WhatsApp
+                            </a>
 
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Tour Angra dos Reis & Isla Grande"
-                                data-description="Ideal para familias, grupos de amigos y parejas que buscan combinar aventura, naturaleza y diversión en un solo dia"
+                                data-description="Ideal para familias, grupos de amigos y parejas que buscan combinar aventura, naturaleza y diversión en un solo día"
                                 data-images='[
-                    "./assets/principal/cards/angracard.webp",            
-                    "./assets/modals/barcos/angradosreis/angra1.webp",
-                    "./assets/modals/barcos/angradosreis/angra2.webp",
-                    "./assets/modals/barcos/angradosreis/angra3.webp",
-                    "./assets/modals/barcos/angradosreis/angra4.webp",
-                    "./assets/modals/barcos/angradosreis/angra5.webp",
-                    "./assets/modals/barcos/angradosreis/angra6.webp",
-                    "./assets/modals/barcos/angradosreis/angra7.webp"
-                ]' data-duration="14 horas" data-stops="Urca, Botafogo"
+                                "./assets/principal/cards/angracard.webp",
+                                "./assets/modals/barcos/angradosreis/angra1.webp",
+                                "./assets/modals/barcos/angradosreis/angra2.webp",
+                                "./assets/modals/barcos/angradosreis/angra3.webp",
+                                "./assets/modals/barcos/angradosreis/angra4.webp",
+                                "./assets/modals/barcos/angradosreis/angra5.webp",
+                                "./assets/modals/barcos/angradosreis/angra6.webp",
+                                "./assets/modals/barcos/angradosreis/angra7.webp"
+                            ]' data-duration="14 horas" data-stops="Urca, Botafogo"
                                 data-includes="Transporte ida y vuelta desde punto de encuentro"
                                 data-notincludes="Equipo de buceo" data-itinerary='[
-                    "Guia bilingüe especializado",
-                    "Se realizan cuatro paradas para nadar y bucear",
-                    "Almuerzo buffet libre en la isla (no incluye postre y bebida)",
-                    "Islas incluidas en el recorrido: Freguesia de Santana, Aracá, Laguna Azul, Isla de Cataguases"
-                ]' data-whatsapp="Consulta%20sobre%20Tour%20en%20Barco%20al%20Atardecer">
+                                "Guia bilingüe especializado",
+                                "Se realizan cuatro paradas para nadar y bucear",
+                                "Almuerzo buffet libre en la isla (no incluye postre y bebida)",
+                                "Islas incluidas en el recorrido: Freguesia de Santana, Aracá, Laguna Azul, Isla de Cataguases"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20en%20Barco%20al%20Atardecer">
                                 Ver detalles
                             </button>
                         </div>
@@ -277,45 +314,51 @@
                 </article>
 
                 <!-- CARD 3 -->
-                <!-- CARD Fiesta en Barco -->
                 <article class="barco-card">
+
                     <div class="barco-img" style="background-image:url('./assets/principal/cards/buzioscard.webp');">
                     </div>
 
                     <div class="barco-content">
                         <span class="badge">Grupos</span>
+
                         <h3>Búzios Premium Catamarán</h3>
-                        <p>Descubre las playas mas exclusivas de Búzios en un recorrido en Catamaran Premium.</p>
+                        <p>
+                            Descubre las playas más exclusivas de Búzios en un recorrido
+                            en Catamarán Premium.
+                        </p>
 
                         <ul class="info-quick">
                             <li>Duración: 12h</li>
                             <li>Paradas: 3</li>
-
                         </ul>
 
                         <span class="price">Desde R$ xxx</span>
 
                         <div class="barco-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Fiesta%20en%20Barco"
-                                class="btn-primary" target="_blank">Consultar por WhatsApp</a>
+                                class="btn-primary" target="_blank">
+                                Consultar por WhatsApp
+                            </a>
 
                             <button class="btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Búzios Premium Catamaran"
-                                data-description="Una experiencia ideal para parejas, familias y grupos de amigos que buscan disfrutar de Búzios con comfort y estilo."
+                                data-description="Una experiencia ideal para parejas, familias y grupos de amigos que buscan disfrutar de Búzios con confort y estilo."
                                 data-images='[
-                    "./assets/principal/cards/buzioscard.webp",            
-                    "./assets/modals/barcos/buzios/buzios1.webp",
-                    "./assets/modals/barcos/buzios/buzios2.webp",
-                    "./assets/modals/barcos/buzios/buzios3.webp",
-                    "./assets/modals/barcos/buzios/buzios4.webp",
-                    "./assets/modals/barcos/buzios/buzios5.webp"
-                ]' data-duration="12 horas" data-stops="Playa de la tortuga , Playa Azeda, Playa João Fernández"
+                                "./assets/principal/cards/buzioscard.webp",
+                                "./assets/modals/barcos/buzios/buzios1.webp",
+                                "./assets/modals/barcos/buzios/buzios2.webp",
+                                "./assets/modals/barcos/buzios/buzios3.webp",
+                                "./assets/modals/barcos/buzios/buzios4.webp",
+                                "./assets/modals/barcos/buzios/buzios5.webp"
+                            ]' data-duration="12 horas"
+                                data-stops="Playa de la Tortuga, Playa Azeda, Playa João Fernández"
                                 data-includes="Almuerzo buffet libre" data-notincludes="xxx" data-itinerary='[
-                    "Transporte desde el punto de encuentro",
-                    "Guía bilingüe",
-                    "Paradas para bañarse",
-                    "Vuelta al punto de encuentro"
-                ]' data-whatsapp="Consulta%20sobre%20Fiesta%20en%20Barco">
+                                "Transporte desde el punto de encuentro",
+                                "Guía bilingüe",
+                                "Paradas para bañarse",
+                                "Vuelta al punto de encuentro"
+                            ]' data-whatsapp="Consulta%20sobre%20Fiesta%20en%20Barco">
                                 Ver detalles
                             </button>
                         </div>
@@ -325,67 +368,50 @@
             </div>
         </div>
     </section>
-
-    <!-- ===========================
-     MODAL DINÁMICO
-=========================== -->
-
-
     <!-- ===========================
      SECCIÓN: FIESTAS EN RÍO
 =========================== -->
+    <section class="rio-parties" id="rioParties">
+        <div class="rio-container">
 
-    <section class="fiestas-rio" id="fiestas">
-        <div class="fiestas-overlay"></div>
-
-        <div class="fiestas-container">
-            <h2 class="fiestas-title">Fiestas en Río de Janeiro</h2>
-            <p class="fiestas-subtitle">
+            <h2 class="rio-title">Fiestas en Río de Janeiro</h2>
+            <p class="rio-subtitle">
                 Viví la noche carioca con experiencias únicas, música, energía y escenarios inolvidables.
             </p>
 
-            <div class="fiestas-grid">
+            <div class="rio-grid">
 
-                <!-- CARD Fiesta en Barco Nocturna -->
-                <article class="fiesta-card">
-                    <div class="fiesta-img" style="background-image:url('./assets/principal/cards/dosalcard.webp');">
+                <!-- CARD 1 -->
+                <article class="rio-card">
+                    <div class="rio-card-img" style="background-image:url('./assets/principal/cards/dosalcard.webp');">
                     </div>
 
-                    <div class="fiesta-content">
-                        <span class="badge">Top Night</span>
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Top Night</span>
+
                         <h3>Pedra do Sal (Lunes)</h3>
                         <p>Descubre la Pequeña África y la cuna de la samba carioca.</p>
 
-                        <ul class="info-quick">
+                        <ul class="rio-info-quick">
                             <li>Duración: xh</li>
                             <li>Gastronomía local</li>
                             <li>Bebidas locales</li>
                         </ul>
 
-                        <span class="price">Desde R$ xxx</span>
+                        <span class="rio-price">Desde R$ xxx</span>
 
-                        <div class="fiesta-buttons">
-                            <a href="https://wa.me/0000000000?text=Consulta%20Fiesta%20en%20Barco" class="btn-primary"
-                                target="_blank">WhatsApp</a>
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Pedra%20do%20Sal" class="rio-btn-primary"
+                                target="_blank">
+                                WhatsApp
+                            </a>
 
-                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Pedra do Sal (Lunes)"
-                                data-description="Pedra do Sal es un rincón emblemático de Río, donde la historia, la música y la vida nocturna se encuentran. Un lugar ideal para disfrutar de la samba, la gastronomía y la energía de la juventud.
-
-                            Explora la escalera tallada de Pedra do Sal, declarada patrimonio en 1984; descubre el Morro da Conceição y la vibrante zona de Porto Maravilha.
-                            Vive la samba en directo, aprende sobre la comida y las bebidas callejeras, y conéctate con auténticos cariocas que harán de esta noche una experiencia inolvidable."
-                                data-images='[
-                    "https://via.placeholder.com/900x500?text=Boat+Party+1",
-                    "https://via.placeholder.com/900x500?text=Boat+Party+2",
-                    "https://via.placeholder.com/900x500?text=Boat+Party+3"
-                ]' data-duration="x horas" data-stops="xxx"
-                                data-includes="xxx" data-notincludes="xxx"
-                                data-itinerary='[
-                    "xxx",
-                    "xxx",
-                    "xxx",
-                    "xxx"
-                ]' data-whatsapp="Consulta%20sobre%20Fiesta%20en%20Barco%20Nocturna">
+                                data-description="Pedra do Sal es un rincón emblemático..." data-images='[
+                              "https://via.placeholder.com/900x500?text=1",
+                              "https://via.placeholder.com/900x500?text=2"
+                            ]'>
                                 Ver detalles
                             </button>
                         </div>
@@ -393,42 +419,45 @@
                 </article>
 
                 <!-- CARD 2 -->
-                <!-- CARD Fiesta en club icónico -->
-                <article class="fiesta-card">
-                    <div class="fiesta-img" style="background-image:url('./assets/principal/cards/fiestabarco.jpg');">
+                <article class="rio-card">
+                    <div class="rio-card-img" style="background-image:url('./assets/principal/cards/fiestabarco.jpg');">
                     </div>
 
-                    <div class="fiesta-content">
-                        <span class="badge">Premium</span>
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Premium</span>
+
                         <h3>Fiesta del Barco (Martes)</h3>
                         <p>Fiesta latina llena de ritmo y diversión</p>
 
-                        <ul class="info-quick">
+                        <ul class="rio-info-quick">
                             <li>Embarque: 23:45</li>
-                            <li>Salida: 00:30h</li>
-                            <li>Retorno: 4:30h</li>
+                            <li>Salida: 00:30</li>
+                            <li>Retorno: 04:30</li>
                         </ul>
 
-                        <span class="price">Desde R$ xxx</span>
+                        <span class="rio-price">Desde R$ xxx</span>
 
-                        <div class="fiesta-buttons">
-                            <a href="https://wa.me/0000000000?text=Consulta%20Fiesta%20en%20Club" class="btn-primary"
-                                target="_blank">WhatsApp</a>
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Fiesta%20Barco" class="rio-btn-primary"
+                                target="_blank">
+                                WhatsApp
+                            </a>
 
-                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
-                                data-title="Fiesta del barco ( Martes )"
-                                data-description="Fiesta latina llena de ritmo y diversión"
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Fiesta del Barco (Martes)"
+                                data-description="Fiesta latina llena de ritmo y diversión a bordo, con DJ en vivo, bar y vistas nocturnas de Río."
                                 data-images='[
-                    "https://via.placeholder.com/900x500?text=Club+1",
-                    "https://via.placeholder.com/900x500?text=Club+2",
-                    "https://via.placeholder.com/900x500?text=Club+3"
-                ]' data-duration="6h" data-stops="—" data-includes="Entrada VIP" data-notincludes="Bebidas"
-                                data-itinerary='[
-                    "DJ: SANT - Funk, Reggaeton, Pop y Electrónica",
-                    "Capacidad del barco: Hasta 150 personas",
-                    "Recorrido: Flamengo, Botafogo, Puente Niterói y Pão de Açúcar",
-                    "Disfruta de las visitas mas icónicas de Rio desde el agua"
-                ]' data-whatsapp="Consulta%20sobre%20Fiesta%20en%20Club">
+                                "./assets/principal/cards/fiestabarco.jpg",
+                                "./assets/modals/fiestas/barco/barco1.webp",
+                                "./assets/modals/fiestas/barco/barco2.webp",
+                                "./assets/modals/fiestas/barco/barco3.webp"
+                                ]' data-duration="23:45 a 04:30" data-stops="Bahía de Guanabara"
+                                data-includes="Entrada + DJ + paseo nocturno" data-notincludes="Bebidas" data-itinerary='[
+                                "Embarque 23:45",
+                                "Salida 00:30",
+                                "Fiesta a bordo con DJ",
+                                "Regreso 04:30"
+                                ]' data-whatsapp="Consulta%20Fiesta%20del%20Barco%20Martes">
                                 Ver detalles
                             </button>
                         </div>
@@ -444,6 +473,7 @@
 
     <section class="favela-tours" id="favela">
         <div class="favela-container">
+
             <h2 class="favela-title">Tours por las favelas</h2>
             <p class="favela-subtitle">
                 Conoce la verdadera historia, cultura y vida cotidiana de las favelas de Río acompañado por guías
@@ -453,44 +483,45 @@
             <div class="favela-grid">
 
                 <!-- CARD 1 -->
-                <!-- CARD Favela Rocinha Experience -->
                 <article class="favela-card">
-                    <div class="favela-img"
-                        style="background-image:url('./assets/principal/cards/rosiniacard.webp');">
+                    <div class="favela-img" style="background-image:url('./assets/principal/cards/rosiniacard.webp');">
                     </div>
 
                     <div class="favela-content">
-                        <span class="badge">Más elegido</span>
-                        <h3>Favela Rocinha</h3>
-                        <p>La favela mas grande de Brasil con experiencias autenticas</p>
+                        <span class="favela-badge">Más elegido</span>
 
-                        <ul class="info-quick">
+                        <h3>Favela Rocinha</h3>
+                        <p>La favela más grande de Brasil con experiencias auténticas.</p>
+
+                        <ul class="favela-info">
                             <li>Duración: xh</li>
                             <li>Guía local</li>
                             <li>Cultural</li>
                         </ul>
 
-                        <span class="price">Desde R$ xxx</span>
+                        <span class="favela-price">Desde R$ xxx</span>
 
                         <div class="favela-buttons">
-                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Rocinha" class="btn-primary"
-                                target="_blank">WhatsApp</a>
+                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Rocinha"
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
 
-                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Favela Rocinha Experience"
                                 data-description="Recorrido guiado por la favela más grande de Brasil, con miradores, cultura local y relatos reales."
                                 data-images='[
-                    "https://via.placeholder.com/900x500?text=Rocinha+1",
-                    "https://via.placeholder.com/900x500?text=Rocinha+2",
-                    "https://via.placeholder.com/900x500?text=Rocinha+3"
-                ]' data-duration="3 horas" data-stops="Miradores, calles principales"
+                                "https://via.placeholder.com/900x500?text=Rocinha+1",
+                                "https://via.placeholder.com/900x500?text=Rocinha+2",
+                                "https://via.placeholder.com/900x500?text=Rocinha+3"
+                            ]' data-duration="3 horas" data-stops="Miradores, calles principales"
                                 data-includes="Guía local, transporte interno" data-notincludes="Comidas"
                                 data-itinerary='[
-                    "Encuentro con el guía",
-                    "Recorrido por la favela",
-                    "Miradores panorámicos",
-                    "Interacción cultural"
-                ]' data-whatsapp="Consulta%20sobre%20Tour%20Favela%20Rocinha">
+                                "Encuentro con el guía",
+                                "Recorrido por la favela",
+                                "Miradores panorámicos",
+                                "Interacción cultural"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Favela%20Rocinha">
                                 Ver detalles
                             </button>
                         </div>
@@ -498,43 +529,44 @@
                 </article>
 
                 <!-- CARD 2 -->
-                <!-- CARD Santa Marta Cultural Tour -->
                 <article class="favela-card">
-                    <div class="favela-img"
-                        style="background-image:url('./assets/principal/cards/santamarta.webp');">
+                    <div class="favela-img" style="background-image:url('./assets/principal/cards/santamarta.webp');">
                     </div>
 
                     <div class="favela-content">
-                        <span class="badge">Panorámico</span>
+                        <span class="favela-badge">Panorámico</span>
+
                         <h3>Santa Marta</h3>
                         <p>Historia, arte urbano y vistas únicas de Río.</p>
 
-                        <ul class="info-quick">
+                        <ul class="favela-info">
                             <li>Duración: 2.5h</li>
                             <li>Arte urbano</li>
                             <li>Seguro</li>
                         </ul>
 
-                        <span class="price">Desde R$ 100</span>
+                        <span class="favela-price">Desde R$ 100</span>
 
                         <div class="favela-buttons">
                             <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Santa%20Marta"
-                                class="btn-primary" target="_blank">WhatsApp</a>
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
 
-                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Santa Marta Cultural Tour"
                                 data-description="Un tour seguro y organizado por una de las favelas más visitadas, famosa por su historia y miradores."
                                 data-images='[
-                    "https://via.placeholder.com/900x500?text=Santa+Marta+1",
-                    "https://via.placeholder.com/900x500?text=Santa+Marta+2",
-                    "https://via.placeholder.com/900x500?text=Santa+Marta+3"
-                ]' data-duration="2.5 horas" data-stops="Escaleras, miradores, murales"
+                                "https://via.placeholder.com/900x500?text=Santa+Marta+1",
+                                "https://via.placeholder.com/900x500?text=Santa+Marta+2",
+                                "https://via.placeholder.com/900x500?text=Santa+Marta+3"
+                            ]' data-duration="2.5 horas" data-stops="Escaleras, miradores, murales"
                                 data-includes="Guía especializado" data-notincludes="Transporte" data-itinerary='[
-                    "Ingreso guiado",
-                    "Puntos históricos",
-                    "Mirador principal",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20sobre%20Tour%20Santa%20Marta">
+                                "Ingreso guiado",
+                                "Puntos históricos",
+                                "Mirador principal",
+                                "Regreso"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Santa%20Marta">
                                 Ver detalles
                             </button>
                         </div>
@@ -542,43 +574,44 @@
                 </article>
 
                 <!-- CARD 3 -->
-                <!-- CARD Vidigal Sunset Tour -->
                 <article class="favela-card">
-                    <div class="favela-img"
-                        style="background-image:url('./assets/principal/cards/vidigalcard.webp');">
+                    <div class="favela-img" style="background-image:url('./assets/principal/cards/vidigalcard.webp');">
                     </div>
 
                     <div class="favela-content">
-                        <span class="badge">Sunset</span>
+                        <span class="favela-badge">Sunset</span>
+
                         <h3>Vidigal</h3>
                         <p>Una experiencia visual imperdible al caer el sol.</p>
 
-                        <ul class="info-quick">
+                        <ul class="favela-info">
                             <li>Duración: 3h</li>
                             <li>Atardecer</li>
                             <li>Fotográfico</li>
                         </ul>
 
-                        <span class="price">Desde R$ 100</span>
+                        <span class="favela-price">Desde R$ 100</span>
 
                         <div class="favela-buttons">
-                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Vidigal" class="btn-primary"
-                                target="_blank">WhatsApp</a>
+                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Vidigal"
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
 
-                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
                                 data-title="Vidigal Sunset Tour"
                                 data-description="Un recorrido por Vidigal con final en miradores al atardecer, ideal para fotos y vistas panorámicas."
                                 data-images='[
-                    "https://via.placeholder.com/900x500?text=Vidigal+1",
-                    "https://via.placeholder.com/900x500?text=Vidigal+2",
-                    "https://via.placeholder.com/900x500?text=Vidigal+3"
-                ]' data-duration="3 horas" data-stops="Mirador Dois Irmãos" data-includes="Guía local"
+                                "https://via.placeholder.com/900x500?text=Vidigal+1",
+                                "https://via.placeholder.com/900x500?text=Vidigal+2",
+                                "https://via.placeholder.com/900x500?text=Vidigal+3"
+                            ]' data-duration="3 horas" data-stops="Mirador Dois Irmãos" data-includes="Guía local"
                                 data-notincludes="Bebidas" data-itinerary='[
-                    "Subida a Vidigal",
-                    "Recorrido interno",
-                    "Atardecer en mirador",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20sobre%20Tour%20Vidigal">
+                                "Subida a Vidigal",
+                                "Recorrido interno",
+                                "Atardecer en mirador",
+                                "Regreso"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Vidigal">
                                 Ver detalles
                             </button>
                         </div>
@@ -588,442 +621,413 @@
             </div>
         </div>
     </section>
+    <<!--===========================SECCIÓN: EXTRAS (ANTIBUG)===========================-->
+        <section class="x-extras" id="x-extras">
+            <div class="x-extras__container">
 
+                <header class="x-extras__header">
+                    <h2 class="x-extras__title">Más experiencias para descubrir</h2>
+                    <p class="x-extras__subtitle">
+                        Explorá otras excursiones y actividades que también forman parte de nuestra propuesta en Río.
+                    </p>
+                </header>
 
-    <!-- ===========================
-     SECCIÓN: MÁS EXCURSIONES
-=========================== -->
+                <div class="x-extras__carousel">
 
-    <section class="extras" id="tours">
-        <div class="extras-container">
+                    <!-- CARD 1 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/cristocard.webp');"></div>
 
-            <div class="extras-header">
-                <h2>Más experiencias para descubrir</h2>
-                <p>Explora otras excursiones y actividades que también forman parte de nuestra propuesta en Río.</p>
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Cristo & Panorámicas</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Cristo Redentor y Pan de Azúcar"
+                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
+                                data-notincludes="Entradas" data-itinerary='[
+                            "Salida",
+                            "Cristo",
+                            "Pan de Azúcar",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/fulldayrio.webp');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Full Day Río</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Full Day Río"
+                                data-description="Recorrido completo por los principales atractivos de Río."
+                                data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Full Day" data-stops="Cristo, Pan de Azúcar, Centro"
+                                data-includes="Guía, transporte" data-notincludes="Entradas" data-itinerary='[
+                            "Salida",
+                            "Cristo",
+                            "Pan de Azúcar",
+                            "Centro histórico",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Full%20Day%20Rio">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 3 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/acuario.jpg');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Acuario + Boulevard Olímpico</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Acuario + Boulevard Olímpico"
+                                data-description="Una experiencia urbana y cultural en la zona olímpica." data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Half Day" data-stops="Acuario, Boulevard Olímpico" data-includes="Guía"
+                                data-notincludes="Entradas" data-itinerary='[
+                            "Salida",
+                            "Acuario",
+                            "Boulevard Olímpico",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Acuario%20Boulevard">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 4 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/dagavea.webp');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Pedra da Gávea</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Pedra da Gávea"
+                                data-description="Aventura y trekking con vistas increíbles." data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Full Day" data-stops="Pedra da Gávea" data-includes="Guía"
+                                data-notincludes="Equipamiento" data-itinerary='[
+                            "Salida",
+                            "Trekking",
+                            "Cumbre",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Pedra%20da%20Gavea">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 5 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/morrodoisdoiscard.webp');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Morro Dois Irmãos</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Morro Dois Irmãos"
+                                data-description="Senderismo con vistas panorámicas de Río." data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Half Day" data-stops="Morro Dois Irmãos" data-includes="Guía"
+                                data-notincludes="Transporte" data-itinerary='[
+                            "Salida",
+                            "Ascenso",
+                            "Mirador",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Morro%20Dois%20Irmaos">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 6 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/pedratelcard.webp');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Pedra do Telégrafo</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Pedra do Telégrafo" data-description="La famosa piedra para fotos icónicas."
+                                data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Half Day" data-stops="Pedra do Telégrafo" data-includes="Guía"
+                                data-notincludes="Transporte" data-itinerary='[
+                            "Salida",
+                            "Sendero",
+                            "Fotos",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Pedra%20do%20Telegrafo">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- CARD 7 -->
+                    <article class="x-extras__card">
+                        <div class="x-extras__img"
+                            style="background-image:url('./assets/principal/cards/standuppaddlecard.webp');"></div>
+
+                        <div class="x-extras__body">
+                            <h3 class="x-extras__card-title">Amanecer en Copacabana + Stand Up Paddle</h3>
+                            <span class="x-extras__price">Desde R$ xxx</span>
+
+                            <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                                data-title="Amanecer en Copacabana + Stand Up Paddle"
+                                data-description="Una experiencia única al amanecer en el mar." data-images='[
+                            "https://via.placeholder.com/900x500"
+                        ]' data-duration="Early Morning" data-stops="Copacabana" data-includes="Equipo, guía"
+                                data-notincludes="Transporte" data-itinerary='[
+                            "Encuentro",
+                            "Stand Up Paddle",
+                            "Amanecer",
+                            "Regreso"
+                        ]' data-whatsapp="Consulta%20Stand%20Up%20Paddle">
+                                Ver detalles →
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <footer class="tbt-footer" id="tbt-contacto">
+            <div class="tbt-footer-top">
+
+                <!-- Marca -->
+                <div class="tbt-footer-brand">
+                    <img src="./assets/icons/logo.png" alt="Logo TheBrothersTour" class="tbt-footer-logo">
+                    <span class="tbt-footer-name">THEBROTHERSTOUR</span>
+                </div>
+
+                <!-- Contacto -->
+                <div class="tbt-footer-contact">
+                    <a href="https://wa.me/5491123230921" target="_blank" class="tbt-footer-link">
+                        <img src="./assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                        Asesor - Martin Comito
+                    </a>
+
+                    <a href="https://wa.me/5521980125314" target="_blank" class="tbt-footer-link">
+                        <img src="./assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                        Asesor - Lucas Comito
+                    </a>
+                </div>
+
+                <!-- Redes -->
+                <div class="tbt-footer-social">
+                    <a href="https://instagram.com/thebrotherstour.rj" target="_blank" class="tbt-footer-link">
+                        <img src="./assets/icons/iconoig.webp" alt="Instagram" class="tbt-footer-icon">
+                        Instagram
+                    </a>
+                </div>
+
             </div>
 
-            <div class="extras-carousel">
-
-                <!-- CARD -->
-                <!-- CARD Cristo Redentor y Pan de Azúcar -->
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/cristocard.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Cristo & Panorámicas</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/fulldayrio.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Full Day Río</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/acuario.jpg');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Acuario + Boulevard Olímpico</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/dagavea.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Pedra da Gávea</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/morrodoisdoiscard.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Morro Dois Irmãos</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/pedratelcard.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Pedra do Telégrafo</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="extra-card">
-                    <div class="extra-img"
-                        style="background-image:url('./assets/principal/cards/standuppaddlecard.webp');">
-                    </div>
-
-                    <div class="extra-body">
-                        <h3>Amanecer en Copacabana + Stand Up Paddle</h3>
-                        <span class="price">Desde R$ xxx</span>
-
-                        <div class="extra-buttons">
-                            <button class="link-btn btn-open-modal" data-modal="tourModal"
-                                data-title="Cristo Redentor y Pan de Azúcar"
-                                data-description="Los íconos imperdibles de Río en una excursión guiada." data-images='[
-                    "https://via.placeholder.com/900x500"
-                ]' data-duration="Half Day" data-stops="Cristo, Pan de Azúcar" data-includes="Guía, transporte"
-                                data-notincludes="Entradas" data-itinerary='[
-                    "Salida",
-                    "Cristo",
-                    "Pan de Azúcar",
-                    "Regreso"
-                ]' data-whatsapp="Consulta%20Cristo%20y%20Pan%20de%20Azucar">
-                                Ver detalles →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                
-                <!-- Repetir estructura (x8) -->
-
-                <!-- Agregás hasta 8 -->
+            <div class="tbt-footer-bottom">
+                <p>© 2026 THEBROTHERSTOUR - Todos los derechos reservados</p>
             </div>
+        </footer>
 
-        </div>
-    </section>
-    <footer class="footer" id="contacto">
-        <div class="footer-top">
-            <!-- Logo y nombre -->
-            <div class="footer-brand">
-                <img src="./assets/icons/logo.png" alt="Logo TheBrothersTour" class="footer-logo">
-                <span class="footer-name">THEBROTHERSTOUR</span>
-            </div>
 
-            <!-- Contacto -->
-            <div class="footer-contact">
-                <a href="https://wa.me/5491123230921" target="_blank" class="footer-contact-item">
-                    <img src="./assets/icons/iconowp.webp" alt="WhatsApp" class="footer-icon">
-                    Asesor - Martin Comito
-                </a>
-                <a href="https://wa.me/5521980125314" target="_blank" class="footer-contact-item">
-                    <img src="./assets/icons/iconowp.webp" alt="WhatsApp" class="footer-icon">
-                    Asesor - Lucas Comito
-                </a>
-            </div>
+        <div class="modal" id="tourModal">
+            <div class="modal-content">
+                <button class="modal-close" data-close>&times;</button>
 
-            <!-- Redes sociales -->
-            <div class="footer-social">
-                <a href="https://instagram.com/thebrotherstour.rj" target="_blank" class="footer-social-item">
-                    <img src="./assets/icons/iconoig.webp" alt="Instagram" class="footer-icon">
-                    Instagram
-                </a>
-            </div>
-        </div>
+                <div class="modal-gallery">
+                    <div class="slider"></div>
+                    <button class="slider-prev">&#10094;</button>
+                    <button class="slider-next">&#10095;</button>
+                </div>
 
-        <!-- Derechos reservados -->
-        <div class="footer-bottom">
-            <p>&copy; 2026 THEBROTHERSTOUR - Todos los derechos reservados</p>
-        </div>
-    </footer>
-    <div class="modal" id="tourModal">
-        <div class="modal-content">
-            <button class="modal-close" data-close>&times;</button>
+                <h2 class="modal-title"></h2>
+                <p class="modal-description"></p>
 
-            <div class="modal-gallery">
-                <div class="slider"></div>
-                <button class="slider-prev">&#10094;</button>
-                <button class="slider-next">&#10095;</button>
-            </div>
+                <ul class="info-list">
+                    <li><strong>Duración:</strong> <span class="modal-duration"></span></li>
+                    <li><strong>Paradas:</strong> <span class="modal-stops"></span></li>
+                    <li><strong>Incluye:</strong> <span class="modal-includes"></span></li>
+                    <li><strong>No incluye:</strong> <span class="modal-notincludes"></span></li>
+                </ul>
 
-            <h2 class="modal-title"></h2>
-            <p class="modal-description"></p>
+                <h3>Detalle</h3>
+                <ol class="modal-itinerary"></ol>
 
-            <ul class="info-list">
-                <li><strong>Duración:</strong> <span class="modal-duration"></span></li>
-                <li><strong>Paradas:</strong> <span class="modal-stops"></span></li>
-                <li><strong>Incluye:</strong> <span class="modal-includes"></span></li>
-                <li><strong>No incluye:</strong> <span class="modal-notincludes"></span></li>
-            </ul>
-
-            <h3>Detalle</h3>
-            <ol class="modal-itinerary"></ol>
-
-            <div class="modal-cta">
-                <a class="btn-primary big modal-whatsapp" target="_blank">
-                    Consultar este tour por WhatsApp
-                </a>
+                <div class="modal-cta">
+                    <a class="btn-primary big modal-whatsapp" target="_blank">
+                        Consultar este tour por WhatsApp
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+        <script>
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("navLinks");
 
-
-
-
-
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("navLinks");
-
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-            hamburger.classList.toggle("active");
-        });
-    </script>
-    <script>
-        /* ===========================
-           MODAL TOUR ÚNICO
-        =========================== */
-
-        const openButtons = document.querySelectorAll(".btn-open-modal");
-        const modal = document.getElementById("tourModal");
-
-        const slider = modal.querySelector(".slider");
-        const titleEl = modal.querySelector(".modal-title");
-        const descEl = modal.querySelector(".modal-description");
-        const durationEl = modal.querySelector(".modal-duration");
-        const stopsEl = modal.querySelector(".modal-stops");
-        const includesEl = modal.querySelector(".modal-includes");
-        const notIncludesEl = modal.querySelector(".modal-notincludes");
-        const itineraryEl = modal.querySelector(".modal-itinerary");
-        const whatsappBtn = modal.querySelector(".modal-whatsapp");
-
-        const prevBtn = modal.querySelector(".slider-prev");
-        const nextBtn = modal.querySelector(".slider-next");
-
-        let currentIndex = 0;
-        let images = [];
-
-        /* ===========================
-           ABRIR MODAL
-        =========================== */
-        openButtons.forEach(btn => {
-            btn.addEventListener("click", () => {
-
-                // Reset
-                slider.innerHTML = "";
-                itineraryEl.innerHTML = "";
-                currentIndex = 0;
-
-                // Texto
-                titleEl.textContent = btn.dataset.title || "";
-                descEl.textContent = btn.dataset.description || "";
-                durationEl.textContent = btn.dataset.duration || "";
-                stopsEl.textContent = btn.dataset.stops || "";
-                includesEl.textContent = btn.dataset.includes || "";
-                notIncludesEl.textContent = btn.dataset.notincludes || "";
-
-                // WhatsApp
-                whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
-
-                // Imágenes
-                images = JSON.parse(btn.dataset.images || "[]");
-
-                images.forEach((src, i) => {
-                    const img = document.createElement("img");
-                    img.src = src;
-                    if (i === 0) img.classList.add("active");
-                    slider.appendChild(img);
-                });
-
-                // Itinerario
-                const itinerary = JSON.parse(btn.dataset.itinerary || "[]");
-                itinerary.forEach(step => {
-                    const li = document.createElement("li");
-                    li.textContent = step;
-                    itineraryEl.appendChild(li);
-                });
-
-                modal.classList.add("active");
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+                hamburger.classList.toggle("active");
             });
-        });
+        </script>
+        <script>
+            /* ===========================
+               MODAL TOUR ÚNICO
+            =========================== */
 
-        /* ===========================
-           SLIDER
-        =========================== */
-        function showImage(index) {
-            const imgs = slider.querySelectorAll("img");
-            imgs.forEach(img => img.classList.remove("active"));
-            if (imgs[index]) imgs[index].classList.add("active");
-        }
+            const openButtons = document.querySelectorAll(".btn-open-modal");
+            const modal = document.getElementById("tourModal");
 
-        prevBtn.addEventListener("click", () => {
-            currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
-        });
+            const slider = modal.querySelector(".slider");
+            const titleEl = modal.querySelector(".modal-title");
+            const descEl = modal.querySelector(".modal-description");
+            const durationEl = modal.querySelector(".modal-duration");
+            const stopsEl = modal.querySelector(".modal-stops");
+            const includesEl = modal.querySelector(".modal-includes");
+            const notIncludesEl = modal.querySelector(".modal-notincludes");
+            const itineraryEl = modal.querySelector(".modal-itinerary");
+            const whatsappBtn = modal.querySelector(".modal-whatsapp");
 
-        nextBtn.addEventListener("click", () => {
-            currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-            showImage(currentIndex);
-        });
+            const prevBtn = modal.querySelector(".slider-prev");
+            const nextBtn = modal.querySelector(".slider-next");
 
-        /* ===========================
-           CERRAR MODAL
-        =========================== */
-        modal.querySelector("[data-close]").addEventListener("click", () => {
-            modal.classList.remove("active");
-        });
+            let currentIndex = 0;
+            let images = [];
 
-        modal.addEventListener("click", e => {
-            if (e.target === modal) modal.classList.remove("active");
-        });
-    </script>
-    <script>
-        // Crear el contenedor del lightbox dinámicamente
-        const lightbox = document.createElement("div");
-        lightbox.classList.add("lightbox");
-        document.body.appendChild(lightbox);
+            /* ===========================
+               ABRIR MODAL
+            =========================== */
+            openButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
 
-        // Función para mostrar imagen en lightbox
-        const showLightbox = (src) => {
-            lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
-            lightbox.classList.add("active");
-        };
+                    // Reset
+                    slider.innerHTML = "";
+                    itineraryEl.innerHTML = "";
+                    currentIndex = 0;
 
-        // Cerrar al click en el overlay
-        lightbox.addEventListener("click", () => {
-            lightbox.classList.remove("active");
-        });
+                    // Texto
+                    titleEl.textContent = btn.dataset.title || "";
+                    descEl.textContent = btn.dataset.description || "";
+                    durationEl.textContent = btn.dataset.duration || "";
+                    stopsEl.textContent = btn.dataset.stops || "";
+                    includesEl.textContent = btn.dataset.includes || "";
+                    notIncludesEl.textContent = btn.dataset.notincludes || "";
 
-        // Hacer las imágenes del slider clickeables
-        document.querySelectorAll(".modal .slider img").forEach(img => {
-            img.style.cursor = "zoom-in"; // cambiar cursor
-            img.addEventListener("click", () => {
-                showLightbox(img.src);
+                    // WhatsApp
+                    whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
+
+                    // Imágenes
+                    images = JSON.parse(btn.dataset.images || "[]");
+
+                    images.forEach((src, i) => {
+                        const img = document.createElement("img");
+                        img.src = src;
+                        if (i === 0) img.classList.add("active");
+                        slider.appendChild(img);
+                    });
+
+                    // Itinerario
+                    const itinerary = JSON.parse(btn.dataset.itinerary || "[]");
+                    itinerary.forEach(step => {
+                        const li = document.createElement("li");
+                        li.textContent = step;
+                        itineraryEl.appendChild(li);
+                    });
+
+                    modal.classList.add("active");
+                });
             });
-        });
-    </script>
-    <script>
-        // Parallax hero full responsive
-        const heroImg = document.querySelector('.hero-img');
 
-        window.addEventListener('scroll', () => {
-            let factor = 0.25; // Desktop
-
-            if (window.innerWidth <= 1024 && window.innerWidth > 700) {
-                factor = 0.15; // Tablet
-            } else if (window.innerWidth <= 700) {
-                factor = 0.05; // Móvil
+            /* ===========================
+               SLIDER
+            =========================== */
+            function showImage(index) {
+                const imgs = slider.querySelectorAll("img");
+                imgs.forEach(img => img.classList.remove("active"));
+                if (imgs[index]) imgs[index].classList.add("active");
             }
 
-            const offset = window.scrollY * factor;
-            heroImg.style.transform = `translateY(${offset}px)`;
-        });
-    </script>
+            prevBtn.addEventListener("click", () => {
+                currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            });
 
+            nextBtn.addEventListener("click", () => {
+                currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            });
 
+            /* ===========================
+               CERRAR MODAL
+            =========================== */
+            modal.querySelector("[data-close]").addEventListener("click", () => {
+                modal.classList.remove("active");
+            });
 
-</body>
+            modal.addEventListener("click", e => {
+                if (e.target === modal) modal.classList.remove("active");
+            });
+        </script>
+        <script>
+            // Crear el contenedor del lightbox dinámicamente
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            document.body.appendChild(lightbox);
 
-</html>
+            // Función para mostrar imagen en lightbox
+            const showLightbox = (src) => {
+                lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
+                lightbox.classList.add("active");
+            };
+
+            // Cerrar al click en el overlay
+            lightbox.addEventListener("click", () => {
+                lightbox.classList.remove("active");
+            });
+
+            // Hacer las imágenes del slider clickeables
+            document.querySelectorAll(".modal .slider img").forEach(img => {
+                img.style.cursor = "zoom-in"; // cambiar cursor
+                img.addEventListener("click", () => {
+                    showLightbox(img.src);
+                });
+            });
+        </script>
+        <script>
+            // Parallax hero full responsive
+            const heroImg = document.querySelector('.hero-img');
+
+            window.addEventListener('scroll', () => {
+                let factor = 0.25; // Desktop
+
+                if (window.innerWidth <= 1024 && window.innerWidth > 700) {
+                    factor = 0.15; // Tablet
+                } else if (window.innerWidth <= 700) {
+                    factor = 0.05; // Móvil
+                }
+
+                const offset = window.scrollY * factor;
+                heroImg.style.transform = `translateY(${offset}px)`;
+            });
+        </script>
