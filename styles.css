@@ -12,6 +12,13 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
+* {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
 
 html {
     scroll-behavior: smooth;
