@@ -674,10 +674,14 @@ MAIN NAVBAR===========================*/
     color: var(--gris-texto);
     margin-bottom: 0.8rem;
 
-    /* 🔥 evita desbalance de alturas */
+    /* Evita desbalance de alturas */
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    /* Propiedad estándar (futuro / navegadores modernos) */
+    line-clamp: 3;
+
     overflow: hidden;
 }
 
@@ -835,9 +839,14 @@ MAIN NAVBAR===========================*/
 
 .barcos .barco-content p {
     color: var(--gris-texto);
+
     display: -webkit-box;
-    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+
+    /* Propiedad estándar (compatibilidad futura) */
+    line-clamp: 3;
+
     overflow: hidden;
 }
 
