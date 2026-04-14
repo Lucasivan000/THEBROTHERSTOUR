@@ -345,12 +345,7 @@ MAIN NAVBAR===========================*/
 
 
 
-/*MODAL ABARCATIVO */
 
-
-/* ===========================
-   MODAL PREMIUM TURISMO
-=========================== */
 
 /* ===========================
    MODAL PREMIUM TURISMO
@@ -448,10 +443,12 @@ MAIN NAVBAR===========================*/
 /* SLIDER IMAGES */
 .slider img {
     width: 100%;
-    height: 450px;
-    object-fit: cover;
+    max-height: 450px;
+    height: auto;
+    object-fit: contain; /* 🔑 CLAVE */
     display: none;
-    border-radius: 14px 14px 0 0;
+    border-radius: 14px;
+    background: #000; /* evita fondo vacío feo */
 }
 
 .slider img.active {
@@ -460,44 +457,53 @@ MAIN NAVBAR===========================*/
 
 @media (max-width: 700px) {
     .slider img {
-        height: 260px;
+        max-height: 260px;
     }
 }
+.modal-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-/* FLECHAS SLIDER */
+/* FLECHAS SLIDER — APPLE STYLE */
 .slider-prev,
 .slider-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 1.3rem;
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0.4rem 0.6rem;
+    font-size: 2.6rem;
+    color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.2s ease;
+    transition: 
+        color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    opacity: 0.75;
 }
 
 .slider-prev:hover,
 .slider-next:hover {
-    background: rgba(224, 184, 79, 0.9);
-    color: #000;
-    transform: translateY(-50%) scale(1.05);
+    opacity: 1;
+    color: #E0B84F; /* tu color premium */
+    transform: translateY(-50%) scale(1.15);
 }
 
 .slider-prev {
-    left: 14px;
+    left: 8px;
 }
 
 .slider-next {
-    right: 14px;
+    right: 8px;
 }
 
 /* SECCIONES */
@@ -1504,6 +1510,15 @@ MAIN NAVBAR===========================*/
     text-align: center;
     font-size: 0.85rem;
     opacity: 0.85;
+}
+.tbt-footer-signature {
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.tbt-footer-signature a {
+    font-weight: 600;
 }
 
 /* ---------------------------
