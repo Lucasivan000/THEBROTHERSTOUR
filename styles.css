@@ -216,6 +216,12 @@ MAIN NAVBAR===========================*/
     }
 }
 
+@media (max-width: 768px) {
+    .main-nav__brand {
+        padding-left: 16px;
+    }
+}
+
 
 
 /*lenguajes*/
