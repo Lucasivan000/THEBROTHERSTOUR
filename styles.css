@@ -209,6 +209,13 @@ MAIN NAVBAR===========================*/
     }
 }
 
+/* Ocultar texto del brand en mobile */
+@media (max-width: 768px) {
+    .main-nav__title {
+        display: none;
+    }
+}
+
 
 
 /*lenguajes*/
