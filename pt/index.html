@@ -1,11 +1,1225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
     <title>Document</title>
 </head>
+
 <body>
-    portugues
-</body>
-</html>
+
+    <!-- MAIN NAVBAR -->
+    <header class="main-nav">
+        <div class="main-nav__container">
+
+            <div class="main-nav__brand">
+                <img src="../assets/icons/logo.png" alt="Logo TheBrothersTour" class="main-nav__logo">
+                <span class="main-nav__title">Thebrotherstour.rj</span>
+            </div>
+
+            <nav class="main-nav__links" id="mainNavLinks">
+                <a href="#inicio">Início</a>
+                <a href="#experiencias">Experiências</a>
+                <a href="#barcos">Barcos</a>
+                <a href="#rioParties">Festas</a>
+                <a href="#favela">Favela</a>
+                <a href="#x-extras">Tours</a>
+
+                <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">
+                    WhatsApp
+                </a>
+            </nav>
+
+            <!-- 🌐 LANGUAGE SWITCH (PRO + ANTIBUG) -->
+            <div class="lang-switch">
+
+                <a href="/index.html" class="lang-switch__item" data-lang="es" title="Español">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/es.jpg" alt="ES">
+                    </span>
+                    <span class="lang-switch__text">ES</span>
+                </a>
+
+                <a href="/pt/index.html" class="lang-switch__item" data-lang="pt" title="Português">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/pt.jpg" alt="PT">
+                    </span>
+                    <span class="lang-switch__text">PT</span>
+                </a>
+
+                <a href="/en/index.html" class="lang-switch__item" data-lang="en" title="English">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/en.jpg" alt="EN">
+                    </span>
+                    <span class="lang-switch__text">EN</span>
+                </a>
+
+            </div>
+
+            <button class="main-nav__hamburger" id="mainNavHamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+    <!-- HERO MAIN -->
+    <section class="hero-main" id="inicio">
+
+        <img src="../assets/principal/portada1.jpeg" alt="Río de Janeiro" class="hero-main__image js-parallax">
+
+        <div class="hero-main__overlay"></div>
+
+        <div class="hero-main__content">
+            <h1 class="hero-main__title">Descubra o Rio de Janeiro</h1>
+            <p class="hero-main__text">
+                Viva aventuras autênticas, cercado pela natureza e acompanhado por guias profissionais.
+            </p>
+
+            <div class="hero-main__actions">
+                <a href="https://wa.me/0000000000" target="_blank" class="hero-main__btn hero-main__btn--primary">
+                    Falar no WhatsApp
+                </a>
+
+                <a href="#experiencias" class="hero-main__btn hero-main__btn--secondary">
+                    Ver Experiências
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     EXPERIENCIAS DESTACADAS
+=========================== -->
+    <section class="experiencias" id="experiencias">
+
+        <div class="exp-container">
+
+            <header class="exp-header">
+                <h2 class="exp-title">Experiências em destaque</h2>
+                <p class="exp-subtitle">
+                    Aventura, adrenalina e vistas inesquecíveis no Rio de Janeiro.
+                </p>
+            </header>
+
+            <div class="exp-grid">
+
+                <!-- CARD 1 -->
+                <article class="exp-card">
+
+                    <div class="exp-img" style="background-image: url('../assets/principal/cards/parapentcard.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <span class="badge">Mais vendido</span>
+
+                        <h3>Parapente no Rio</h3>
+                        <p>Voe sobre as montanhas e praias icônicas do Rio com pilotos certificados.</p>
+                        <span class="price">Desde R$ 600</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Parapente" target="_blank"
+                                class="btn-primary">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Parapente sobre o Rio de Janeiro"
+                                data-description="Voe e aproveite uma aventura única pelo céu!" data-images='[
+                                "../assets/principal/cards/parapentcard.webp",
+                                "../assets/modals/experiencias/para/para1.jpeg",
+                                "../assets/modals/experiencias/para/para2.jpeg",
+                                "../assets/modals/experiencias/para/para3.jpeg",
+                                "../assets/modals/experiencias/para/para4.jpeg",
+                                "../assets/modals/experiencias/para/para5.jpeg",
+                                "../assets/modals/experiencias/para/para6.jpeg"
+                            ]' data-duration="10 a 15 minutos de pura adrenalina e paisagem" data-stops="-"
+                                data-includes="com instrutor profissional, vistas panorâmicas da cidade e suas praias icônicas"
+                                data-notincludes="translado até o ponto de saída" data-itinerary='[
+                                "Saída de: Parque da Cidade, Niterói",
+                                "Desconto especial: a partir de 2 pessoas",
+                                "Fotos e vídeos opcionais para registrar a experiência",
+                                "Pouso na praia"
+                            
+
+                            ]' data-whatsapp="Consulta%20sobre%20Parapente">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="exp-card">
+
+                    <div class="exp-img" style="background-image: url('../assets/principal/cards/asadelta.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <span class="badge">Experiência única</span>
+
+                        <h3>Asa delta</h3>
+                        <p>Uma experiência de voo de asa delta a partir de um dos pontos mais icônicos do Brasil.</p>
+                        <span class="price">Desde R$ 1500</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Asa%20Delta" target="_blank"
+                                class="btn-primary">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal" data-title="Asa delta"
+                                data-description="Uma experiência de voo de asa delta a partir de um dos pontos mais icônicos do Brasil, sobrevoando floresta, montanhas e mar em uma das vistas mais impressionantes do Rio de Janeiro.
+
+                                A decolagem acontece na região da Pedra Bonita, dentro do Parque Nacional da Tijuca, atravessando o céu com vistas panorâmicas únicas até pousar junto ao mar.
+
+                                O pouso é realizado na praia de Praia do Pepino, no bairro de São Conrado." data-images='[
+                                "../assets/principal/cards/asadelta.webp"
+                            ]' data-duration="2h" data-stops="x"
+                                data-includes="transporte até a rampa, fotos e 1 vídeo digital. Instrução básica antes da decolagem. Acompanhamento de instrutor certificado durante toda a experiência"
+                                data-notincludes="Comidas e bebidas. Traslados fora do itinerário estabelecido"
+                                data-itinerary='[
+                                "Ponto de encontro ou retirada na hospedagem",
+                                "Traslado até a rampa da Pedra Bonita",
+                                "Preparação + briefing com o instrutor",
+                                "Voo de asa delta sobre a floresta e a costa",
+                                "Pouso na Praia do Pepino",
+                                "Entrega de fotos e vídeo + retorno"
+                            ]' data-whatsapp="Consulta%20sobre%20Asa%20Delta">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="exp-card">
+
+                    <div class="exp-img"
+                        style="background-image: url('../assets/principal/cards/helicopterocard.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <h3>Helicóptero no Rio de Janeiro</h3>
+                        <p>Viva o Rio do céu e desfrute de vistas panorâmicas únicas.</p>
+                        <span class="price">Desde R$ 1000</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Helicoptero" target="_blank"
+                                class="btn-primary">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Passeio de Helicóptero no Rio de Janeiro"
+                                data-description="Viva o Rio do céu e desfrute de vistas panorâmicas únicas."
+                                data-images='[
+                                "../assets/principal/cards/helicopterocard.webp",
+                                "../assets/modals/experiencias/heli/heli1.jpeg",
+                                "../assets/modals/experiencias/heli/heli2.jpeg",
+                                "../assets/modals/experiencias/heli/heli3.jpeg"
+                            ]' data-duration="Conforme o roteiro" data-stops="Sem paradas" data-includes="Piloto profissional"
+                                data-notincludes="Fotos" data-itinerary='[
+                                "Roteiro recomendado: Cristo Redentor (15 a 20 min)",
+                                "Variedade de pontos turísticos à escolha",
+                                "Praias: Barra da Tijuca - Ipanema - Joatinga - Leblon - São Conrado"
+                            ]' data-whatsapp="Consulta%20sobre%20Helicoptero">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     RECORRIDOS EN BARCO
+=========================== -->
+    <section class="barcos" id="barcos">
+
+        <div class="barcos-container">
+
+            <header class="barcos-header">
+                <h2 class="barcos-title">Explore as praias do Rio de barco</h2>
+                <p class="barcos-subtitle">
+                    Descubra o Rio pelo mar e pise na areia das suas praias mais icônicas.
+                </p>
+            </header>
+
+            <div class="barcos-grid">
+
+                <!-- CARD 1 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/arraialcard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Mais escolhido</span>
+
+                        <h3>Arraial do Cabo</h3>
+                        <p>
+                            Conhecido como "O Caribe Brasileiro", este tour leva você a descobrir
+                            as praias mais espetaculares do Rio de Janeiro.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Duração: 12h</li>
+                        </ul>
+
+                        <span class="price">Desde R$ 260</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Passeio%20de%20Barco%20pelas%20Praias"
+                                class="btn-primary" target="_blank">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Passeio de barco pelas praias"
+                                data-description="Uma experiência perfeita para famílias, casais e grupos de amigos que buscam relaxamento, aventura e fotografia em um ambiente natural único."
+                                data-images='[
+                                "../assets/principal/cards/arraialcard.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial1.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial2.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial3.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial4.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial5.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial6.webp"
+                            ]' data-duration="xh"
+                                data-stops="Praia do Forno, Pontal do Atalaia, Ilha do Farol, Fenda de Nossa Senhora, Gruta Azul e Perfil do Macaco."
+                                data-includes="Almoço buffet livre"
+                                data-notincludes="Transporte até o ponto de encontro" data-itinerary='[
+                                "Transporte ida e volta até o ponto de encontro",
+                                "Guia profissional credenciado, bilíngue e com ampla experiência",
+                                "Embarcação certificada que combina segurança, diversão e respeito à natureza",
+                                "Passeio pelas praias",
+                                "Tempo livre para aproveitar o vilarejo ou a praia",
+                                "Aluguel de máscaras a bordo",
+                                "Retorno de ônibus"
+                            ]' data-whatsapp="Consulta%20sobre%20Passeio%20de%20Barco%20pelas%20Praias">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/angracard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Ideal para família</span>
+
+                        <h3>Angra dos Reis & Ilha Grande</h3>
+                        <p>
+                            Descubra um paraíso tropical com mais de 365 ilhas no coração
+                            do estado do Rio de Janeiro.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Duração aproximada: 14h</li>
+                        </ul>
+
+                        <span class="price">Desde R$ 240</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Passeio%20de%20Barco%20ao%20Pôr%20do%20Sol"
+                                class="btn-primary" target="_blank">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Tour Angra dos Reis & Ilha Grande"
+                                data-description="Ideal para famílias, grupos de amigos e casais que buscam combinar aventura, natureza e diversão em um único dia"
+                                data-images='[
+                                "../assets/principal/cards/angracard.webp",
+                                "../assets/modals/barcos/angradosreis/angra1.webp",
+                                "../assets/modals/barcos/angradosreis/angra2.webp",
+                                "../assets/modals/barcos/angradosreis/angra3.webp",
+                                "../assets/modals/barcos/angradosreis/angra4.webp",
+                                "../assets/modals/barcos/angradosreis/angra5.webp",
+                                "../assets/modals/barcos/angradosreis/angra6.webp",
+                                "../assets/modals/barcos/angradosreis/angra7.webp"
+                            ]' data-duration="14 horas" data-stops="Urca, Botafogo"
+                                data-includes="Transporte ida e volta desde o ponto de encontro"
+                                data-notincludes="Equipamento de mergulho" data-itinerary='[
+                                "Guia bilíngue especializado",
+                                "São realizadas quatro paradas para nadar e mergulhar",
+                                "Almoço buffet livre na ilha (não inclui sobremesa e bebidas)",
+                                "Ilhas incluídas no roteiro: Freguesia de Santana, Aracá, Lagoa Azul, Ilha de Cataguases"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Angra%20dos%20Reis%20e%20Ilha%20Grande">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/buzioscard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Grupos</span>
+
+                        <h3>Búzios Catamarã Premium</h3>
+                        <p>
+                            Descubra as praias mais exclusivas de Búzios em um passeio
+                            de catamarã premium.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Duração: 12h</li>
+                        </ul>
+
+                        <span class="price">Desde R$ 260</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20sobre%20Festa%20no%20Barco"
+                                class="btn-primary" target="_blank">
+                                Falar no WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Búzios Catamarã Premium"
+                                data-description="Uma experiência ideal para casais, famílias e grupos de amigos que desejam aproveitar Búzios com conforto e estilo."
+                                data-images='[
+                                "../assets/principal/cards/buzioscard.webp",
+                                "../assets/modals/barcos/buzios/buzios1.webp",
+                                "../assets/modals/barcos/buzios/buzios2.webp",
+                                "../assets/modals/barcos/buzios/buzios3.webp",
+                                "../assets/modals/barcos/buzios/buzios4.webp",
+                                "../assets/modals/barcos/buzios/buzios5.webp"
+                            ]' data-duration="12 horas" data-stops="Praia da Tartaruga, Praia Azeda, Praia João Fernandes"
+                                data-includes="Almoço buffet livre" data-notincludes="xxx" data-itinerary='[
+                                "Transporte desde o ponto de encontro",
+                                "Guia bilíngue",
+                                "Paradas para banho",
+                                "Retorno ao ponto de encontro"
+                            ]' data-whatsapp="Consulta%20sobre%20Festa%20no%20Barco">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     SECCIÓN: FIESTAS EN RÍO
+=========================== -->
+    <section class="rio-parties" id="rioParties">
+        <div class="rio-container">
+            <h2 class="rio-title">Festas no Rio de Janeiro</h2>
+            <p class="rio-subtitle">
+                Viva a noite carioca com experiências únicas, música, energia e cenários inesquecíveis.
+            </p>
+
+            <div class="rio-grid">
+
+                <!-- CARD 1 -->
+                <article class="rio-card">
+                    <div class="rio-card-img"
+                        style="background-image:url('../assets/modals/fiestas/dosal/dosal3.jpeg');">
+                    </div>
+
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Top Night</span>
+
+                        <h3>Pedra do Sal</h3>
+                        <p>Descubra a Pequena África e o berço do samba carioca.</p>
+
+                        <ul class="rio-info-quick">
+                            <li> Roda de samba ao vivo na Pedra do Sal</li>
+                            <li> Experiência no histórico bairro da Pequena África</li>
+                            <li> Música, dança e cultura de rua carioca</li>
+                        </ul>
+
+                        <span class="rio-price">Desde R$ 200</span>
+
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Pedra%20do%20Sal" class="rio-btn-primary"
+                                target="_blank">
+                                WhatsApp
+                            </a>
+
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Pedra do Sal"
+                                data-description="Viva uma das experiências mais autênticas do Rio de Janeiro na Pedra do Sal, o lugar onde nasceu o samba urbano e onde a cultura afro-brasileira continua mais viva do que nunca.
+                                Localizada na histórica região da Pequena África, perto do porto do Rio, este espaço combina história, música e festa em um só lugar: uma escadaria de pedra carregada de memória que hoje se transforma em um grande círculo de samba ao ar livre."
+                                data-images='[
+                                "../assets/principal/cards/dosalcard.webp",
+                                "../assets/modals/fiestas/dosal/dosal3.jpeg",
+                                "../assets/modals/fiestas/dosal/dosal1.jpeg",
+                                "../assets/modals/fiestas/dosal/dosal2.jpeg"
+            
+                            ]' data-duration="5h"
+                                data-stops="Pedra do Sal, bairro histórico Pequena África e região do porto e escadarias de pedra"
+                                data-includes="Acesso à roda de samba ao vivo. Passeio pela região histórica da Pequena África. Acompanhamento de guia"
+                                data-notincludes="Comidas e bebidas" data-itinerary='[
+                                "Encontro e saída",
+                                "Contexto histórico do local",
+                                "Passeio pela Pequena África",
+                                "Chegada à Pedra do Sal",
+                                "Início da roda de samba",
+                                "Festa noturna",
+                                "Encerramento da experiência"
+                            ]' data-whatsapp="Consulta%20Festa%20Pedra%20do%20Sal">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="rio-card">
+                    <div class="rio-card-img" style="background-image:url('../assets/modals/fiestas/boat/boat2.jpeg');">
+                    </div>
+
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Premium</span>
+
+                        <h3>Festa no Barco (Terça-feira)</h3>
+                        <p>Festa latina cheia de ritmo e diversão</p>
+
+                        <ul class="rio-info-quick">
+                            <li>Embarque: 23:45</li>
+                            <li>Saída: 00:30</li>
+                            <li>Retorno: 04:30</li>
+                        </ul>
+
+                        <span class="rio-price">Desde R$ 170</span>
+
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Festa%20Barco" class="rio-btn-primary"
+                                target="_blank">
+                                WhatsApp
+                            </a>
+
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Festa no Barco (Terça-feira)" data-description="Uma noite única de festa navegando pela costa do Rio de Janeiro, com música, ambiente festivo e vistas noturnas incríveis da cidade a partir do mar.
+
+                                O embarque é realizado na Marina da Glória, um dos principais pontos náuticos da cidade." data-images='[
+                                "../assets/modals/fiestas/boat/boat2.jpeg",
+                                "../assets/modals/fiestas/boat/boat1.jpeg",
+                                "../assets/modals/fiestas/boat/boat3.jpeg"
+                            ]' data-duration="23:45 a 04:30" data-stops="Baía de Guanabara"
+                                data-includes="Passeio noturno pela baía. Ambiente musical e festa a bordo. Acesso à festa no barco"
+                                data-notincludes="Bebidas e consumos. Refeições. Traslados até a marina" data-itinerary='[
+                                "Horários: Embarque: 23:45 hs. Saída: 00:30 hs (pontual). Retorno: 04:30 hs (madrugada)",
+                                "Ponto de encontro: Marina da Glória",
+                                "Entrada apenas com reserva antecipada",
+                                "Festa no barco com ambiente noturno",
+                                "Passeio pela costa iluminada do Rio",
+                                "Música e energia durante toda a navegação",
+                                "Experiência social e turística única"
+                            ]' data-whatsapp="Consulta%20Festa%20Barco%20Terça">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     SECCIÓN: TOURS POR LA FAVELA
+=========================== -->
+
+    <section class="favela-tours" id="favela">
+        <div class="favela-container">
+
+            <h2 class="favela-title">Tours pelas favelas</h2>
+            <p class="favela-subtitle">
+                Conheça a verdadeira história, cultura e vida cotidiana das favelas do Rio acompanhado por guias locais.
+            </p>
+
+            <div class="favela-grid">
+
+                <!-- CARD 1 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/rosiniacard.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Mais escolhido</span>
+
+                        <h3>Favela Rocinha</h3>
+                        <p>Conheça sua história e sua vibrante cultura urbana sob uma visão segura e respeitosa.</p>
+
+                        <ul class="favela-info">
+                            <li>Duração: 4h</li>
+                            <li>Guia local</li>
+                            <li>Cultura urbana</li>
+                        </ul>
+
+                        <span class="favela-price">Desde R$ 160</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Rocinha"
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Experiência Favela Rocinha"
+                                data-description="Um roteiro autêntico pela Favela da Rocinha, a maior favela do Brasil, onde se combinam cultura local, arte urbana e vistas panorâmicas únicas da cidade.
+
+                                O tour permite conhecer o dia a dia da comunidade, seus projetos sociais e sua forte identidade cultural." data-images='[
+                                "../assets/principal/cards/rosiniacard.webp",
+                                "../assets/modals/favelas/rocina/rocina1.jpeg",
+                                "../assets/modals/favelas/rocina/rocina2.jpeg",
+                                "../assets/modals/favelas/rocina/rocina3.jpeg",
+                                "../assets/modals/favelas/rocina/rocina4.jpeg"
+                            ]' data-duration="4 horas" data-stops="Mirantes, ruas principais"
+                                data-includes="Guia local, transporte interno"
+                                data-notincludes="Comidas e bebidas. Traslados fora do itinerário estabelecido."
+                                data-itinerary='[
+                                "Traslado da Zona Sul até a Rocinha",
+                                "Subida opcional de moto até o Mirante Novo Visual (aprox. 7 minutos – R$ 10 opcional)",
+                                "Parada no Projeto Social Acorda Capoeira",
+                                "Parada no Mirante Novo Visual",
+                                "Início da descida a pé pela comunidade",
+                                "Parada opcional em ponto de alimentação (lanches / salgados)",
+                                "Caminhada pelos becos e escadarias da Rocinha",
+                                "Parada no Work Rocinha (artista grafiteiro local)",
+                                "Descida final até a Estrada da Gávea",
+                                "Fim do tour"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Favela%20Rocinha">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/santamarta.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Panorâmico</span>
+
+                        <h3>Santa Marta</h3>
+                        <p>Um tour cultural com vistas panorâmicas do Rio e a famosa escadaria do Michael Jackson.</p>
+
+                        <ul class="favela-info">
+                            <li>Duração: 2h</li>
+                            <li>Arte urbana</li>
+                            <li>Escadaria do MJ</li>
+                        </ul>
+
+                        <span class="favela-price">Desde R$ 180</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Santa%20Marta"
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Tour Cultural Santa Marta"
+                                data-description="Um tour seguro e organizado por uma das favelas mais visitadas, famosa por sua história e mirantes."
+                                data-images='[
+                                "../assets/principal/cards/santamarta.webp",
+                                "../assets/modals/favelas/santamarta/santamarta1.jpeg",
+                                "../assets/modals/favelas/santamarta/santamarta2.jpeg",
+                                "../assets/modals/favelas/santamarta/santamarta3.jpeg"
+                            ]' data-duration="2 horas" data-stops="Escadarias, mirantes, murais"
+                                data-includes="Guia local durante todo o percurso. Subida de bondinho até a quinta estação. Paradas para fotos em mirantes."
+                                data-notincludes="Comidas e bebidas. Traslados até o ponto de encontro." data-itinerary='[
+                                "Ponto de encontro na Praça Corumbá (stand de turismo)",
+                                "Subida de bondinho até a quinta estação",
+                                "Caminhada de 15 minutos até o Mirante do Pedrão",
+                                "Retorno caminhando até a UPP por uma trilha de 10 minutos",
+                                "Parada para fotos e vista panorâmica da quinta estação",
+                                "Partida de futebol com crianças da comunidade",
+                                "Visita à Laje Michael Jackson",
+                                "Mirante da Arena (novo ponto turístico)",
+                                "Visita a lojas e quiosques de souvenirs",
+                                "Descida pela comunidade caminhando entre becos e vielas",
+                                "Conhecimento da Associação de Moradores",
+                                "Projeto “Tudo de Cor” (casas coloridas)",
+                                "Visita à Praça Cantão",
+                                "Passagem pela escola de samba local"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Santa%20Marta">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/vidigalcard.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Pôr do sol</span>
+
+                        <h3>Vidigal</h3>
+                        <p>Uma experiência autêntica que combina cultura local, natureza e pores do sol únicos.</p>
+
+                        <ul class="favela-info">
+                            <li>Duração: 3h</li>
+                            <li>Mirante panorâmico</li>
+                            <li>Fotográfico</li>
+                        </ul>
+
+                        <span class="favela-price">A partir de R$ 160</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Consulta%20Favela%20Vidigal"
+                                class="favela-btn-primary" target="_blank">
+                                WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Tour Sunset no Vidigal"
+                                data-description="Um passeio autêntico pela comunidade do Vidigal, onde se combina cultura local, vistas panorâmicas e uma experiência direta com a vida cotidiana de seus moradores.
+
+                                Durante o tour, você conhecerá a realidade social do Rio de Janeiro enquanto explora uma das favelas mais conhecidas e com uma das melhores vistas da cidade."
+                                data-images='[
+                                "../assets/principal/cards/vidigalcard.webp",
+                                "../assets/modals/favelas/vidigal/vidigal1.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal2.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal3.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal4.jpeg"
+                            
+                            ]' data-duration="3 horas" data-stops="Paradas panorâmicas para fotos"
+                                data-includes="Guia especializado durante todo o percurso."
+                                data-notincludes="Alimentação e bebidas. Traslados até o ponto de encontro"
+                                data-itinerary='[
+                                "Mirantes com vista para a Praia de Ipanema",
+                                "Vista panorâmica da Praia de Copacabana",
+                                "Caminhada por ruas e trilhas internas da comunidade",
+                                "Áreas de convivência local e mirantes naturais"
+                            ]' data-whatsapp="Consulta%20sobre%20Tour%20Vidigal">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!--===========================SECCIÓN: EXTRAS (ANTIBUG)===========================-->
+    <section class="x-extras" id="x-extras">
+        <div class="x-extras__container">
+
+            <header class="x-extras__header">
+                <h2 class="x-extras__title">Mais experiências para descobrir</h2>
+                <p class="x-extras__subtitle">
+                    Explore outros passeios e atividades que também fazem parte da nossa proposta no Rio de Janeiro.
+                </p>
+            </header>
+
+            <div class="x-extras__carousel">
+
+                <!-- CARD 1 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/cristocard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Corcovado + City Tour</h3>
+                        <span class="x-extras__price">A partir de R$ 260</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Cristo Redentor e Panorâmicas"
+                            data-description="Uma visita às principais atrações turísticas do Rio de Janeiro"
+                            data-images='[
+                            "../assets/principal/cards/cristocard.webp",
+                            "../assets/modals/tours/cor/cor1.jpeg",
+                            "../assets/modals/tours/cor/cor2.jpeg",
+                            "../assets/modals/tours/cor/cor3.jpeg",
+                            "../assets/modals/tours/cor/cor4.jpeg",
+                            "../assets/modals/tours/cor/cor5.jpeg",
+                            "../assets/modals/tours/cor/cor6.jpeg"
+                        ]' data-duration="Meio dia" data-stops="Cristo Redentor"
+                            data-includes="Transporte executivo. Guia bilíngue especializado"
+                            data-notincludes="Ingressos" data-itinerary='[
+                            "Embarque a partir das 08:00",
+                            "Retirada no ponto de encontro",
+                            "Subida ao Cristo Redentor atravessando o Parque Nacional da Tijuca",
+                            "Passeio pelo Sambódromo",
+                            "Parada na Catedral Metropolitana",
+                            "Visita à Escadaria Selarón e Arcos da Lapa",
+                            "Vista externa do Estádio do Maracanã",
+                            "Passeio panorâmico por praias e áreas icônicas",
+                            "Retorno ao ponto de origem"
+                        ]' data-whatsapp="Consulta%20sobre%20Cristo%20%2B%20City%20Tour">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/fulldayrio.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Dia Completo Rio</h3>
+                        <span class="x-extras__price">A partir de R$ 460</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Dia Completo Rio"
+                            data-description="Tour completo pelos principais pontos turísticos do Rio de Janeiro."
+                            data-images='[
+                            "../assets/principal/cards/fulldayrio.webp",
+                            "../assets/modals/tours/fulldayrio/rio2.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio3.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio4.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio5.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio6.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio7.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio8.jpeg"
+                        ]' data-duration="Dia inteiro" data-stops="Cristo Redentor, Pão de Açúcar, Centro"
+                            data-includes="Guia bilíngue especializado. Transporte executivo. Almoço buffet livre"
+                            data-notincludes="Bebidas e sobremesas não incluídas" data-itinerary='[
+                            "Cristo Redentor – ingresso incluído",
+                            "Pão de Açúcar – ingresso e bondinho incluídos",
+                            "Estádio do Maracanã – vista externa",
+                            "Sambódromo",
+                            "Catedral Metropolitana de São Sebastião",
+                            "Escadaria Selarón e Arcos da Lapa",
+                            "Floresta da Tijuca e praias – vista panorâmica (sem paradas)",
+                            "Duração: 10h"
+                        ]' data-whatsapp="Consulta%20Dia%20Completo%20Rio">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img" style="background-image:url('../assets/principal/cards/acuario.jpg');">
+                    </div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Aquário + Boulevard Olímpico</h3>
+                        <span class="x-extras__price">A partir de R$ 240</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Aquário + Boulevard Olímpico"
+                            data-description="Uma experiência urbana e cultural na região olímpica." data-images='[
+                            "../assets/principal/cards/acuario.jpg",
+                            "../assets/modals/tours/acuario/uno.jpeg",
+                            "../assets/modals/tours/acuario/dos.jpeg",
+                            "../assets/modals/tours/acuario/tres.jpeg"
+                        ]' data-duration="Meio dia" data-stops="Aquário, Boulevard Olímpico" data-includes="Guia"
+                            data-notincludes="Ingressos" data-itinerary='[
+                            "Saída",
+                            "Aquário",
+                            "Boulevard Olímpico",
+                            "Retorno"
+                        ]' data-whatsapp="Consulta%20Aquário%20Boulevard">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img" style="background-image:url('../assets/principal/cards/dagavea.webp');">
+                    </div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Pedra da Gávea</h3>
+                        <span class="x-extras__price">A partir de R$ 600</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal" data-title="Pedra da Gávea"
+                            data-description="Aventura e trekking com vistas incríveis." data-images='[
+                            "../assets/principal/cards/dagavea.webp"
+                        ]' data-duration="Dia inteiro" data-stops="Pedra da Gávea" data-includes="Guia" data-notincludes=""
+                            data-itinerary='[
+                            "Saída",
+                            "Trekking",
+                            "Cume",
+                            "Retorno"
+                        ]' data-whatsapp="Consulta%20Pedra%20da%20Gavea">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 5 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/morrodoisdoiscard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Morro Dois Irmãos</h3>
+                        <span class="x-extras__price">A partir de R$ 200</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Morro Dois Irmãos"
+                            data-description="O Morro Dois Irmãos oferece uma das vistas mais incríveis do Rio de Janeiro e é uma das paisagens mais icônicas da cidade. Do topo, é possível ver toda a Zona Sul carioca, com suas praias, bairros e caminhos perfeitamente delineados.
+                            O passeio percorre uma trilha que começa na comunidade do Vidigal e culmina no topo do “irmão maior”. É uma caminhada curta, acessível e com uma recompensa visual impressionante."
+                            data-images='[
+                            "../assets/principal/cards/morrodoisdoiscard.webp",
+                            "../assets/modals/tours/morrodois/morro1.jpeg",
+                            "../assets/modals/tours/morrodois/morro2.jpeg",
+                            "../assets/modals/tours/morrodois/morro3.jpeg"
+                        ]' data-duration="Meio dia" data-stops="Morro Dois Irmãos"
+                            data-includes="Caminhada guiada até o topo do Morro Dois Irmãos. Acompanhamento durante todo o percurso. Vistas panorâmicas da Zona Sul do Rio de Janeiro"
+                            data-notincludes="Traslados até o ponto de início. Alimentação e bebidas" data-itinerary='[
+                            "Ponto de encontro na comunidade do Vidigal",
+                            "Início da trilha rumo ao Morro Dois Irmãos",
+                            "Chegada ao topo do “irmão maior”",
+                            "Retorno pelo mesmo caminho"
+                        ]' data-whatsapp="Consulta%20Morro%20Dois%20Irmaos">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 6 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/pedratelcard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Pedra do Telégrafo</h3>
+                        <span class="x-extras__price">A partir de R$ 180</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Pedra do Telégrafo – Tour de Aventura e Mirantes no Rio de Janeiro"
+                            data-description="Excursão até a famosa Pedra do Telégrafo, um dos mirantes mais icônicos do Brasil, conhecido por suas fotos extremas e vistas panorâmicas do litoral carioca.
+
+                            Durante o passeio, você atravessa paisagens naturais únicas do Rio de Janeiro, combinando caminhada, natureza e fotografia."
+                            data-images='[
+                            "../assets/principal/cards/pedratelcard.webp",    
+                            "../assets/modals/tours/telegrafo/uno.jpeg",
+                            "../assets/modals/tours/telegrafo/dos.jpg",
+                            "../assets/modals/tours/telegrafo/tres.jpeg",
+                            "../assets/modals/tours/telegrafo/cuatro.jpeg"
+                        ]' data-duration="7hs" data-stops="Pedra do Telégrafo"
+                            data-includes="Transporte em veículo de 7 lugares. Guia turístico especializado"
+                            data-notincludes="Alimentação e bebidas. Traslados fora dos pontos de embarque estabelecidos"
+                            data-itinerary='[
+                            "Saída: 06:00 hs",
+                            "Frequência: todos os dias",
+                            "Apresentação obrigatória: 10 minutos antes do embarque",
+                            "Vistas panorâmicas incluídas: Praia de Grumari. Praia da Prainha. Praia do Recreio dos Bandeirantes. Barra da Tijuca. São Conrado (lagoas e montanhas). Lagoa Rodrigo de Freitas.",
+                            "Caminhada de 40 a 50 minutos"
+                        ]' data-whatsapp="Consulta%20Pedra%20do%20Telegrafo">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 7 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/standuppaddlecard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Amanhecer em Copacabana + Stand Up Paddle</h3>
+                        <span class="x-extras__price">A partir de R$ 170</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Amanhecer em Copacabana + Stand Up Paddle"
+                            data-description="Uma experiência única para ver o nascer do sol em um dos lugares mais icônicos do mundo: a praia de Copacabana.
+
+                            O encontro acontece na emblemática Avenida Atlântica, no Posto 6, onde começa uma experiência guiada que combina segurança, fotografia profissional e um cenário natural inesquecível em frente ao mar."
+                            data-images='[
+                            "../assets/principal/cards/standuppaddlecard.webp"
+                        ]' data-duration="2hs" data-stops="Copacabana" data-includes="Fotografia ilimitada durante a experiência"
+                            data-notincludes="Transporte" data-itinerary='[
+                            "Ponto de encontro na Avenida Atlântica – Posto 6",
+                            "Recepção do grupo e preparação do equipamento",
+                            "Aula teórica de segurança e orientação",
+                            "Entrega de coletes salva-vidas e organização do grupo",
+                            "Experiência guiada no mar durante o nascer do sol",
+                            "Sessão de fotos e vídeos em 4K em Copacabana",
+                            "Encerramento da atividade e devolução dos pertences"
+                        ]' data-whatsapp="Consulta%20Stand%20Up%20Paddle">
+                            Ver detalhes →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <footer class="tbt-footer" id="tbt-contacto">
+        <div class="tbt-footer-top">
+
+            <!-- Marca -->
+            <div class="tbt-footer-brand">
+                <img src="../assets/icons/logo.png" alt="Logo TheBrothersTour" class="tbt-footer-logo">
+                <span class="tbt-footer-name">THEBROTHERSTOUR</span>
+            </div>
+
+            <!-- Contacto -->
+            <div class="tbt-footer-contact">
+                <a href="https://wa.me/5491123230921" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                    Consultor - Martin Comito
+                </a>
+
+                <a href="https://wa.me/5521980125314" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                    Consultor - Lucas Comito
+                </a>
+            </div>
+
+            <!-- Redes -->
+            <div class="tbt-footer-social">
+                <a href="https://instagram.com/thebrotherstour.rj" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconoig.webp" alt="Instagram" class="tbt-footer-icon">
+                    Instagram
+                </a>
+            </div>
+
+        </div>
+
+        <div class="tbt-footer-bottom">
+            <p>© 2026 Thebrotherstour.rj - Todos os direitos reservados</p>
+            <p class="tbt-footer-signature">
+                Desenvolvido por <a href="https://initiumq.com" target="_blank">InitiumQuest</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="tourModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close>&times;</button>
+
+            <div class="modal-gallery">
+                <div class="slider"></div>
+                <button class="slider-prev">&#10094;</button>
+                <button class="slider-next">&#10095;</button>
+            </div>
+
+            <h2 class="modal-title"></h2>
+            <p class="modal-description"></p>
+
+            <ul class="info-list">
+                <li><strong>Duración:</strong> <span class="modal-duration"></span></li>
+                <li><strong>Paradas:</strong> <span class="modal-stops"></span></li>
+                <li><strong>Incluye:</strong> <span class="modal-includes"></span></li>
+                <li><strong>No incluye:</strong> <span class="modal-notincludes"></span></li>
+            </ul>
+
+            <h3>Detalle</h3>
+            <ol class="modal-itinerary"></ol>
+
+            <div class="modal-cta">
+                <a class="btn-primary big modal-whatsapp" target="_blank">
+                    Consultar este tour por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const path = window.location.pathname;
+
+        document.querySelectorAll(".lang-switch__item").forEach(item => {
+            const lang = item.dataset.lang;
+
+            if (
+                (lang === "es" && path === "/index.html") ||
+                (lang !== "es" && path.includes(`/${lang}/`))
+            ) {
+                item.classList.add("active");
+            }
+        });
+    </script>
+    <script>
+        const heroImage = document.querySelector(".js-parallax");
+
+        window.addEventListener("scroll", () => {
+            const scroll = window.scrollY;
+
+            if (scroll < window.innerHeight) {
+                heroImage.style.transform = `translateY(${scroll * 0.35}px)`;
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.getElementById("mainNavHamburger");
+            const navLinks = document.getElementById("mainNavLinks");
+
+            if (!hamburger || !navLinks) return;
+
+            // Abrir / cerrar menú
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            // Cerrar al hacer click en un link
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+
+            // Cerrar al clickear fuera
+            document.addEventListener("click", (e) => {
+                const isClickInside =
+                    hamburger.contains(e.target) || navLinks.contains(e.target);
+
+                if (!isClickInside) {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        /* ===========================
+           MODAL TOUR ÚNICO
+        =========================== */
+
+        const openButtons = document.querySelectorAll(".btn-open-modal");
+        const modal = document.getElementById("tourModal");
+
+        const slider = modal.querySelector(".slider");
+        const titleEl = modal.querySelector(".modal-title");
+        const descEl = modal.querySelector(".modal-description");
+        const durationEl = modal.querySelector(".modal-duration");
+        const stopsEl = modal.querySelector(".modal-stops");
+        const includesEl = modal.querySelector(".modal-includes");
+        const notIncludesEl = modal.querySelector(".modal-notincludes");
+        const itineraryEl = modal.querySelector(".modal-itinerary");
+        const whatsappBtn = modal.querySelector(".modal-whatsapp");
+
+        const prevBtn = modal.querySelector(".slider-prev");
+        const nextBtn = modal.querySelector(".slider-next");
+
+        let currentIndex = 0;
+        let images = [];
+
+        /* ===========================
+           ABRIR MODAL
+        =========================== */
+        openButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                // Reset
+                slider.innerHTML = "";
+                itineraryEl.innerHTML = "";
+                currentIndex = 0;
+
+                // Texto
+                titleEl.textContent = btn.dataset.title || "";
+                descEl.textContent = btn.dataset.description || "";
+                durationEl.textContent = btn.dataset.duration || "";
+                stopsEl.textContent = btn.dataset.stops || "";
+                includesEl.textContent = btn.dataset.includes || "";
+                notIncludesEl.textContent = btn.dataset.notincludes || "";
+
+                // WhatsApp
+                whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
+
+                // Imágenes
+                images = JSON.parse(btn.dataset.images || "[]");
+
+                images.forEach((src, i) => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    if (i === 0) img.classList.add("active");
+                    slider.appendChild(img);
+                });
+
+                // Itinerario
+                const itinerary = JSON.parse(btn.dataset.itinerary || "[]");
+                itinerary.forEach(step => {
+                    const li = document.createElement("li");
+                    li.textContent = step;
+                    itineraryEl.appendChild(li);
+                });
+
+                modal.classList.add("active");
+            });
+        });
+
+        /* ===========================
+           SLIDER
+        =========================== */
+        function showImage(index) {
+            const imgs = slider.querySelectorAll("img");
+            imgs.forEach(img => img.classList.remove("active"));
+            if (imgs[index]) imgs[index].classList.add("active");
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        /* ===========================
+           CERRAR MODAL
+        =========================== */
+        modal.querySelector("[data-close]").addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+
+        modal.addEventListener("click", e => {
+            if (e.target === modal) modal.classList.remove("active");
+        });
+    </script>
+    <script>
+        // Crear el contenedor del lightbox dinámicamente
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        document.body.appendChild(lightbox);
+
+        // Función para mostrar imagen en lightbox
+        const showLightbox = (src) => {
+            lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
+            lightbox.classList.add("active");
+        };
+
+        // Cerrar al click en el overlay
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        // Hacer las imágenes del slider clickeables
+        document.querySelectorAll(".modal .slider img").forEach(img => {
+            img.style.cursor = "zoom-in"; // cambiar cursor
+            img.addEventListener("click", () => {
+                showLightbox(img.src);
+            });
+        });
+    </script>
+    <script>
+        // Parallax hero full responsive
+        const heroImg = document.querySelector('.hero-img');
+
+        window.addEventListener('scroll', () => {
+            let factor = 0.25; // Desktop
+
+            if (window.innerWidth <= 1024 && window.innerWidth > 700) {
+                factor = 0.15; // Tablet
+            } else if (window.innerWidth <= 700) {
+                factor = 0.05; // Móvil
+            }
+
+            const offset = window.scrollY * factor;
+            heroImg.style.transform = `translateY(${offset}px)`;
+        });
+    </script>
