@@ -9,12 +9,14 @@
 </head>
 
 <body>
+    
     <!-- MAIN NAVBAR -->
     <header class="main-nav">
         <div class="main-nav__container">
+
             <div class="main-nav__brand">
                 <img src="./assets/icons/logo.png" alt="Logo TheBrothersTour" class="main-nav__logo">
-                <span class="main-nav__title">TheBrothersTour</span>
+                <span class="main-nav__title">Thebrotherstour.rj</span>
             </div>
 
             <nav class="main-nav__links" id="mainNavLinks">
@@ -24,14 +26,44 @@
                 <a href="#rioParties">Fiestas</a>
                 <a href="#favela">Favela</a>
                 <a href="#x-extras">Tours</a>
-                <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">WhatsApp</a>
+
+                <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">
+                    WhatsApp
+                </a>
             </nav>
+
+            <!-- 🌐 LANGUAGE SWITCH (PRO + ANTIBUG) -->
+            <div class="lang-switch">
+
+                <a href="/index.html" class="lang-switch__item" data-lang="es" title="Español">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/es.jpg" alt="ES">
+                    </span>
+                    <span class="lang-switch__text">ES</span>
+                </a>
+
+                <a href="/pt/index.html" class="lang-switch__item" data-lang="pt" title="Português">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/pt.jpg" alt="PT">
+                    </span>
+                    <span class="lang-switch__text">PT</span>
+                </a>
+
+                <a href="/en/index.html" class="lang-switch__item" data-lang="en" title="English">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/en.jpg" alt="EN">
+                    </span>
+                    <span class="lang-switch__text">EN</span>
+                </a>
+
+            </div>
 
             <button class="main-nav__hamburger" id="mainNavHamburger" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+
         </div>
     </header>
     <!-- HERO MAIN -->
@@ -401,7 +433,8 @@
 
                 <!-- CARD 1 -->
                 <article class="rio-card">
-                    <div class="rio-card-img" style="background-image:url('./assets/modals/fiestas/dosal/dosal3.jpeg');">
+                    <div class="rio-card-img"
+                        style="background-image:url('./assets/modals/fiestas/dosal/dosal3.jpeg');">
                     </div>
 
                     <div class="rio-card-content">
@@ -412,7 +445,7 @@
 
                         <ul class="rio-info-quick">
                             <li> Roda de samba en vivo en Pedra do Sal</li>
-                            <li> Experiencia en el histórico barrio de la Pequeña África</li> 
+                            <li> Experiencia en el histórico barrio de la Pequeña África</li>
                             <li> Música, baile y cultura callejera carioca</li>
                         </ul>
 
@@ -434,11 +467,10 @@
                               "./assets/modals/fiestas/dosal/dosal1.jpeg",
                               "./assets/modals/fiestas/dosal/dosal2.jpeg"
                             
-                            ]'  data-duration="5Hs" 
+                            ]' data-duration="5Hs"
                                 data-stops="Pedra do Sal, Barrio histórico Pequeña África y zona del puerto y escalinatas de piedra"
                                 data-includes="Acceso a la fiesta de samba en vivo. Recorrido por la zona histórica de la Pequeña África. Acompañamiento de guía"
-                                data-notincludes="Comidas y bebidas"
-                                data-itinerary='[
+                                data-notincludes="Comidas y bebidas" data-itinerary='[
                                 "Encuentro y salida",
                                 "Contexto histórico del lugar",
                                 "Recorrido por la Pequeña África",
@@ -1011,6 +1043,20 @@
             </div>
         </div>
     </div>
+    <script>
+        const path = window.location.pathname;
+
+        document.querySelectorAll(".lang-switch__item").forEach(item => {
+            const lang = item.dataset.lang;
+
+            if (
+                (lang === "es" && path === "/index.html") ||
+                (lang !== "es" && path.includes(`/${lang}/`))
+            ) {
+                item.classList.add("active");
+            }
+        });
+    </script>
     <script>
         const heroImage = document.querySelector(".js-parallax");
 

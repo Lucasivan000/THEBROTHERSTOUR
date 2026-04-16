@@ -1,0 +1,1231 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- MAIN NAVBAR -->
+    <header class="main-nav">
+        <div class="main-nav__container">
+
+            <div class="main-nav__brand">
+                <img src="../assets/icons/logo.png" alt="Logo TheBrothersTour" class="main-nav__logo">
+                <span class="main-nav__title">Thebrotherstour.rj</span>
+            </div>
+
+            <nav class="main-nav__links" id="mainNavLinks">
+                <a href="#inicio">Home</a>
+                <a href="#experiencias">Experiences</a>
+                <a href="#barcos">Boats</a>
+                <a href="#rioParties">Parties</a>
+                <a href="#favela">Favela</a>
+                <a href="#x-extras">Tours</a>
+
+                <a href="https://wa.me/0000000000" target="_blank" class="main-nav__cta">
+                    WhatsApp
+                </a>
+            </nav>
+
+            <!-- 🌐 LANGUAGE SWITCH (PRO + ANTIBUG) -->
+            <div class="lang-switch">
+
+                <a href="/index.html" class="lang-switch__item" data-lang="es" title="Español">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/es.jpg" alt="ES">
+                    </span>
+                    <span class="lang-switch__text">ES</span>
+                </a>
+
+                <a href="/pt/index.html" class="lang-switch__item" data-lang="pt" title="Português">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/pt.jpg" alt="PT">
+                    </span>
+                    <span class="lang-switch__text">PT</span>
+                </a>
+
+                <a href="/en/index.html" class="lang-switch__item" data-lang="en" title="English">
+                    <span class="lang-switch__flag">
+                        <img src="/assets/flags/en.jpg" alt="EN">
+                    </span>
+                    <span class="lang-switch__text">EN</span>
+                </a>
+
+            </div>
+
+            <button class="main-nav__hamburger" id="mainNavHamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </header>
+    <!-- HERO MAIN -->
+    <section class="hero-main" id="inicio">
+
+        <img src="../assets/principal/portada1.jpeg" alt="Rio de Janeiro" class="hero-main__image js-parallax">
+
+        <div class="hero-main__overlay"></div>
+
+        <div class="hero-main__content">
+            <h1 class="hero-main__title">Discover Rio de Janeiro</h1>
+            <p class="hero-main__text">
+                Experience authentic adventures surrounded by nature and guided by professional tour guides.
+            </p>
+
+            <div class="hero-main__actions">
+                <a href="https://wa.me/0000000000" target="_blank" class="hero-main__btn hero-main__btn--primary">
+                    Contact via WhatsApp
+                </a>
+
+                <a href="#experiencias" class="hero-main__btn hero-main__btn--secondary">
+                    View Experiences
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     EXPERIENCIAS DESTACADAS
+=========================== -->
+    <section class="experiencias" id="experiencias">
+
+        <div class="exp-container">
+
+            <header class="exp-header">
+                <h2 class="exp-title">Featured Experiences</h2>
+                <p class="exp-subtitle">
+                    Adventure, adrenaline, and unforgettable views in Rio de Janeiro.
+                </p>
+            </header>
+
+            <div class="exp-grid">
+
+                <!-- CARD 1 -->
+                <article class="exp-card">
+
+                    <div class="exp-img" style="background-image: url('../assets/principal/cards/parapentcard.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <span class="badge">Best seller</span>
+
+                        <h3>Paragliding in Rio</h3>
+                        <p>Fly over Rio’s iconic mountains and beaches with certified pilots.</p>
+                        <span class="price">From R$ 600</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Paragliding" target="_blank"
+                                class="btn-primary">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Paragliding over Rio de Janeiro"
+                                data-description="Fly and enjoy a unique adventure from the sky!" data-images='[
+                                "../assets/principal/cards/parapentcard.webp",
+                                "../assets/modals/experiencias/para/para1.jpeg",
+                                "../assets/modals/experiencias/para/para2.jpeg",
+                                "../assets/modals/experiencias/para/para3.jpeg",
+                                "../assets/modals/experiencias/para/para4.jpeg",
+                                "../assets/modals/experiencias/para/para5.jpeg",
+                                "../assets/modals/experiencias/para/para6.jpeg"
+                            ]' data-duration="10 to 15 minutes of pure adrenaline and scenery" data-stops="-"
+                                data-includes="professional instructor, panoramic views of the city and its iconic beaches"
+                                data-notincludes="transport to the departure point" data-itinerary='[
+                                "Departure from: Parque da Cidade, Niterói",
+                                "Special discount: from 2 people",
+                                "Optional photos and videos to remember the experience",
+                                "Landing on the beach"
+                            
+
+                            ]' data-whatsapp="Inquiry%20about%20Paragliding">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="exp-card">
+
+                    <div class="exp-img" style="background-image: url('../assets/principal/cards/asadelta.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <span class="badge">Unique experience</span>
+
+                        <h3>Hang gliding</h3>
+                        <p>An unforgettable flying experience from one of the most iconic spots in Brazil.</p>
+                        <span class="price">From R$ 1500</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Hang%20gliding" target="_blank"
+                                class="btn-primary">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Hang gliding" data-description="A flying experience over jungle, mountains, and ocean, offering one of the most breathtaking views in Rio de Janeiro.
+
+                            The takeoff is from Pedra Bonita, inside Tijuca National Park, gliding through the sky with panoramic views until landing by the sea.
+
+                            The landing takes place at Praia do Pepino, in the São Conrado neighborhood." data-images='[
+                            "../assets/principal/cards/asadelta.webp"
+                            ]' data-duration="2h" data-stops="x"
+                                data-includes="transport to launch ramp, photos and 1 digital video. Basic instruction before takeoff. Certified instructor guidance throughout the experience"
+                                data-notincludes="Meals and drinks. Transfers outside the planned itinerary"
+                                data-itinerary='[
+                                "Meeting point or hotel pick-up",
+                                "Transfer to Pedra Bonita ramp",
+                                "Preparation + briefing with instructor",
+                                "Hang gliding flight over jungle and coast",
+                                "Landing at Praia do Pepino",
+                                "Photo and video delivery + return"
+                            ]' data-whatsapp="Inquiry%20about%20Hang%20gliding">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="exp-card">
+
+                    <div class="exp-img"
+                        style="background-image: url('../assets/principal/cards/helicopterocard.webp');">
+                    </div>
+
+                    <div class="exp-content">
+                        <h3>Helicopter tour over Rio de Janeiro</h3>
+                        <p>Experience Rio from the sky and enjoy unique panoramic views.</p>
+                        <span class="price">From R$ 1000</span>
+
+                        <div class="exp-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Helicopter%20tour" target="_blank"
+                                class="btn-primary">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Helicopter tour over Rio de Janeiro"
+                                data-description="Experience Rio from the sky and enjoy unique panoramic views."
+                                data-images='[
+                                "../assets/principal/cards/helicopterocard.webp",
+                                "../assets/modals/experiencias/heli/heli1.jpeg",
+                                "../assets/modals/experiencias/heli/heli2.jpeg",
+                                "../assets/modals/experiencias/heli/heli3.jpeg"
+                            ]' data-duration="According to the route" data-stops="No stops"
+                                data-includes="Professional pilot" data-notincludes="Photos" data-itinerary='[
+                                "Recommended route: Christ the Redeemer (15 to 20 min)",
+                                "Various tourist points available",
+                                "Beaches: Barra da Tijuca - Ipanema - Joatinga - Leblon - São Conrado"
+                            ]' data-whatsapp="Inquiry%20about%20Helicopter%20tour">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     RECORRIDOS EN BARCO
+=========================== -->
+    <section class="barcos" id="barcos">
+
+        <div class="barcos-container">
+
+            <header class="barcos-header">
+                <h2 class="barcos-title">Explore Rio’s beaches by boat</h2>
+                <p class="barcos-subtitle">
+                    Discover Rio from the sea and step onto the sand of its most iconic beaches.
+                </p>
+            </header>
+
+            <div class="barcos-grid">
+
+                <!-- CARD 1 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/arraialcard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Most popular</span>
+
+                        <h3>Arraial do Cabo</h3>
+                        <p>
+                            Known as the “Brazilian Caribbean”, this tour takes you to discover
+                            some of the most spectacular beaches in Rio de Janeiro.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Duration: 12h</li>
+
+                        </ul>
+
+                        <span class="price">From R$ 260</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Boat%20Tour%20to%20Beaches"
+                                class="btn-primary" target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Boat tour to beaches"
+                                data-description="A perfect experience for families, couples, and groups of friends looking for relaxation, adventure, and photography in a unique natural setting."
+                                data-images='[
+                                "../assets/principal/cards/arraialcard.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial1.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial2.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial3.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial4.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial5.webp",
+                                "../assets/modals/barcos/arrialdocabo/arraial6.webp"
+                            ]' data-duration="12h"
+                                data-stops="Praia do Forno, Pontal do Atalaia, Ilha do Farol, Fenda de Nossa Senhora, Blue Grotto and Monkey Profile"
+                                data-includes="Open buffet lunch" data-notincludes="Transport to meeting point"
+                                data-itinerary='[
+                                "Round-trip transportation to meeting point",
+                                "Certified professional bilingual guide with extensive experience",
+                                "Certified boat offering safety, fun, and respect for nature",
+                                "Beach tour route",
+                                "Free time to enjoy the village or beach",
+                                "Mask rental on board",
+                                "Return by bus"
+                            ]' data-whatsapp="Inquiry%20about%20Boat%20Tour%20to%20Beaches">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/angracard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Family friendly</span>
+
+                        <h3>Angra dos Reis & Ilha Grande</h3>
+                        <p>
+                            Discover a tropical paradise with more than 365 islands in the heart
+                            of the state of Rio de Janeiro.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Approx. duration: 14h</li>
+
+                        </ul>
+
+                        <span class="price">From R$ 240</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Boat%20Tour%20to%20Sunset"
+                                class="btn-primary" target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Angra dos Reis & Ilha Grande Tour"
+                                data-description="Ideal for families, groups of friends, and couples looking to combine adventure, nature, and fun in a single day"
+                                data-images='[
+                                "../assets/principal/cards/angracard.webp",
+                                "../assets/modals/barcos/angradosreis/angra1.webp",
+                                "../assets/modals/barcos/angradosreis/angra2.webp",
+                                "../assets/modals/barcos/angradosreis/angra3.webp",
+                                "../assets/modals/barcos/angradosreis/angra4.webp",
+                                "../assets/modals/barcos/angradosreis/angra5.webp",
+                                "../assets/modals/barcos/angradosreis/angra6.webp",
+                                "../assets/modals/barcos/angradosreis/angra7.webp"
+                            ]' data-duration="14 hours" data-stops="Urca, Botafogo"
+                                data-includes="Round-trip transportation from meeting point"
+                                data-notincludes="Snorkeling equipment" data-itinerary='[
+                                "Bilingual specialized guide",
+                                "Four stops for swimming and snorkeling",
+                                "Open buffet lunch on the island (dessert and drinks not included)",
+                                "Islands included in the route: Freguesia de Santana, Aracá, Blue Lagoon, Cataguases Island"
+                            ]' data-whatsapp="Inquiry%20about%20Boat%20Tour%20to%20Sunset">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="barco-card">
+
+                    <div class="barco-img" style="background-image:url('../assets/principal/cards/buzioscard.webp');">
+                    </div>
+
+                    <div class="barco-content">
+                        <span class="badge">Groups</span>
+
+                        <h3>Búzios Premium Catamaran</h3>
+                        <p>
+                            Discover the most exclusive beaches in Búzios on a premium catamaran tour.
+                        </p>
+
+                        <ul class="info-quick">
+                            <li>Duration: 12h</li>
+
+                        </ul>
+
+                        <span class="price">From R$ 260</span>
+
+                        <div class="barco-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20about%20Boat%20Party" class="btn-primary"
+                                target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Búzios Premium Catamaran"
+                                data-description="An ideal experience for couples, families, and groups of friends who want to enjoy Búzios in comfort and style."
+                                data-images='[
+                                "../assets/principal/cards/buzioscard.webp",
+                                "../assets/modals/barcos/buzios/buzios1.webp",
+                                "../assets/modals/barcos/buzios/buzios2.webp",
+                                "../assets/modals/barcos/buzios/buzios3.webp",
+                                "../assets/modals/barcos/buzios/buzios4.webp",
+                                "../assets/modals/barcos/buzios/buzios5.webp"
+                            ]' data-duration="12 hours" data-stops="Turtle Beach, Azeda Beach, João Fernandes Beach"
+                                data-includes="Open buffet lunch" data-notincludes="xxx" data-itinerary='[
+                                "Transport from meeting point",
+                                "Bilingual guide",
+                                "Swimming stops",
+                                "Return to meeting point"
+                            ]' data-whatsapp="Inquiry%20about%20Boat%20Party">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     SECCIÓN: FIESTAS EN RÍO
+=========================== -->
+    <section class="rio-parties" id="rioParties">
+        <div class="rio-container">
+
+            <h2 class="rio-title">Parties in Rio de Janeiro</h2>
+            <p class="rio-subtitle">
+                Experience Rio’s nightlife with unique events, music, energy, and unforgettable settings.
+            </p>
+
+            <div class="rio-grid">
+
+                <!-- CARD 1 -->
+                <article class="rio-card">
+                    <div class="rio-card-img"
+                        style="background-image:url('../assets/modals/fiestas/dosal/dosal3.jpeg');">
+                    </div>
+
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Top Night</span>
+
+                        <h3>Pedra do Sal</h3>
+                        <p>Discover Little Africa and the birthplace of Rio samba.</p>
+
+                        <ul class="rio-info-quick">
+                            <li>Live samba circle at Pedra do Sal</li>
+                            <li>Experience in the historic Little Africa neighborhood</li>
+                            <li>Music, dance, and Rio street culture</li>
+                        </ul>
+
+                        <span class="rio-price">From R$ 200</span>
+
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20Pedra%20do%20Sal" class="rio-btn-primary"
+                                target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Pedra do Sal"
+                                data-description="Experience one of the most authentic experiences in Rio de Janeiro at Pedra do Sal, the place where urban samba was born and where Afro-Brazilian culture remains more alive than ever.
+                                Located in the historic Little Africa region, near Rio’s port area, this spot combines history, music, and nightlife in a single place: a stone staircase full of memory that today turns into a large open-air samba circle."
+                                data-images='[
+                            "../assets/principal/cards/dosalcard.webp",
+                            "../assets/modals/fiestas/dosal/dosal3.jpeg",
+                            "../assets/modals/fiestas/dosal/dosal1.jpeg",
+                            "../assets/modals/fiestas/dosal/dosal2.jpeg"
+                            
+                            ]' data-duration="5h"
+                                data-stops="Pedra do Sal, historic Little Africa neighborhood, and port area stone staircase"
+                                data-includes="Access to live samba party. Tour through the historic Little Africa area. Guided accompaniment"
+                                data-notincludes="Food and drinks" data-itinerary='[
+                                "Meeting point and departure",
+                                "Historical context of the area",
+                                "Tour through Little Africa",
+                                "Arrival at Pedra do Sal",
+                                "Start of samba circle",
+                                "Night party",
+                                "End of experience"
+
+                            ]' data-whatsapp="Inquiry%20Pedra%20do%20Sal">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="rio-card">
+                    <div class="rio-card-img" style="background-image:url('../assets/modals/fiestas/boat/boat2.jpeg');">
+                    </div>
+
+                    <div class="rio-card-content">
+                        <span class="rio-badge">Premium</span>
+
+                        <h3>Boat Party (Tuesday)</h3>
+                        <p>Latin party full of rhythm and fun</p>
+
+                        <ul class="rio-info-quick">
+                            <li>Boarding: 23:45</li>
+                            <li>Departure: 00:30</li>
+                            <li>Return: 04:30</li>
+                        </ul>
+
+                        <span class="rio-price">From R$ 170</span>
+
+                        <div class="rio-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20Boat%20Party" class="rio-btn-primary"
+                                target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="rio-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Boat Party (Tuesday)" data-description="A unique night party sailing along the coast of Rio de Janeiro, with music, a festive atmosphere, and incredible night views of the city from the sea.
+
+                                Boarding takes place at Marina da Glória, one of the city's main nautical hubs."
+                                data-images='[
+                                "../assets/modals/fiestas/boat/boat2.jpeg",
+                                "../assets/modals/fiestas/boat/boat1.jpeg",
+                                "../assets/modals/fiestas/boat/boat3.jpeg"
+                
+    
+                            ]' data-duration="23:45 to 04:30" data-stops="Guanabara Bay"
+                                data-includes="Night cruise through the bay. Onboard party atmosphere with music. Access to the boat party"
+                                data-notincludes="Drinks and beverages. Food. Transport to Marina" data-itinerary='[
+                                "Schedule: Boarding 23:45. Departure 00:30 (on time). Return 04:30 (early morning)",
+                                "Meeting point: Marina da Glória",
+                                "Entry only with prior reservation",
+                                "Boat party with nightlife atmosphere",
+                                "Cruise along Rio’s illuminated coastline",
+                                "Music and energy throughout the navigation",
+                                "Unique social and tourist experience"
+
+                            ]' data-whatsapp="Inquiry%20Boat%20Party">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ===========================
+     SECCIÓN: TOURS POR LA FAVELA
+=========================== -->
+
+    <section class="favela-tours" id="favela">
+        <div class="favela-container">
+
+            <h2 class="favela-title">Favela tours</h2>
+            <p class="favela-subtitle">
+                Discover the true history, culture, and daily life of Rio’s favelas accompanied by local guides.
+            </p>
+
+            <div class="favela-grid">
+
+                <!-- CARD 1 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/rosiniacard.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Most popular</span>
+
+                        <h3>Rocinha Favela</h3>
+                        <p>Learn about its history and vibrant urban culture from a safe and respectful perspective.</p>
+
+                        <ul class="favela-info">
+                            <li>Duration: 4h</li>
+                            <li>Local guide</li>
+                            <li>Urban culture</li>
+                        </ul>
+
+                        <span class="favela-price">From R$ 160</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20Rocinha%20Favela"
+                                class="favela-btn-primary" target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Rocinha Favela Experience"
+                                data-description="An authentic tour through Rocinha Favela, the largest favela in Brazil, where local culture, urban art, and unique panoramic views of the city come together.
+
+                                The tour allows you to experience daily life in the community, its social projects, and its strong cultural identity."
+                                data-images='[
+                                "../assets/principal/cards/rosiniacard.webp",
+                                "../assets/modals/favelas/rocina/rocina1.jpeg",
+                                "../assets/modals/favelas/rocina/rocina2.jpeg",
+                                "../assets/modals/favelas/rocina/rocina3.jpeg",
+                                "../assets/modals/favelas/rocina/rocina4.jpeg"
+                            ]' data-duration="4 hours" data-stops="Viewpoints, main streets"
+                                data-includes="Local guide, internal transport"
+                                data-notincludes="Food and drinks. Transport outside the planned itinerary."
+                                data-itinerary='[
+                                "Transfer from Zona Sul to Rocinha",
+                                "Optional motorbike ride up to Mirante Novo Visual (approx. 7 minutes – R$ 10 optional)",
+                                "Stop at Acorda Capoeira Social Project",
+                                "Stop at Mirante Novo Visual",
+                                "Start of walking descent through the community",
+                                "Optional stop at food stand (lunch / snack)",
+                                "Walk through Rocinha alleys and stairways",
+                                "Stop at Work Rocinha (local graffiti artist)",
+                                "Final descent to Estrada da Gávea",
+                                "End of the tour"
+                
+
+                            ]' data-whatsapp="Inquiry%20Rocinha%20Favela">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/santamarta.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Panoramic</span>
+
+                        <h3>Santa Marta</h3>
+                        <p>A cultural tour with panoramic views of Rio and the famous Michael Jackson staircase.</p>
+
+                        <ul class="favela-info">
+                            <li>Duration: 2h</li>
+                            <li>Urban art</li>
+                            <li>MJ staircase</li>
+                        </ul>
+
+                        <span class="favela-price">From R$ 180</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20Santa%20Marta%20Favela"
+                                class="favela-btn-primary" target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Santa Marta Cultural Tour"
+                                data-description="A safe and well-organized tour through one of the most visited favelas, famous for its history and viewpoints."
+                                data-images='[
+                                "../assets/principal/cards/santamarta.webp",
+                                "../assets/modals/favelas/santamarta/santamarta1.jpeg",
+                                "../assets/modals/favelas/santamarta/santamarta2.jpeg",
+                                "../assets/modals/favelas/santamarta/santamarta3.jpeg"
+                            ]' data-duration="2 hours" data-stops="Stairs, viewpoints, murals"
+                                data-includes="Local guide throughout the tour. Cable car ride up to the fifth station. Photo stops at viewpoints."
+                                data-notincludes="Food and drinks. Transport to meeting point." data-itinerary='[
+                                "Meeting point at Praça Corumbá (Tourist stand)",
+                                "Cable car ride up to the fifth station",
+                                "15-minute walk to Mirante do Pedrão",
+                                "Walk back to the UPP via a 10-minute trail",
+                                "Photo stop with panoramic view from the fifth station",
+                                "Football game with local children",
+                                "Visit to the Michael Jackson Laje",
+                                "Mirante da Arena (new tourist spot)",
+                                "Visit to local shops and souvenir stalls",
+                                "Descent through the community via alleys and stairways",
+                                "Visit to the Residents Association",
+                                "‘Tudo de Cor’ project (colorful houses)",
+                                "Visit to Praça Cantão",
+                                "Pass by the local samba school"
+                            ]' data-whatsapp="Inquiry%20Santa%20Marta%20Favela">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="favela-card">
+                    <div class="favela-img" style="background-image:url('../assets/principal/cards/vidigalcard.webp');">
+                    </div>
+
+                    <div class="favela-content">
+                        <span class="favela-badge">Sunset</span>
+
+                        <h3>Vidigal</h3>
+                        <p>An authentic experience combining local culture, nature, and unique sunsets.</p>
+
+                        <ul class="favela-info">
+                            <li>Duration: 3h</li>
+                            <li>Panoramic viewpoint</li>
+                            <li>Photography</li>
+                        </ul>
+
+                        <span class="favela-price">From R$ 160</span>
+
+                        <div class="favela-buttons">
+                            <a href="https://wa.me/0000000000?text=Inquiry%20Vidigal%20Favela"
+                                class="favela-btn-primary" target="_blank">
+                                Chat on WhatsApp
+                            </a>
+
+                            <button class="favela-btn-secondary btn-open-modal" data-modal="tourModal"
+                                data-title="Vidigal Sunset Tour"
+                                data-description="An authentic tour through the Favela do Vidigal community, where local culture, panoramic views, and direct contact with the daily life of its residents come together.
+
+                                During the tour, you will learn about the social reality of Rio de Janeiro while exploring one of the most well-known favelas with one of the best views of the city."
+                                data-images='[
+                                "../assets/principal/cards/vidigalcard.webp",
+                                "../assets/modals/favelas/vidigal/vidigal1.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal2.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal3.jpeg",
+                                "../assets/modals/favelas/vidigal/vidigal4.jpeg"
+            
+                            ]' data-duration="3 hours" data-stops="Panoramic photo stops"
+                                data-includes="Expert guide throughout the tour."
+                                data-notincludes="Food and drinks. Transport to meeting point" data-itinerary='[
+                                "Viewpoints overlooking Ipanema Beach",
+                                "Panoramic view of Copacabana Beach",
+                                "Walk through internal streets and paths of the community",
+                                "Local social areas and natural viewpoints"
+                            ]' data-whatsapp="Inquiry%20Vidigal%20Favela">
+                                View details
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!--===========================SECCIÓN: EXTRAS (ANTIBUG)===========================-->
+    <section class="x-extras" id="x-extras">
+        <div class="x-extras__container">
+
+            <header class="x-extras__header">
+                <h2 class="x-extras__title">More experiences to discover</h2>
+                <p class="x-extras__subtitle">
+                    Explore other tours and activities that are also part of our Rio experience selection.
+                </p>
+            </header>
+
+            <div class="x-extras__carousel">
+
+                <!-- CARD 1 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/cristocard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Corcovado + City Tour</h3>
+                        <span class="x-extras__price">From R$ 260</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Christ the Redeemer and Panoramic Views"
+                            data-description="A visit to Rio de Janeiro’s main tourist attractions" data-images='[
+                            "../assets/principal/cards/cristocard.webp",
+                            "../assets/modals/tours/cor/cor1.jpeg",
+                            "../assets/modals/tours/cor/cor2.jpeg",
+                            "../assets/modals/tours/cor/cor3.jpeg",
+                            "../assets/modals/tours/cor/cor4.jpeg",
+                            "../assets/modals/tours/cor/cor5.jpeg",
+                            "../assets/modals/tours/cor/cor6.jpeg"
+                        ]' data-duration="Half Day" data-stops="Christ the Redeemer"
+                            data-includes="Executive transport. Specialized bilingual guide" data-notincludes="Tickets"
+                            data-itinerary='[
+                            "Boarding from 08:00 am",
+                            "Pick-up at meeting point",
+                            "Ascent to Christ the Redeemer through Tijuca Forest",
+                            "Sambadrome tour",
+                            "Stop at Metropolitan Cathedral",
+                            "Visit to Selarón Steps and Lapa Arches",
+                            "Exterior view of Maracanã Stadium",
+                            "Panoramic tour of beaches and landmarks",
+                            "Return to origin point"
+                        ]' data-whatsapp="Inquiry%20Christ%20+%20City%20Tour">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/fulldayrio.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Full Day Rio</h3>
+                        <span class="x-extras__price">From R$ 460</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal" data-title="Full Day Rio"
+                            data-description="A complete tour of Rio de Janeiro’s main attractions." data-images='[
+                            "../assets/principal/cards/fulldayrio.webp",
+                            "../assets/modals/tours/fulldayrio/rio2.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio3.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio4.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio5.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio6.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio7.jpeg",
+                            "../assets/modals/tours/fulldayrio/rio8.jpeg"
+                        ]' data-duration="Full Day" data-stops="Christ the Redeemer, Sugarloaf Mountain, Downtown"
+                            data-includes="Specialized bilingual guide. Executive transport. Open buffet lunch"
+                            data-notincludes="Drinks and desserts not included" data-itinerary='[
+                            "Christ the Redeemer – Ticket included",
+                            "Sugarloaf Mountain – Ticket and cable car included",
+                            "Maracanã Stadium – Exterior view",
+                            "Sambadrome",
+                            "São Sebastião Metropolitan Cathedral",
+                            "Selarón Steps and Lapa Arches",
+                            "Tijuca Forest and beaches – Panoramic view (no stops)",
+                            "Duration: 10h"
+                        ]' data-whatsapp="Inquiry%20Full%20Day%20Rio">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 3 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img" style="background-image:url('../assets/principal/cards/acuario.jpg');">
+                    </div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Aquarium + Olympic Boulevard</h3>
+                        <span class="x-extras__price">From R$ 240</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Aquarium + Olympic Boulevard"
+                            data-description="An urban and cultural experience in Rio’s Olympic zone." data-images='[
+                            "../assets/principal/cards/acuario.jpg",
+                            "../assets/modals/tours/acuario/uno.jpeg",
+                            "../assets/modals/tours/acuario/dos.jpeg",
+                            "../assets/modals/tours/acuario/tres.jpeg"
+                        ]' data-duration="Half Day" data-stops="Aquarium, Olympic Boulevard" data-includes="Guide"
+                            data-notincludes="Tickets" data-itinerary='[
+                            "Departure",
+                            "Aquarium",
+                            "Olympic Boulevard",
+                            "Return"
+                        ]' data-whatsapp="Inquiry%20Aquarium%20Boulevard">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 4 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img" style="background-image:url('../assets/principal/cards/dagavea.webp');">
+                    </div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Pedra da Gávea</h3>
+                        <span class="x-extras__price">From R$ 600</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal" data-title="Pedra da Gávea"
+                            data-description="Adventure and trekking with incredible views." data-images='[
+                            "../assets/principal/cards/dagavea.webp"
+                        ]' data-duration="Full Day" data-stops="Pedra da Gávea" data-includes="Guide" data-notincludes=""
+                            data-itinerary='[
+                            "Departure",
+                            "Hike",
+                            "Summit",
+                            "Return"
+                        ]' data-whatsapp="Inquiry%20Pedra%20da%20Gavea">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 5 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/morrodoisdoiscard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Morro Dois Irmãos</h3>
+                        <span class="x-extras__price">From R$ 200</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Morro Dois Irmãos"
+                            data-description="Morro Dois Irmãos offers one of the most incredible views of Rio de Janeiro and is one of the city’s most iconic postcards. From the summit, you can see the entire South Zone, with its beaches, neighborhoods, and clearly defined landscapes.
+            
+                            The hike starts in the Vidigal community and leads to the summit of the “older brother”. It is a short, accessible trek with an impressive visual reward."
+                            data-images='[
+                            "../assets/principal/cards/morrodoisdoiscard.webp",
+                            "../assets/modals/tours/morrodois/morro1.jpeg",
+                            "../assets/modals/tours/morrodois/morro2.jpeg",
+                            "../assets/modals/tours/morrodois/morro3.jpeg"
+                        ]' data-duration="Half Day" data-stops="Morro Dois Irmãos"
+                            data-includes="Guided hike to the summit of Morro Dois Irmãos. Full accompaniment throughout the tour. Panoramic views of Rio de Janeiro’s South Zone"
+                            data-notincludes="Transport to the starting point. Food and drinks" data-itinerary='[
+                            "Meeting point in the Vidigal community",
+                            "Start of the hike towards Morro Dois Irmãos trail",
+                            "Arrival at the summit of the ‘older brother’",
+                            "Return via the same trail"
+                        ]' data-whatsapp="Inquiry%20Morro%20Dois%20Irmaos">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 6 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/pedratelcard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Pedra do Telégrafo</h3>
+                        <span class="x-extras__price">From R$ 180</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Pedra do Telégrafo – Adventure Tour and Viewpoints in Rio de Janeiro"
+                            data-description="Excursion to the famous Pedra do Telégrafo, one of Brazil’s most iconic viewpoints, known for its extreme photos and panoramic views of the Rio coastline.
+
+                            During the tour, you will cross unique natural landscapes of Rio de Janeiro, combining hiking, nature, and photography."
+                            data-images='[
+                            "../assets/principal/cards/pedratelcard.webp",    
+                            "../assets/modals/tours/telegrafo/uno.jpeg",
+                            "../assets/modals/tours/telegrafo/dos.jpg",
+                            "../assets/modals/tours/telegrafo/tres.jpeg",
+                            "../assets/modals/tours/telegrafo/cuatro.jpeg"
+                        ]' data-duration="7h" data-stops="Pedra do Telégrafo"
+                            data-includes="Transport in a 7-seat vehicle. Specialized tour guide"
+                            data-notincludes="Food and drinks. Transport outside the established boarding points"
+                            data-itinerary='[
+                            "Departure: 06:00 am",
+                            "Frequency: Daily",
+                            "Mandatory check-in: 10 minutes before boarding",
+                            "Panoramic views included: Grumari Beach. Prainha Beach. Recreio dos Bandeirantes Beach. Barra da Tijuca. São Conrado (lagoons and mountains). Rodrigo de Freitas Lagoon.",
+                            "40 to 50-minute hike"
+                        ]' data-whatsapp="Inquiry%20Pedra%20do%20Telegrafo">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+                <!-- CARD 7 -->
+                <article class="x-extras__card">
+                    <div class="x-extras__img"
+                        style="background-image:url('../assets/principal/cards/standuppaddlecard.webp');"></div>
+
+                    <div class="x-extras__body">
+                        <h3 class="x-extras__card-title">Sunrise in Copacabana + Stand Up Paddle</h3>
+                        <span class="x-extras__price">From R$ 170</span>
+
+                        <button class="x-extras__link btn-open-modal" data-modal="tourModal"
+                            data-title="Sunrise in Copacabana + Stand Up Paddle"
+                            data-description="A unique experience to watch the sunrise in one of the most iconic places in the world: Copacabana Beach.
+
+                            The meeting point is at the iconic Avenida Atlântica, Posto 6, where a guided experience begins, combining safety, professional photography, and an unforgettable natural setting by the sea."
+                            data-images='[
+                            "./assets/principal/cards/standuppaddlecard.webp"
+                        ]' data-duration="2h" data-stops="Copacabana" data-includes="Unlimited photography during the experience"
+                            data-notincludes="Transport" data-itinerary='[
+                            "Meeting point at Avenida Atlântica – Posto 6",
+                            "Group reception and equipment preparation",
+                            "Safety and orientation briefing",
+                            "Life jacket delivery and group organization",
+                            "Guided experience at sea during sunrise",
+                            "Photo and 4K video session in Copacabana",
+                            "End of activity and return of equipment"
+                        ]' data-whatsapp="Inquiry%20Stand%20Up%20Paddle">
+                            View details →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+    <footer class="tbt-footer" id="tbt-contacto">
+        <div class="tbt-footer-top">
+
+            <!-- Marca -->
+            <div class="tbt-footer-brand">
+                <img src="../assets/icons/logo.png" alt="Logo TheBrothersTour" class="tbt-footer-logo">
+                <span class="tbt-footer-name">THEBROTHERSTOUR</span>
+            </div>
+
+            <!-- Contacto -->
+            <div class="tbt-footer-contact">
+                <a href="https://wa.me/5491123230921" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                    Advisor - Martin Comito
+                </a>
+
+                <a href="https://wa.me/5521980125314" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconowp.webp" alt="WhatsApp" class="tbt-footer-icon">
+                    Advisor - Lucas Comito
+                </a>
+            </div>
+
+            <!-- Redes -->
+            <div class="tbt-footer-social">
+                <a href="https://instagram.com/thebrotherstour.rj" target="_blank" class="tbt-footer-link">
+                    <img src="../assets/icons/iconoig.webp" alt="Instagram" class="tbt-footer-icon">
+                    Instagram
+                </a>
+            </div>
+
+        </div>
+
+        <div class="tbt-footer-bottom">
+            <p>© 2026 THEBROTHERSTOUR - All rights reserved</p>
+            <p class="tbt-footer-signature">
+                Developed by <a href="https://initiumq.com" target="_blank">InitiumQuest</a>
+            </p>
+        </div>
+    </footer>
+
+
+    <div class="modal" id="tourModal">
+        <div class="modal-content">
+            <button class="modal-close" data-close>&times;</button>
+
+            <div class="modal-gallery">
+                <div class="slider"></div>
+                <button class="slider-prev">&#10094;</button>
+                <button class="slider-next">&#10095;</button>
+            </div>
+
+            <h2 class="modal-title"></h2>
+            <p class="modal-description"></p>
+
+            <ul class="info-list">
+                <li><strong>Duration:</strong> <span class="modal-duration"></span></li>
+                <li><strong>Stops:</strong> <span class="modal-stops"></span></li>
+                <li><strong>Includes:</strong> <span class="modal-includes"></span></li>
+                <li><strong>Not included:</strong> <span class="modal-notincludes"></span></li>
+            </ul>
+
+            <h3>Details</h3>
+            <ol class="modal-itinerary"></ol>
+
+            <div class="modal-cta">
+                <a class="btn-primary big modal-whatsapp" target="_blank">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const path = window.location.pathname;
+
+        document.querySelectorAll(".lang-switch__item").forEach(item => {
+            const lang = item.dataset.lang;
+
+            if (
+                (lang === "es" && path === "/index.html") ||
+                (lang !== "es" && path.includes(`/${lang}/`))
+            ) {
+                item.classList.add("active");
+            }
+        });
+    </script>
+    <script>
+        const heroImage = document.querySelector(".js-parallax");
+
+        window.addEventListener("scroll", () => {
+            const scroll = window.scrollY;
+
+            if (scroll < window.innerHeight) {
+                heroImage.style.transform = `translateY(${scroll * 0.35}px)`;
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.getElementById("mainNavHamburger");
+            const navLinks = document.getElementById("mainNavLinks");
+
+            if (!hamburger || !navLinks) return;
+
+            // Abrir / cerrar menú
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            // Cerrar al hacer click en un link
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+
+            // Cerrar al clickear fuera
+            document.addEventListener("click", (e) => {
+                const isClickInside =
+                    hamburger.contains(e.target) || navLinks.contains(e.target);
+
+                if (!isClickInside) {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        /* ===========================
+           MODAL TOUR ÚNICO
+        =========================== */
+
+        const openButtons = document.querySelectorAll(".btn-open-modal");
+        const modal = document.getElementById("tourModal");
+
+        const slider = modal.querySelector(".slider");
+        const titleEl = modal.querySelector(".modal-title");
+        const descEl = modal.querySelector(".modal-description");
+        const durationEl = modal.querySelector(".modal-duration");
+        const stopsEl = modal.querySelector(".modal-stops");
+        const includesEl = modal.querySelector(".modal-includes");
+        const notIncludesEl = modal.querySelector(".modal-notincludes");
+        const itineraryEl = modal.querySelector(".modal-itinerary");
+        const whatsappBtn = modal.querySelector(".modal-whatsapp");
+
+        const prevBtn = modal.querySelector(".slider-prev");
+        const nextBtn = modal.querySelector(".slider-next");
+
+        let currentIndex = 0;
+        let images = [];
+
+        /* ===========================
+           ABRIR MODAL
+        =========================== */
+        openButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+
+                // Reset
+                slider.innerHTML = "";
+                itineraryEl.innerHTML = "";
+                currentIndex = 0;
+
+                // Texto
+                titleEl.textContent = btn.dataset.title || "";
+                descEl.textContent = btn.dataset.description || "";
+                durationEl.textContent = btn.dataset.duration || "";
+                stopsEl.textContent = btn.dataset.stops || "";
+                includesEl.textContent = btn.dataset.includes || "";
+                notIncludesEl.textContent = btn.dataset.notincludes || "";
+
+                // WhatsApp
+                whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
+
+                // Imágenes
+                images = JSON.parse(btn.dataset.images || "[]");
+
+                images.forEach((src, i) => {
+                    const img = document.createElement("img");
+                    img.src = src;
+                    if (i === 0) img.classList.add("active");
+                    slider.appendChild(img);
+                });
+
+                // Itinerario
+                const itinerary = JSON.parse(btn.dataset.itinerary || "[]");
+                itinerary.forEach(step => {
+                    const li = document.createElement("li");
+                    li.textContent = step;
+                    itineraryEl.appendChild(li);
+                });
+
+                modal.classList.add("active");
+            });
+        });
+
+        /* ===========================
+           SLIDER
+        =========================== */
+        function showImage(index) {
+            const imgs = slider.querySelectorAll("img");
+            imgs.forEach(img => img.classList.remove("active"));
+            if (imgs[index]) imgs[index].classList.add("active");
+        }
+
+        prevBtn.addEventListener("click", () => {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        /* ===========================
+           CERRAR MODAL
+        =========================== */
+        modal.querySelector("[data-close]").addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+
+        modal.addEventListener("click", e => {
+            if (e.target === modal) modal.classList.remove("active");
+        });
+    </script>
+    <script>
+        // Crear el contenedor del lightbox dinámicamente
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        document.body.appendChild(lightbox);
+
+        // Función para mostrar imagen en lightbox
+        const showLightbox = (src) => {
+            lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
+            lightbox.classList.add("active");
+        };
+
+        // Cerrar al click en el overlay
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        // Hacer las imágenes del slider clickeables
+        document.querySelectorAll(".modal .slider img").forEach(img => {
+            img.style.cursor = "zoom-in"; // cambiar cursor
+            img.addEventListener("click", () => {
+                showLightbox(img.src);
+            });
+        });
+    </script>
+    <script>
+        // Parallax hero full responsive
+        const heroImg = document.querySelector('.hero-img');
+
+        window.addEventListener('scroll', () => {
+            let factor = 0.25; // Desktop
+
+            if (window.innerWidth <= 1024 && window.innerWidth > 700) {
+                factor = 0.15; // Tablet
+            } else if (window.innerWidth <= 700) {
+                factor = 0.05; // Móvil
+            }
+
+            const offset = window.scrollY * factor;
+            heroImg.style.transform = `translateY(${offset}px)`;
+        });
+    </script>
