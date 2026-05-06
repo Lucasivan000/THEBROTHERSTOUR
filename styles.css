@@ -695,7 +695,92 @@ MAIN NAVBAR===========================*/
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
+/* === JERARQUÍA GENERAL === */
+.modal-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 1.2rem 0 0.6rem;
+    color: #fff;
+}
 
+.modal-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #E5E5E5;
+    margin-bottom: 1.6rem;
+}
+
+/* Separación clara entre bloques */
+.info-list,
+.modal-itinerary {
+    margin-top: 1.6rem;
+}
+
+/* === INFO CLAVE DEL TOUR === */
+.info-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.info-list li {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.7rem 0.9rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #E0E0E0;
+}
+
+.info-list strong {
+    color: #E0B84F;
+    font-weight: 600;
+}
+
+/* === ITINERARIO PREMIUM === */
+.modal-itinerary {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.modal-itinerary li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1.2rem;
+    color: #E5E5E5;
+    line-height: 1.6;
+}
+
+/* Número estilizado (no escolar) */
+.modal-itinerary li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(224, 184, 79, 0.15);
+    color: #E0B84F;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+.modal-content h3 {
+    margin-top: 2.2rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+}
 
 
 
