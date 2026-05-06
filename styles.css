@@ -889,6 +889,22 @@ MAIN NAVBAR===========================*/
     }
 }
 
+/* ===========================
+   INFO-LIST MOBILE FIX
+=========================== */
+@media (max-width: 700px) {
+    .info-list {
+        grid-template-columns: 1fr;
+        /* una sola columna */
+        gap: 0.8rem;
+    }
+
+    .info-list li {
+        font-size: 0.95rem;
+        padding: 0.85rem 1rem;
+    }
+}
+
 
 
 
