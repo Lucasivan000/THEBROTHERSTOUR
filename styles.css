@@ -460,7 +460,7 @@ MAIN NAVBAR===========================*/
 
 
 /* ===========================
-   MODAL PREMIUM TURISMO
+   MODAL PREMIUM TURISMO (FIXED)
 =========================== */
 
 .modal {
@@ -471,7 +471,7 @@ MAIN NAVBAR===========================*/
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: env(safe-area-inset-top) 1rem env(safe-area-inset-bottom);
     z-index: 9999;
 }
 
@@ -491,17 +491,17 @@ MAIN NAVBAR===========================*/
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.06);
 
-    /* padding general PRO */
-    padding: 1.5rem 1.8rem 2rem;
+    /* 🔑 FIX CLAVE */
+    padding:
+        calc(env(safe-area-inset-top) + 3.5rem) 1.8rem calc(env(safe-area-inset-bottom) + 2rem);
 
-    /* animación */
     animation: modalIn 0.25s ease;
 }
 
-/* ANIMACIÓN MODAL */
+/* ANIMACIÓN */
 @keyframes modalIn {
     from {
-        transform: scale(0.95);
+        transform: scale(0.96);
         opacity: 0;
     }
 
@@ -511,19 +511,11 @@ MAIN NAVBAR===========================*/
     }
 }
 
-/* MOBILE */
-@media (max-width: 700px) {
-    .modal-content {
-        height: 100vh;
-        border-radius: 0;
-    }
-}
-
 /* CLOSE BUTTON */
 .modal-close {
-    position: absolute;
-    top: 18px;
-    right: 18px;
+    position: sticky;
+    top: env(safe-area-inset-top);
+    margin-left: auto;
     width: 42px;
     height: 42px;
     border-radius: 50%;
@@ -536,7 +528,7 @@ MAIN NAVBAR===========================*/
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 20;
     transition: 0.2s ease;
 }
 
@@ -546,164 +538,41 @@ MAIN NAVBAR===========================*/
     transform: rotate(90deg);
 }
 
-/* GALLERY */
+/* ===========================
+   GALERÍA
+=========================== */
 .modal-gallery {
-    position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
+    display: flex;
+    justify-content: center;
 }
 
-/* SLIDER IMAGES */
-.slider {
-    touch-action: pan-y;
-}
 .slider img {
     width: 100%;
-    max-height: 450px;
-    height: auto;
+    max-height: 420px;
     object-fit: contain;
-    /* 🔑 CLAVE */
     display: none;
     border-radius: 14px;
     background: #000;
-    /* evita fondo vacío feo */
 }
 
 .slider img.active {
     display: block;
 }
 
-
 @media (max-width: 700px) {
     .slider img {
-        max-height: 260px;
+        max-height: 240px;
     }
 }
 
-.modal-gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* FLECHAS SLIDER — APPLE STYLE */
-.slider-prev,
-.slider-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    width: auto;
-    height: auto;
-    padding: 0.4rem 0.6rem;
-    font-size: 2.6rem;
-    color: rgba(255, 255, 255, 0.85);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease,
-        opacity 0.2s ease;
-    opacity: 0.75;
-}
-
-.slider-prev:hover,
-.slider-next:hover {
-    opacity: 1;
-    color: #E0B84F;
-    /* tu color premium */
-    transform: translateY(-50%) scale(1.15);
-}
-
-.slider-prev {
-    left: 8px;
-}
-
-.slider-next {
-    right: 8px;
-}
-
-/* SECCIONES */
-.modal-section {
-    margin-top: 1.5rem;
-    padding: 0;
-    /* evita doble padding */
-}
-
-.modal-section h4 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.6rem;
-    color: #B8B8B8;
-}
-
-.modal-section p,
-.info-list li {
-    color: #D0D0D0;
-    line-height: 1.5;
-}
-
-.info-list li {
-    margin-bottom: 0.4rem;
-}
-
-/* CTA */
-.modal-cta {
-    margin-top: 2rem;
-    text-align: center;
-    padding-bottom: 2rem;
-}
-
-/* BOTÓN PRO TURISMO */
-.modal .modal-cta a {
-    display: inline-block;
-    background: #E0B84F;
-    color: #000;
-    padding: 0.9rem 1.6rem;
-    border-radius: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: 0.2s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.modal .modal-cta a:hover {
-    background: #fff;
-    transform: translateY(-2px);
-}
-
-/* LIGHTBOX */
-.lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.95);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    cursor: zoom-out;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 95%;
-    max-height: 95%;
-    border-radius: 10px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-}
-
-/* === JERARQUÍA GENERAL === */
+/* ===========================
+   TEXTO Y SECCIONES
+=========================== */
 .modal-title {
     font-size: 1.9rem;
     font-weight: 700;
-    margin: 1.2rem 0 0.6rem;
+    margin: 0.5rem 0 0.6rem;
     color: #fff;
 }
 
@@ -714,13 +583,7 @@ MAIN NAVBAR===========================*/
     margin-bottom: 1.6rem;
 }
 
-/* Separación clara entre bloques */
-.info-list,
-.modal-itinerary {
-    margin-top: 1.6rem;
-}
-
-/* === INFO CLAVE DEL TOUR === */
+/* INFO LIST */
 .info-list {
     list-style: none;
     padding: 0;
@@ -732,180 +595,87 @@ MAIN NAVBAR===========================*/
 
 .info-list li {
     background: rgba(255, 255, 255, 0.04);
-    padding: 0.7rem 0.9rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
     color: #E0E0E0;
 }
 
 .info-list strong {
     color: #E0B84F;
-    font-weight: 600;
 }
 
-/* === ITINERARIO PREMIUM === */
+/* ===========================
+   ITINERARIO
+=========================== */
 .modal-itinerary {
     list-style: none;
+    padding: 0;
     counter-reset: step;
-    padding-left: 0;
-    margin-top: 1rem;
 }
 
 .modal-itinerary li {
     counter-increment: step;
-    position: relative;
     padding-left: 3rem;
     margin-bottom: 1.2rem;
     color: #E5E5E5;
-    line-height: 1.6;
+    position: relative;
 }
 
-/* Número estilizado (no escolar) */
 .modal-itinerary li::before {
     content: counter(step);
     position: absolute;
     left: 0;
-    top: 0.1rem;
-    width: 32px;
-    height: 32px;
+    top: 0.15rem;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background: rgba(224, 184, 79, 0.15);
     color: #E0B84F;
-    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.85rem;
-}
-
-.modal-content h3 {
-    margin-top: 2.2rem;
-    margin-bottom: 0.6rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
+    font-weight: 700;
 }
 
 /* ===========================
-   MOBILE OPTIMIZATION
+   CTA
+=========================== */
+.modal-cta {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.modal-cta a {
+    display: block;
+    width: 100%;
+    background: #E0B84F;
+    color: #000;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* ===========================
+   MOBILE
 =========================== */
 @media (max-width: 768px) {
-
-    /* Modal ocupa toda la pantalla */
     .modal {
         padding: 0;
     }
 
     .modal-content {
-        max-width: 100%;
-        max-height: 100vh;
         height: 100vh;
+        max-height: 100vh;
         border-radius: 0;
-        padding: 1.2rem 1rem 2.2rem;
-        animation: none;
-        /* más fluido en mobile */
+        padding:
+            calc(env(safe-area-inset-top) + 3.8rem) 1rem calc(env(safe-area-inset-bottom) + 2rem);
     }
 
-    /* Botón cerrar: más cómodo para dedo */
-    .modal-close {
-        top: 14px;
-        right: 14px;
-        width: 44px;
-        height: 44px;
-        font-size: 1.4rem;
-    }
-
-    /* Galería */
-    .modal-gallery {
-        margin-bottom: 1.2rem;
-    }
-
-    .slider img {
-        max-height: 240px;
-        border-radius: 12px;
-    }
-
-    /* Flechas más chicas y menos invasivas */
-    .slider-prev,
-    .slider-next {
-        font-size: 2.2rem;
-        padding: 0.3rem 0.5rem;
-        opacity: 0.85;
-    }
-
-    /* TÍTULO */
-    .modal-title {
-        font-size: 1.5rem;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* DESCRIPCIÓN */
-    .modal-description {
-        font-size: 0.95rem;
-        line-height: 1.65;
-        margin-bottom: 1.3rem;
-    }
-
-    /* INFO CLAVE: pasa a una sola columna */
     .info-list {
         grid-template-columns: 1fr;
-        gap: 0.6rem;
-        margin-bottom: 1.6rem;
-    }
-
-    .info-list li {
-        font-size: 0.88rem;
-        padding: 0.65rem 0.8rem;
-    }
-
-    /* TÍTULO SECCIÓN */
-    .modal-content h3 {
-        margin-top: 1.8rem;
-        font-size: 1rem;
-    }
-
-    /* ITINERARIO */
-    .modal-itinerary li {
-        padding-left: 2.6rem;
-        margin-bottom: 1rem;
-        font-size: 0.92rem;
-    }
-
-    .modal-itinerary li::before {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8rem;
-        top: 0.15rem;
-    }
-
-    /* CTA */
-    .modal-cta {
-        margin-top: 2rem;
-        padding-bottom: 1.5rem;
-    }
-
-    .modal .modal-cta a {
-        width: 100%;
-        padding: 1rem;
-        font-size: 0.95rem;
-        border-radius: 12px;
-    }
-}
-
-/* ===========================
-   INFO-LIST MOBILE FIX
-=========================== */
-@media (max-width: 700px) {
-    .info-list {
-        grid-template-columns: 1fr;
-        /* una sola columna */
-        gap: 0.8rem;
-    }
-
-    .info-list li {
-        font-size: 0.95rem;
-        padding: 0.85rem 1rem;
     }
 }
 
