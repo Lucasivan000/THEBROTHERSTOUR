@@ -553,6 +553,9 @@ MAIN NAVBAR===========================*/
 }
 
 /* SLIDER IMAGES */
+.slider {
+    touch-action: pan-y;
+}
 .slider img {
     width: 100%;
     max-height: 450px;
@@ -568,6 +571,7 @@ MAIN NAVBAR===========================*/
 .slider img.active {
     display: block;
 }
+
 
 @media (max-width: 700px) {
     .slider img {

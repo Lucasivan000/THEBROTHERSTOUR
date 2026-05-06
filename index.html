@@ -1229,12 +1229,24 @@
         /* ===========================
            SLIDER
         =========================== */
+        let currentIndex = 0;
+
+        const slider = document.querySelector(".slider");
+        const images = slider.querySelectorAll("img");
+        const prevBtn = slider.querySelector(".slider-prev");
+        const nextBtn = slider.querySelector(".slider-next");
+
+        // ===============================
+        // MOSTRAR IMAGEN ACTIVA
+        // ===============================
         function showImage(index) {
-            const imgs = slider.querySelectorAll("img");
-            imgs.forEach(img => img.classList.remove("active"));
-            if (imgs[index]) imgs[index].classList.add("active");
+            images.forEach(img => img.classList.remove("active"));
+            if (images[index]) images[index].classList.add("active");
         }
 
+        // ===============================
+        // BOTONES (DESKTOP + MOBILE)
+        // ===============================
         prevBtn.addEventListener("click", () => {
             currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
             showImage(currentIndex);
@@ -1244,6 +1256,41 @@
             currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
             showImage(currentIndex);
         });
+
+        // ===============================
+        // SWIPE MOBILE (iOS / ANDROID)
+        // ===============================
+        let startX = 0;
+        let endX = 0;
+
+        slider.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        slider.addEventListener("touchend", (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const diff = startX - endX;
+
+            // umbral mínimo para evitar falsos swipes
+            if (Math.abs(diff) < 50) return;
+
+            if (diff > 0) {
+                // swipe izquierda → siguiente
+                currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            } else {
+                // swipe derecha → anterior
+                currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+            }
+
+            showImage(currentIndex);
+        }
+
+        // imagen inicial
+        showImage(currentIndex);
 
         /* ===========================
            CERRAR MODAL
