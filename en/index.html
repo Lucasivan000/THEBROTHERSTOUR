@@ -1299,6 +1299,58 @@
         });
     </script>
     <script>
+        /* ===========================
+           SWIPE MOBILE PARA SLIDER
+        =========================== */
+
+        let startX = 0;
+        let startY = 0;
+        let isSwiping = false;
+
+        slider.addEventListener("touchstart", (e) => {
+            if (e.touches.length !== 1) return;
+
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isSwiping = true;
+        }, { passive: true });
+
+        slider.addEventListener("touchmove", (e) => {
+            if (!isSwiping) return;
+
+            const diffX = e.touches[0].clientX - startX;
+            const diffY = e.touches[0].clientY - startY;
+
+            // Si el movimiento es más vertical que horizontal → NO slider
+            if (Math.abs(diffY) > Math.abs(diffX)) {
+                isSwiping = false;
+            }
+        }, { passive: true });
+
+        slider.addEventListener("touchend", (e) => {
+            if (!isSwiping) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diffX = endX - startX;
+
+            const threshold = 50; // sensibilidad swipe
+
+            if (diffX > threshold) {
+                // 👉 swipe derecha → imagen anterior
+                currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                showImage(currentIndex);
+            }
+
+            if (diffX < -threshold) {
+                // 👈 swipe izquierda → siguiente imagen
+                currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                showImage(currentIndex);
+            }
+
+            isSwiping = false;
+        });
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             const hamburger = document.getElementById("mainNavHamburger");
             const navLinks = document.getElementById("mainNavLinks");

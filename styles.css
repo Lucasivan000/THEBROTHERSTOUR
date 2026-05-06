@@ -588,6 +588,38 @@ MAIN NAVBAR===========================*/
 }
 
 /* ===========================
+   SLIDER DOTS (INDICADOR)
+=========================== */
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.slider-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    transition: all 0.25s ease;
+}
+
+.slider-dots span.active {
+    background: #E0B84F;
+    transform: scale(1.4);
+}
+
+/* Mobile: un poco más visibles */
+@media (max-width: 768px) {
+    .slider-dots span {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* ===========================
    TEXTO Y SECCIONES
 =========================== */
 .modal-title {

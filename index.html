@@ -1074,6 +1074,7 @@
                 <div class="slider"></div>
                 <button class="slider-prev">&#10094;</button>
                 <button class="slider-next">&#10095;</button>
+                <div class="slider-dots"></div>
             </div>
 
             <h2 class="modal-title"></h2>
@@ -1185,12 +1186,37 @@
         let lightboxOpen = false;
 
         /* ===========================
+           INDICADOR SLIDER
+        =========================== */
+        const sliderIndicator = document.createElement("div");
+        sliderIndicator.className = "slider-indicator";
+        slider.appendChild(sliderIndicator);
+
+        function updateIndicator() {
+            if (images.length <= 1) {
+                sliderIndicator.style.display = "none";
+                return;
+            }
+
+            sliderIndicator.style.display = "flex";
+            sliderIndicator.innerHTML = `
+            <span>${currentIndex + 1} / ${images.length}</span>
+            <div class="dots">
+                ${images.map((_, i) =>
+                `<i class="${i === currentIndex ? "active" : ""}"></i>`
+            ).join("")}
+            </div>
+        `;
+        }
+
+        /* ===========================
            ABRIR MODAL
         =========================== */
         openButtons.forEach(btn => {
             btn.addEventListener("click", () => {
 
                 slider.innerHTML = "";
+                slider.appendChild(sliderIndicator);
                 itineraryEl.innerHTML = "";
                 currentIndex = 0;
 
@@ -1218,6 +1244,8 @@
                     itineraryEl.appendChild(li);
                 });
 
+                updateIndicator();
+
                 modal.classList.add("active");
                 document.body.style.overflow = "hidden";
                 modalOpen = true;
@@ -1233,6 +1261,7 @@
             const imgs = slider.querySelectorAll("img");
             imgs.forEach(img => img.classList.remove("active"));
             if (imgs[index]) imgs[index].classList.add("active");
+            updateIndicator();
         }
 
         prevBtn.addEventListener("click", () => {
@@ -1268,23 +1297,23 @@
         const lightbox = document.createElement("div");
         lightbox.id = "imgLightbox";
         lightbox.style.cssText = `
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    pointer-events: none;
-`;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        pointer-events: none;
+    `;
 
         const lightboxImg = document.createElement("img");
         lightboxImg.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-`;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    `;
 
         lightbox.appendChild(lightboxImg);
         document.body.appendChild(lightbox);
@@ -1318,12 +1347,10 @@
            BACK BUTTON CONTROLADO
         =========================== */
         window.addEventListener("popstate", () => {
-
             if (lightboxOpen) {
                 closeLightbox();
                 return;
             }
-
             if (modalOpen) {
                 closeModal();
                 return;
