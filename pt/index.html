@@ -1194,7 +1194,6 @@
 
                 // Imágenes
                 images = JSON.parse(btn.dataset.images || "[]");
-
                 images.forEach((src, i) => {
                     const img = document.createElement("img");
                     img.src = src;
@@ -1213,7 +1212,7 @@
                 modal.classList.add("active");
                 document.body.style.overflow = "hidden";
 
-                // 👉 agrega estado para botón "atrás" (mobile)
+                // Estado para botón "atrás"
                 history.pushState({ modal: true }, "");
             });
         });
@@ -1252,30 +1251,21 @@
         });
 
         /* ===========================
-           BOTÓN ATRÁS (ANDROID / iOS)
-        =========================== */
-        window.addEventListener("popstate", () => {
-            if (modal.classList.contains("active")) {
-                closeModal();
-            }
-        });
-
-        /* ===========================
-           LIGHTBOX FULLSCREEN IMAGEN
+           LIGHTBOX FULLSCREEN
         =========================== */
         const lightbox = document.createElement("div");
         lightbox.id = "imgLightbox";
         lightbox.style.cssText = `
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity .25s;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
 `;
 
         const lightboxImg = document.createElement("img");
@@ -1292,6 +1282,8 @@
             lightboxImg.src = src;
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
+
+            // estado para botón atrás
             history.pushState({ lightbox: true }, "");
         }
 
@@ -1308,9 +1300,21 @@
 
         lightbox.addEventListener("click", closeLightbox);
 
+        /* ===========================
+           BOTÓN ATRÁS (PRIORIDAD)
+        =========================== */
         window.addEventListener("popstate", () => {
+
+            // 1️⃣ cerrar lightbox primero
             if (lightbox.style.pointerEvents === "auto") {
                 closeLightbox();
+                return;
+            }
+
+            // 2️⃣ luego cerrar modal
+            if (modal.classList.contains("active")) {
+                closeModal();
+                return;
             }
         });
 
@@ -1319,8 +1323,11 @@
         =========================== */
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
-                if (lightbox.style.pointerEvents === "auto") closeLightbox();
-                else if (modal.classList.contains("active")) closeModal();
+                if (lightbox.style.pointerEvents === "auto") {
+                    closeLightbox();
+                } else if (modal.classList.contains("active")) {
+                    closeModal();
+                }
             }
         });
     </script>
