@@ -1181,6 +1181,8 @@
 
         let currentIndex = 0;
         let images = [];
+        let modalOpen = false;
+        let lightboxOpen = false;
 
         /* ===========================
            ABRIR MODAL
@@ -1188,12 +1190,10 @@
         openButtons.forEach(btn => {
             btn.addEventListener("click", () => {
 
-                // Reset
                 slider.innerHTML = "";
                 itineraryEl.innerHTML = "";
                 currentIndex = 0;
 
-                // Texto
                 titleEl.textContent = btn.dataset.title || "";
                 descEl.textContent = btn.dataset.description || "";
                 durationEl.textContent = btn.dataset.duration || "";
@@ -1201,10 +1201,8 @@
                 includesEl.textContent = btn.dataset.includes || "";
                 notIncludesEl.textContent = btn.dataset.notincludes || "";
 
-                // WhatsApp
                 whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
 
-                // Imágenes
                 images = JSON.parse(btn.dataset.images || "[]");
                 images.forEach((src, i) => {
                     const img = document.createElement("img");
@@ -1213,7 +1211,6 @@
                     slider.appendChild(img);
                 });
 
-                // Itinerario
                 const itinerary = JSON.parse(btn.dataset.itinerary || "[]");
                 itinerary.forEach(step => {
                     const li = document.createElement("li");
@@ -1223,8 +1220,8 @@
 
                 modal.classList.add("active");
                 document.body.style.overflow = "hidden";
+                modalOpen = true;
 
-                // Estado para botón "atrás"
                 history.pushState({ modal: true }, "");
             });
         });
@@ -1254,16 +1251,19 @@
         function closeModal() {
             modal.classList.remove("active");
             document.body.style.overflow = "";
+            modalOpen = false;
         }
 
-        modal.querySelector("[data-close]").addEventListener("click", closeModal);
+        modal.querySelector("[data-close]").addEventListener("click", () => {
+            history.back();
+        });
 
         modal.addEventListener("click", e => {
-            if (e.target === modal) closeModal();
+            if (e.target === modal) history.back();
         });
 
         /* ===========================
-           LIGHTBOX FULLSCREEN
+           LIGHTBOX
         =========================== */
         const lightbox = document.createElement("div");
         lightbox.id = "imgLightbox";
@@ -1277,7 +1277,6 @@
     z-index: 10000;
     opacity: 0;
     pointer-events: none;
-    transition: opacity .25s ease;
 `;
 
         const lightboxImg = document.createElement("img");
@@ -1294,14 +1293,15 @@
             lightboxImg.src = src;
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
+            lightboxOpen = true;
 
-            // estado para botón atrás
             history.pushState({ lightbox: true }, "");
         }
 
         function closeLightbox() {
             lightbox.style.opacity = "0";
             lightbox.style.pointerEvents = "none";
+            lightboxOpen = false;
         }
 
         slider.addEventListener("click", e => {
@@ -1310,36 +1310,33 @@
             }
         });
 
-        lightbox.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", () => {
+            history.back();
+        });
 
         /* ===========================
-           BOTÓN ATRÁS (PRIORIDAD)
+           BACK BUTTON CONTROLADO
         =========================== */
         window.addEventListener("popstate", () => {
 
-            // 1️⃣ cerrar lightbox primero
-            if (lightbox.style.pointerEvents === "auto") {
+            if (lightboxOpen) {
                 closeLightbox();
                 return;
             }
 
-            // 2️⃣ luego cerrar modal
-            if (modal.classList.contains("active")) {
+            if (modalOpen) {
                 closeModal();
                 return;
             }
         });
 
         /* ===========================
-           ESC (DESKTOP)
+           ESC
         =========================== */
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
-                if (lightbox.style.pointerEvents === "auto") {
-                    closeLightbox();
-                } else if (modal.classList.contains("active")) {
-                    closeModal();
-                }
+                if (lightboxOpen) history.back();
+                else if (modalOpen) history.back();
             }
         });
     </script>
