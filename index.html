@@ -1125,42 +1125,8 @@
         });
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const hamburger = document.getElementById("mainNavHamburger");
-            const navLinks = document.getElementById("mainNavLinks");
-
-            if (!hamburger || !navLinks) return;
-
-            // Abrir / cerrar menú
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("active");
-                navLinks.classList.toggle("active");
-            });
-
-            // Cerrar al hacer click en un link
-            navLinks.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", () => {
-                    hamburger.classList.remove("active");
-                    navLinks.classList.remove("active");
-                });
-            });
-
-            // Cerrar al clickear fuera
-            document.addEventListener("click", (e) => {
-                const isClickInside =
-                    hamburger.contains(e.target) || navLinks.contains(e.target);
-
-                if (!isClickInside) {
-                    hamburger.classList.remove("active");
-                    navLinks.classList.remove("active");
-                }
-            });
-        });
-    </script>
-
-    <script>
         /* ===========================
-           MODAL TOUR ÚNICO
+           MODAL TOUR ÚNICO + SLIDER TOUCH
         =========================== */
 
         const openButtons = document.querySelectorAll(".btn-open-modal");
@@ -1204,6 +1170,7 @@
                 whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
 
                 images = JSON.parse(btn.dataset.images || "[]");
+
                 images.forEach((src, i) => {
                     const img = document.createElement("img");
                     img.src = src;
@@ -1227,70 +1194,55 @@
         });
 
         /* ===========================
-           SLIDER
+           SLIDER LOGIC
         =========================== */
-        let currentIndex = 0;
-
-        const slider = document.querySelector(".slider");
-        const images = slider.querySelectorAll("img");
-        const prevBtn = slider.querySelector(".slider-prev");
-        const nextBtn = slider.querySelector(".slider-next");
-
-        // ===============================
-        // MOSTRAR IMAGEN ACTIVA
-        // ===============================
         function showImage(index) {
-            images.forEach(img => img.classList.remove("active"));
-            if (images[index]) images[index].classList.add("active");
+            const imgs = slider.querySelectorAll("img");
+            imgs.forEach(img => img.classList.remove("active"));
+            if (imgs[index]) imgs[index].classList.add("active");
         }
 
-        // ===============================
-        // BOTONES (DESKTOP + MOBILE)
-        // ===============================
-        prevBtn.addEventListener("click", () => {
-            currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
-        });
-
-        nextBtn.addEventListener("click", () => {
+        function nextImage() {
             currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
             showImage(currentIndex);
-        });
+        }
 
-        // ===============================
-        // SWIPE MOBILE (iOS / ANDROID)
-        // ===============================
-        let startX = 0;
-        let endX = 0;
-
-        slider.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-        }, { passive: true });
-
-        slider.addEventListener("touchend", (e) => {
-            endX = e.changedTouches[0].clientX;
-            handleSwipe();
-        }, { passive: true });
-
-        function handleSwipe() {
-            const diff = startX - endX;
-
-            // umbral mínimo para evitar falsos swipes
-            if (Math.abs(diff) < 50) return;
-
-            if (diff > 0) {
-                // swipe izquierda → siguiente
-                currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-            } else {
-                // swipe derecha → anterior
-                currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-            }
-
+        function prevImage() {
+            currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
             showImage(currentIndex);
         }
 
-        // imagen inicial
-        showImage(currentIndex);
+        prevBtn.addEventListener("click", prevImage);
+        nextBtn.addEventListener("click", nextImage);
+
+        /* ===========================
+           SWIPE TOUCH (MOBILE)
+        =========================== */
+        let startX = 0;
+        let endX = 0;
+        let isSwiping = false;
+
+        slider.addEventListener("touchstart", e => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        }, { passive: true });
+
+        slider.addEventListener("touchmove", e => {
+            if (!isSwiping) return;
+            endX = e.touches[0].clientX;
+        }, { passive: true });
+
+        slider.addEventListener("touchend", () => {
+            if (!isSwiping) return;
+
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                diff > 0 ? nextImage() : prevImage();
+            }
+
+            isSwiping = false;
+        });
 
         /* ===========================
            CERRAR MODAL
@@ -1341,7 +1293,6 @@
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
             lightboxOpen = true;
-
             history.pushState({ lightbox: true }, "");
         }
 
@@ -1352,7 +1303,7 @@
         }
 
         slider.addEventListener("click", e => {
-            if (e.target.tagName === "IMG") {
+            if (e.target.tagName === "IMG" && !isSwiping) {
                 openLightbox(e.target.src);
             }
         });
@@ -1378,12 +1329,11 @@
         });
 
         /* ===========================
-           ESC
+           ESC DESKTOP
         =========================== */
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
-                if (lightboxOpen) history.back();
-                else if (modalOpen) history.back();
+                if (lightboxOpen || modalOpen) history.back();
             }
         });
     </script>
