@@ -784,8 +784,8 @@
 
                 <!-- CARD 1 -->
                 <article class="x-extras__card">
-                    <div class="x-extras__img"
-                        style="background-image:url('../assets/principal/cards/corco.jpg');"></div>
+                    <div class="x-extras__img" style="background-image:url('../assets/principal/cards/corco.jpg');">
+                    </div>
 
                     <div class="x-extras__body">
                         <h3 class="x-extras__card-title">Corcovado + City Tour</h3>
@@ -1085,6 +1085,9 @@
             </div>
         </div>
     </div>
+    <div class="img-lightbox" id="imgLightbox">
+        <img src="" alt="Imagen ampliada">
+    </div>
     <script>
         const path = window.location.pathname;
 
@@ -1284,3 +1287,63 @@
             heroImg.style.transform = `translateY(${offset}px)`;
         });
     </script>
+    <script>
+        // ===============================
+        // LIGHTBOX FULLSCREEN SEGURO
+        // ===============================
+
+        function closeLightbox() {
+            const lb = document.getElementById("imgLightbox");
+            if (!lb || !lb.classList.contains("active")) return;
+
+            lb.classList.remove("active");
+            document.body.style.overflow = "";
+
+            // vuelve un paso atrás solo si el lightbox agregó history
+            if (history.state && history.state.lightbox) {
+                history.back();
+            }
+        }
+
+        // ABRIR LIGHTBOX AL CLICK EN IMAGEN DEL MODAL
+        document.addEventListener("click", function (e) {
+            const img = e.target.closest(".slider img");
+            if (!img) return;
+
+            const lightbox = document.getElementById("imgLightbox");
+            const lightboxImg = lightbox.querySelector("img");
+
+            lightboxImg.src = img.src;
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+            // permite cerrar con botón "Atrás"
+            history.pushState({ lightbox: true }, "");
+        });
+
+        // CERRAR AL TOCAR FUERA DE LA IMAGEN
+        document.getElementById("imgLightbox").addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // CERRAR CON ESC (desktop)
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                closeLightbox();
+            }
+        });
+
+        // CERRAR CON BOTÓN "ATRÁS" (mobile)
+        window.addEventListener("popstate", function () {
+            const lb = document.getElementById("imgLightbox");
+            if (lb && lb.classList.contains("active")) {
+                lb.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+    </script>
+</body>
+
+</html>
