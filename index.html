@@ -1160,7 +1160,7 @@
 
     <script>
         /* ===========================
-           MODAL TOUR ÚNICO (FINAL)
+           MODAL TOUR ÚNICO
         =========================== */
 
         const openButtons = document.querySelectorAll(".btn-open-modal");
@@ -1246,41 +1246,6 @@
         });
 
         /* ===========================
-           SWIPE REAL (MOBILE)
-        =========================== */
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let isSwiping = false;
-
-        slider.addEventListener("touchstart", e => {
-            touchStartX = e.touches[0].clientX;
-            isSwiping = false;
-        }, { passive: true });
-
-        slider.addEventListener("touchmove", e => {
-            touchEndX = e.touches[0].clientX;
-            if (Math.abs(touchEndX - touchStartX) > 10) {
-                isSwiping = true;
-            }
-        }, { passive: true });
-
-        slider.addEventListener("touchend", () => {
-            const diff = touchEndX - touchStartX;
-
-            if (Math.abs(diff) > 50) {
-                if (diff < 0) {
-                    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-                } else {
-                    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-                }
-                showImage(currentIndex);
-            }
-
-            touchStartX = 0;
-            touchEndX = 0;
-        });
-
-        /* ===========================
            CERRAR MODAL
         =========================== */
         function closeModal() {
@@ -1329,6 +1294,7 @@
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
             lightboxOpen = true;
+
             history.pushState({ lightbox: true }, "");
         }
 
@@ -1338,9 +1304,8 @@
             lightboxOpen = false;
         }
 
-        /* TAP → LIGHTBOX (solo si no hubo swipe) */
         slider.addEventListener("click", e => {
-            if (e.target.tagName === "IMG" && !isSwiping) {
+            if (e.target.tagName === "IMG") {
                 openLightbox(e.target.src);
             }
         });
@@ -1366,7 +1331,7 @@
         });
 
         /* ===========================
-           ESC (DESKTOP)
+           ESC
         =========================== */
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
@@ -1374,7 +1339,6 @@
                 else if (modalOpen) history.back();
             }
         });
-    </script>
     </script>
     <script>
         // Parallax hero full responsive
