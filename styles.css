@@ -661,16 +661,23 @@ MAIN NAVBAR===========================*/
 
     .slider {
         height: 280px;
+
+        /* 🔥 CLAVE: asegura centrado real del contenido absoluto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .slider-prev,
-    .slider-next {
-        width: 38px;
-        height: 38px;
-    }
+    .slider img {
+        width: 100%;
+        height: 100%;
 
-    .slider-dots {
-        bottom: 10px;
+        object-fit: contain;
+
+        /* 🔥 CLAVE: evita que se pegue a la izquierda */
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 }
 
