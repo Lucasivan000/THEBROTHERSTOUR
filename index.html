@@ -1074,8 +1074,9 @@
                 <div class="slider"></div>
                 <button class="slider-prev">&#10094;</button>
                 <button class="slider-next">&#10095;</button>
-                <div class="slider-dots"></div>
+
             </div>
+            <div class="slider-dots"></div>
 
             <h2 class="modal-title"></h2>
             <p class="modal-description"></p>
@@ -1186,37 +1187,50 @@
         let lightboxOpen = false;
 
         /* ===========================
-           INDICADOR SLIDER
+           DOTS INDICATOR
         =========================== */
-        const sliderIndicator = document.createElement("div");
-        sliderIndicator.className = "slider-indicator";
-        slider.appendChild(sliderIndicator);
 
-        function updateIndicator() {
+        const dotsContainer = document.createElement("div");
+        dotsContainer.className = "slider-dots";
+        slider.after(dotsContainer);
+
+        function createDots() {
+            dotsContainer.innerHTML = "";
+
             if (images.length <= 1) {
-                sliderIndicator.style.display = "none";
+                dotsContainer.style.display = "none";
                 return;
             }
 
-            sliderIndicator.style.display = "flex";
-            sliderIndicator.innerHTML = `
-            <span>${currentIndex + 1} / ${images.length}</span>
-            <div class="dots">
-                ${images.map((_, i) =>
-                `<i class="${i === currentIndex ? "active" : ""}"></i>`
-            ).join("")}
-            </div>
-        `;
+            dotsContainer.style.display = "flex";
+
+            images.forEach((_, i) => {
+                const dot = document.createElement("span");
+                if (i === currentIndex) dot.classList.add("active");
+
+                dot.addEventListener("click", () => {
+                    currentIndex = i;
+                    showImage(currentIndex);
+                });
+
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.querySelectorAll("span");
+            dots.forEach(dot => dot.classList.remove("active"));
+            if (dots[currentIndex]) dots[currentIndex].classList.add("active");
         }
 
         /* ===========================
            ABRIR MODAL
         =========================== */
+
         openButtons.forEach(btn => {
             btn.addEventListener("click", () => {
 
                 slider.innerHTML = "";
-                slider.appendChild(sliderIndicator);
                 itineraryEl.innerHTML = "";
                 currentIndex = 0;
 
@@ -1230,6 +1244,7 @@
                 whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
 
                 images = JSON.parse(btn.dataset.images || "[]");
+
                 images.forEach((src, i) => {
                     const img = document.createElement("img");
                     img.src = src;
@@ -1244,7 +1259,7 @@
                     itineraryEl.appendChild(li);
                 });
 
-                updateIndicator();
+                createDots();
 
                 modal.classList.add("active");
                 document.body.style.overflow = "hidden";
@@ -1257,11 +1272,12 @@
         /* ===========================
            SLIDER
         =========================== */
+
         function showImage(index) {
             const imgs = slider.querySelectorAll("img");
             imgs.forEach(img => img.classList.remove("active"));
             if (imgs[index]) imgs[index].classList.add("active");
-            updateIndicator();
+            updateDots();
         }
 
         prevBtn.addEventListener("click", () => {
@@ -1277,6 +1293,7 @@
         /* ===========================
            CERRAR MODAL
         =========================== */
+
         function closeModal() {
             modal.classList.remove("active");
             document.body.style.overflow = "";
@@ -1294,26 +1311,27 @@
         /* ===========================
            LIGHTBOX
         =========================== */
+
         const lightbox = document.createElement("div");
         lightbox.id = "imgLightbox";
         lightbox.style.cssText = `
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.95);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10000;
-        opacity: 0;
-        pointer-events: none;
-    `;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.95);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 10000;
+opacity: 0;
+pointer-events: none;
+`;
 
         const lightboxImg = document.createElement("img");
         lightboxImg.style.cssText = `
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-    `;
+max-width: 100%;
+max-height: 100%;
+object-fit: contain;
+`;
 
         lightbox.appendChild(lightboxImg);
         document.body.appendChild(lightbox);
@@ -1323,7 +1341,6 @@
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
             lightboxOpen = true;
-
             history.pushState({ lightbox: true }, "");
         }
 
@@ -1344,8 +1361,9 @@
         });
 
         /* ===========================
-           BACK BUTTON CONTROLADO
+           BACK BUTTON
         =========================== */
+
         window.addEventListener("popstate", () => {
             if (lightboxOpen) {
                 closeLightbox();
@@ -1360,6 +1378,7 @@
         /* ===========================
            ESC
         =========================== */
+
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
                 if (lightboxOpen) history.back();
@@ -1367,6 +1386,7 @@
             }
         });
     </script>
+
     <script>
         /* ===========================
            SWIPE MOBILE PARA SLIDER
@@ -1376,42 +1396,36 @@
         let startY = 0;
         let isSwiping = false;
 
-        slider.addEventListener("touchstart", (e) => {
+        slider.addEventListener("touchstart", e => {
             if (e.touches.length !== 1) return;
-
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
             isSwiping = true;
         }, { passive: true });
 
-        slider.addEventListener("touchmove", (e) => {
+        slider.addEventListener("touchmove", e => {
             if (!isSwiping) return;
 
             const diffX = e.touches[0].clientX - startX;
             const diffY = e.touches[0].clientY - startY;
 
-            // Si el movimiento es más vertical que horizontal → NO slider
             if (Math.abs(diffY) > Math.abs(diffX)) {
                 isSwiping = false;
             }
         }, { passive: true });
 
-        slider.addEventListener("touchend", (e) => {
+        slider.addEventListener("touchend", e => {
             if (!isSwiping) return;
 
-            const endX = e.changedTouches[0].clientX;
-            const diffX = endX - startX;
-
-            const threshold = 50; // sensibilidad swipe
+            const diffX = e.changedTouches[0].clientX - startX;
+            const threshold = 50;
 
             if (diffX > threshold) {
-                // 👉 swipe derecha → imagen anterior
                 currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
                 showImage(currentIndex);
             }
 
             if (diffX < -threshold) {
-                // 👈 swipe izquierda → siguiente imagen
                 currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
                 showImage(currentIndex);
             }
