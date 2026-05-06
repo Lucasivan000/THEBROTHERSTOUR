@@ -588,31 +588,54 @@ MAIN NAVBAR===========================*/
 }
 
 /* ===========================
-   SLIDER DOTS (INDICADOR)
+   SLIDER DOTS OVERLAY
 =========================== */
 
+.slider {
+    position: relative;
+}
+
 .slider-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 14px;
+    transform: translateX(-50%);
+    z-index: 5;
+
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 6px;
-    margin-top: 10px;
+    gap: 7px;
+
+    padding: 6px 10px;
+    border-radius: 999px;
+
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
 }
 
 .slider-dots span {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.35);
-    transition: all 0.25s ease;
+    background: rgba(255, 255, 255, 0.45);
+    transition: all .25s ease;
 }
 
 .slider-dots span.active {
     background: #E0B84F;
-    transform: scale(1.4);
+    transform: scale(1.35);
 }
 
-/* Mobile: un poco más visibles */
+/* MOBILE */
 @media (max-width: 768px) {
+
+    .slider-dots {
+        bottom: 10px;
+        gap: 6px;
+        padding: 5px 9px;
+    }
+
     .slider-dots span {
         width: 7px;
         height: 7px;
