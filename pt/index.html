@@ -1084,6 +1084,9 @@
             </div>
         </div>
     </div>
+    <div class="img-lightbox" id="imgLightbox">
+        <img src="" alt="Imagen ampliada">
+    </div>
     <script>
         const path = window.location.pathname;
 
@@ -1208,6 +1211,10 @@
                 });
 
                 modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+
+                // 👉 agrega estado para botón "atrás" (mobile)
+                history.pushState({ modal: true }, "");
             });
         });
 
@@ -1233,39 +1240,91 @@
         /* ===========================
            CERRAR MODAL
         =========================== */
-        modal.querySelector("[data-close]").addEventListener("click", () => {
+        function closeModal() {
             modal.classList.remove("active");
-        });
+            document.body.style.overflow = "";
+        }
+
+        modal.querySelector("[data-close]").addEventListener("click", closeModal);
 
         modal.addEventListener("click", e => {
-            if (e.target === modal) modal.classList.remove("active");
+            if (e.target === modal) closeModal();
         });
-    </script>
-    <script>
-        // Crear el contenedor del lightbox dinámicamente
+
+        /* ===========================
+           BOTÓN ATRÁS (ANDROID / iOS)
+        =========================== */
+        window.addEventListener("popstate", () => {
+            if (modal.classList.contains("active")) {
+                closeModal();
+            }
+        });
+
+        /* ===========================
+           LIGHTBOX FULLSCREEN IMAGEN
+        =========================== */
         const lightbox = document.createElement("div");
-        lightbox.classList.add("lightbox");
+        lightbox.id = "imgLightbox";
+        lightbox.style.cssText = `
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .25s;
+`;
+
+        const lightboxImg = document.createElement("img");
+        lightboxImg.style.cssText = `
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+`;
+
+        lightbox.appendChild(lightboxImg);
         document.body.appendChild(lightbox);
 
-        // Función para mostrar imagen en lightbox
-        const showLightbox = (src) => {
-            lightbox.innerHTML = `<img src="${src}" alt="Imagen ampliada">`;
-            lightbox.classList.add("active");
-        };
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.opacity = "1";
+            lightbox.style.pointerEvents = "auto";
+            history.pushState({ lightbox: true }, "");
+        }
 
-        // Cerrar al click en el overlay
-        lightbox.addEventListener("click", () => {
-            lightbox.classList.remove("active");
+        function closeLightbox() {
+            lightbox.style.opacity = "0";
+            lightbox.style.pointerEvents = "none";
+        }
+
+        slider.addEventListener("click", e => {
+            if (e.target.tagName === "IMG") {
+                openLightbox(e.target.src);
+            }
         });
 
-        // Hacer las imágenes del slider clickeables
-        document.querySelectorAll(".modal .slider img").forEach(img => {
-            img.style.cursor = "zoom-in"; // cambiar cursor
-            img.addEventListener("click", () => {
-                showLightbox(img.src);
-            });
+        lightbox.addEventListener("click", closeLightbox);
+
+        window.addEventListener("popstate", () => {
+            if (lightbox.style.pointerEvents === "auto") {
+                closeLightbox();
+            }
+        });
+
+        /* ===========================
+           ESC (DESKTOP)
+        =========================== */
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                if (lightbox.style.pointerEvents === "auto") closeLightbox();
+                else if (modal.classList.contains("active")) closeModal();
+            }
         });
     </script>
+
     <script>
         // Parallax hero full responsive
         const heroImg = document.querySelector('.hero-img');
@@ -1283,63 +1342,7 @@
             heroImg.style.transform = `translateY(${offset}px)`;
         });
     </script>
-    <script>
-        // ===============================
-        // LIGHTBOX FULLSCREEN SEGURO
-        // ===============================
 
-        function closeLightbox() {
-            const lb = document.getElementById("imgLightbox");
-            if (!lb || !lb.classList.contains("active")) return;
-
-            lb.classList.remove("active");
-            document.body.style.overflow = "";
-
-            // vuelve un paso atrás solo si el lightbox agregó history
-            if (history.state && history.state.lightbox) {
-                history.back();
-            }
-        }
-
-        // ABRIR LIGHTBOX AL CLICK EN IMAGEN DEL MODAL
-        document.addEventListener("click", function (e) {
-            const img = e.target.closest(".slider img");
-            if (!img) return;
-
-            const lightbox = document.getElementById("imgLightbox");
-            const lightboxImg = lightbox.querySelector("img");
-
-            lightboxImg.src = img.src;
-            lightbox.classList.add("active");
-            document.body.style.overflow = "hidden";
-
-            // permite cerrar con botón "Atrás"
-            history.pushState({ lightbox: true }, "");
-        });
-
-        // CERRAR AL TOCAR FUERA DE LA IMAGEN
-        document.getElementById("imgLightbox").addEventListener("click", function (e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-
-        // CERRAR CON ESC (desktop)
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") {
-                closeLightbox();
-            }
-        });
-
-        // CERRAR CON BOTÓN "ATRÁS" (mobile)
-        window.addEventListener("popstate", function () {
-            const lb = document.getElementById("imgLightbox");
-            if (lb && lb.classList.contains("active")) {
-                lb.classList.remove("active");
-                document.body.style.overflow = "";
-            }
-        });
-    </script>
 </body>
 
 </html>
