@@ -539,40 +539,56 @@ MAIN NAVBAR===========================*/
 }
 
 /* ===========================
-   GALERÍA
+   GALERÍA (FIX ESTABLE)
 =========================== */
+
 .modal-gallery {
     margin-bottom: 1.4rem;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
+/* SLIDER WRAPPER */
+.slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMÁGENES (DESKTOP DEFAULT) */
 .slider img {
     width: 100%;
     max-height: 420px;
     object-fit: contain;
+
     display: none;
     border-radius: 14px;
     background: #000;
 }
 
+/* ACTIVA */
 .slider img.active {
     display: block;
 }
 
 /* ===========================
-   SLIDER – MOBILE FIX
+   MOBILE FIX
 =========================== */
 @media (max-width: 768px) {
 
-    /* Contenedor del slider */
     .modal-gallery {
         position: relative;
         margin-left: -1rem;
         margin-right: -1rem;
     }
 
-    /* Imagen ocupa todo el ancho */
+    .slider {
+        width: 100%;
+    }
+
     .slider img {
         max-height: 280px;
         width: 100%;
@@ -580,7 +596,7 @@ MAIN NAVBAR===========================*/
         object-fit: cover;
     }
 
-    /* OCULTAMOS flechas en mobile */
+    /* flechas ocultas en mobile */
     .slider-prev,
     .slider-next {
         display: none;
