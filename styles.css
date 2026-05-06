@@ -688,6 +688,33 @@ MAIN NAVBAR===========================*/
     }
 }
 
+/* ===========================
+   SLIDER – MOBILE FIX
+=========================== */
+@media (max-width: 768px) {
+
+    /* Contenedor del slider */
+    .modal-gallery {
+        position: relative;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    /* Imagen ocupa todo el ancho */
+    .slider img {
+        max-height: 280px;
+        width: 100%;
+        border-radius: 0;
+        object-fit: cover;
+    }
+
+    /* OCULTAMOS flechas en mobile */
+    .slider-prev,
+    .slider-next {
+        display: none;
+    }
+}
+
 
 
 
