@@ -1125,8 +1125,42 @@
         });
     </script>
     <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.getElementById("mainNavHamburger");
+            const navLinks = document.getElementById("mainNavLinks");
+
+            if (!hamburger || !navLinks) return;
+
+            // Abrir / cerrar menú
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navLinks.classList.toggle("active");
+            });
+
+            // Cerrar al hacer click en un link
+            navLinks.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                });
+            });
+
+            // Cerrar al clickear fuera
+            document.addEventListener("click", (e) => {
+                const isClickInside =
+                    hamburger.contains(e.target) || navLinks.contains(e.target);
+
+                if (!isClickInside) {
+                    hamburger.classList.remove("active");
+                    navLinks.classList.remove("active");
+                }
+            });
+        });
+    </script>
+
+    <script>
         /* ===========================
-           MODAL TOUR ÚNICO + SLIDER TOUCH
+           MODAL TOUR ÚNICO
         =========================== */
 
         const openButtons = document.querySelectorAll(".btn-open-modal");
@@ -1170,7 +1204,6 @@
                 whatsappBtn.href = `https://wa.me/0000000000?text=${btn.dataset.whatsapp || ""}`;
 
                 images = JSON.parse(btn.dataset.images || "[]");
-
                 images.forEach((src, i) => {
                     const img = document.createElement("img");
                     img.src = src;
@@ -1194,7 +1227,7 @@
         });
 
         /* ===========================
-           SLIDER LOGIC
+           SLIDER
         =========================== */
         function showImage(index) {
             const imgs = slider.querySelectorAll("img");
@@ -1202,46 +1235,14 @@
             if (imgs[index]) imgs[index].classList.add("active");
         }
 
-        function nextImage() {
-            currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-            showImage(currentIndex);
-        }
-
-        function prevImage() {
+        prevBtn.addEventListener("click", () => {
             currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
             showImage(currentIndex);
-        }
+        });
 
-        prevBtn.addEventListener("click", prevImage);
-        nextBtn.addEventListener("click", nextImage);
-
-        /* ===========================
-           SWIPE TOUCH (MOBILE)
-        =========================== */
-        let startX = 0;
-        let endX = 0;
-        let isSwiping = false;
-
-        slider.addEventListener("touchstart", e => {
-            startX = e.touches[0].clientX;
-            isSwiping = true;
-        }, { passive: true });
-
-        slider.addEventListener("touchmove", e => {
-            if (!isSwiping) return;
-            endX = e.touches[0].clientX;
-        }, { passive: true });
-
-        slider.addEventListener("touchend", () => {
-            if (!isSwiping) return;
-
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) {
-                diff > 0 ? nextImage() : prevImage();
-            }
-
-            isSwiping = false;
+        nextBtn.addEventListener("click", () => {
+            currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+            showImage(currentIndex);
         });
 
         /* ===========================
@@ -1293,6 +1294,7 @@
             lightbox.style.opacity = "1";
             lightbox.style.pointerEvents = "auto";
             lightboxOpen = true;
+
             history.pushState({ lightbox: true }, "");
         }
 
@@ -1303,7 +1305,7 @@
         }
 
         slider.addEventListener("click", e => {
-            if (e.target.tagName === "IMG" && !isSwiping) {
+            if (e.target.tagName === "IMG") {
                 openLightbox(e.target.src);
             }
         });
@@ -1329,11 +1331,12 @@
         });
 
         /* ===========================
-           ESC DESKTOP
+           ESC
         =========================== */
         document.addEventListener("keydown", e => {
             if (e.key === "Escape") {
-                if (lightboxOpen || modalOpen) history.back();
+                if (lightboxOpen) history.back();
+                else if (modalOpen) history.back();
             }
         });
     </script>
