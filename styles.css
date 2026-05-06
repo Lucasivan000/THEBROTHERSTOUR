@@ -542,37 +542,138 @@ MAIN NAVBAR===========================*/
    GALERÍA (FIX ESTABLE)
 =========================== */
 
+/* ===========================
+   GALERÍA FIX DEFINITIVO
+=========================== */
+
 .modal-gallery {
-    margin-bottom: 1.4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    width: 100%;
+    margin-bottom: 1.4rem;
 }
 
-/* SLIDER WRAPPER */
+/* CONTENEDOR DEL SLIDER */
 .slider {
+    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* IMÁGENES (DESKTOP DEFAULT) */
-.slider img {
-    width: 100%;
-    max-height: 420px;
-    object-fit: contain;
-
-    display: none;
+    height: 420px; /* desktop */
+    overflow: hidden;
     border-radius: 14px;
+
     background: #000;
 }
 
-/* ACTIVA */
-.slider img.active {
-    display: block;
+/* IMÁGENES SUPERPUESTAS (NO FLEX, NO BLOCK STACK) */
+.slider img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    background: #000;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
+
+.slider img.active {
+    opacity: 1;
+}
+
+/* ===========================
+   FLECHAS (CORREGIDAS)
+=========================== */
+
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+
+    border: none;
+    color: #fff;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+/* ===========================
+   DOTS OVERLAY (ARRIBA DE IMAGEN)
+=========================== */
+
+.slider-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 6px;
+
+    z-index: 6;
+
+    padding: 5px 10px;
+    border-radius: 999px;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+}
+
+.slider-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+}
+
+.slider-dots span.active {
+    background: #E0B84F;
+    transform: scale(1.3);
+}
+
+/* ===========================
+   MOBILE FIX
+=========================== */
+
+@media (max-width: 768px) {
+
+    .slider {
+        height: 280px;
+    }
+
+    .slider-prev,
+    .slider-next {
+        width: 38px;
+        height: 38px;
+    }
+
+    .slider-dots {
+        bottom: 10px;
+    }
+}
+
 
 /* ===========================
    MOBILE FIX
@@ -607,9 +708,7 @@ MAIN NAVBAR===========================*/
    SLIDER DOTS OVERLAY
 =========================== */
 
-.slider {
-    position: relative;
-}
+
 
 .slider-dots {
     position: absolute;
