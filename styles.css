@@ -821,6 +821,34 @@ MAIN NAVBAR===========================*/
     }
 }
 
+/* ===========================
+   FIX FINAL: SCROLL HORIZONTAL
+=========================== */
+
+/* Evita cualquier overflow lateral del modal */
+.modal-content {
+    overflow-x: hidden;
+}
+
+/* Refuerzo específico mobile */
+@media (max-width: 768px) {
+    body.modal-open {
+        overflow-x: hidden;
+    }
+
+    .modal {
+        overflow-x: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
