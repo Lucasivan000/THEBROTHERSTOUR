@@ -661,8 +661,8 @@ MAIN NAVBAR===========================*/
 @media (max-width: 768px) {
 
     .modal-gallery {
+        width: calc(100% + 2rem);
         margin-left: -1rem;
-        margin-right: -1rem;
     }
 
     .slider {
@@ -809,6 +809,15 @@ MAIN NAVBAR===========================*/
 
     .info-list {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================
+   FIX: OCULTAR CLOSE EN MOBILE
+=========================== */
+@media (max-width: 768px) {
+    .modal-close {
+        display: none !important;
     }
 }
 

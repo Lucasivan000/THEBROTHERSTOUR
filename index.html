@@ -1351,8 +1351,9 @@ object-fit: contain;
         }
 
         slider.addEventListener("click", e => {
+            if (images.length <= 1) return;
             if (e.target.tagName === "IMG") {
-                openLightbox(e.target.src);
+                openLightbox(images[currentIndex]);
             }
         });
 
